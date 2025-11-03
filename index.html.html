@@ -3278,6 +3278,17 @@ a[href="#"] {
 .collaboration-content > div:last-child {
     display: none !important;
 }
+    /* Garantir que os fallbacks apareçam e imagens não carregadas sejam escondidas */
+.history-image img,
+.gallery-item img,
+.ministry-images img {
+    display: none !important;
+}
+
+.fallback-content,
+.history-image .fallback-content {
+    display: flex !important;
+}
 </style>
  
 </head>
@@ -3833,4 +3844,5 @@ a[href="#"] {
 
 </body>
 </html>
+
                 
