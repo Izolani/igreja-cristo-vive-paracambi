@@ -257,12 +257,25 @@ nav {
 .btn-primary {
     background: var(--primary-color);
     color: white;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    text-decoration: none;
+    display: inline-block;
+    transition: all 0.3s;
+    font-weight: 600;
 }
 
 .btn-secondary {
     background: transparent;
     color: var(--primary-color);
     border: 2px solid var(--primary-color);
+    padding: 12px 24px;
+    border-radius: 8px;
+    text-decoration: none;
+    display: inline-block;
+    transition: all 0.3s;
+    font-weight: 600;
 }
 
 .btn-secondary:hover {
@@ -576,7 +589,491 @@ section {
 .ministry-images img:hover {
     transform: scale(1.05);
 }
+</style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav class="container">
+            <div class="logo">
+                <div class="church-name">
+                    <div class="igreja-evangelica">IGREJA EVANGÉLICA</div>
+                    <div class="cristo-vive">CRISTO VIVE</div>
+                    <div class="de-paracambi">DE PARACAMBI</div>
+                </div>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home">Início</a></li>
+                <li><a href="#about">Sobre</a></li>
+                <li><a href="#schedule">Cultos</a></li>
+                <li><a href="#ministries">Ministérios</a></li>
+                <li><a href="#gallery">Galeria</a></li>
+                <li><a href="#agenda">Agenda</a></li>
+                <li><a href="#pastor">Pastor</a></li>
+                <li><a href="#prayer">Oração</a></li>
+                <li><a href="#collaboration">Colabore</a></li>
+                <li><a href="#contact">Contato</a></li>
+            </ul>
+            <button class="mobile-menu">
+                <i class="fas fa-bars"></i>
+            </button>
+        </nav>
+    </header>
 
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content fade-in">
+                <div class="verse-day">
+                    <p style="font-style: italic; font-size: 2rem; margin-bottom: 1rem; color: white;">
+                        "Eu sou a ressurreição e a vida; quem crê em mim, ainda que morra, viverá."
+                    </p>
+                    <h1 style="color: var(--secondary-color); font-size: 4rem; margin: 0;">JESUS</h1>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">Sobre Nossa Igreja</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>Nossa História</h3>
+                    <p>A Igreja Evangélica Cristo Vive de Paracambi/RJ é uma comunidade de fé comprometida em proclamar o Evangelho de Jesus Cristo e transformar vidas através do amor de Deus.</p>
+                    
+                    <h3>Nossa Missão</h3>
+                    <p>Anunciar a vida abundante em Cristo, discipular vidas e ser uma igreja relevante na comunidade de Paracambi, demonstrando o amor de Deus através de ações práticas.</p>
+                    
+                    <h3>Nossa Visão</h3>
+                    <p>Ser uma igreja que impacta vidas, famílias e a sociedade, levando esperança e transformação através da Palavra de Deus.</p>
+                </div>
+                <div class="about-image">
+                    <i class="fas fa-church" style="font-size: 4rem; color: var(--primary-color);"></i>
+                </div>
+            </div>
+
+            <!-- History Gallery -->
+            <div class="history-gallery">
+                <h3>Nossa Jornada em Imagens</h3>
+                <div class="history-grid">
+                    <div class="history-item">
+                        <div class="history-image">
+                            <img src="images/history/terreno-antes.jpg" alt="Terreno antes da construção" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                            <div class="fallback-content" style="display: none;">
+                                <i class="fas fa-seedling" style="font-size: 2rem; color: var(--primary-color); margin-bottom: 0.5rem;"></i>
+                                <p>Foto do Terreno - Antes da Construção</p>
+                            </div>
+                        </div>
+                        <div class="history-content">
+                            <h4>O Início</h4>
+                            <p>O terreno onde Deus nos abençoou para edificar Sua casa. Um sonho que se tornou realidade através da fé.</p>
+                        </div>
+                    </div>
+
+                    <div class="history-item">
+                        <div class="history-image">
+                            <img src="images/history/igreja-atual.jpg" alt="Igreja atual" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                            <div class="fallback-content" style="display: none;">
+                                <i class="fas fa-church" style="font-size: 2rem; color: var(--primary-color); margin-bottom: 0.5rem;"></i>
+                                <p>Fotos Atuais do Templo</p>
+                            </div>
+                        </div>
+                        <div class="history-content">
+                            <h4>Hoje</h4>
+                            <p>Nossa igreja atual, onde congregamos e adoramos ao Senhor. Um lugar de encontro com Deus e comunhão fraternal.</p>
+                        </div>
+                    </div>
+
+                    <div class="history-item">
+                        <div class="history-image">
+                            <img src="images/history/projeto-futuro.jpg" alt="Projeto de expansão" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                            <div class="fallback-content" style="display: none;">
+                                <i class="fas fa-drafting-compass" style="font-size: 2rem; color: var(--primary-color); margin-bottom: 0.5rem;"></i>
+                                <p>Projeto Futuro - Expansão</p>
+                            </div>
+                        </div>
+                        <div class="history-content">
+                            <h4>O Futuro</h4>
+                            <p>Os planos de expansão do templo. Deus tem grandes projetos para nossa comunidade de fé.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Schedule Section -->
+    <section id="schedule">
+        <div class="container">
+            <h2 class="section-title">Programação de Cultos</h2>
+            <p class="section-subtitle">Venha adorar conosco! Todos são bem-vindos em nossa casa.</p>
+            
+            <div class="schedule-grid">
+                <div class="schedule-card">
+                    <i class="fas fa-praying-hands"></i>
+                    <h3>Culto de Oração</h3>
+                    <p><strong>Dia:</strong> Terça-feira</p>
+                    <p><strong>Horário:</strong> 19:30h</p>
+                    <p>Momento especial de oração e busca a Deus</p>
+                </div>
+                
+                <div class="schedule-card">
+                    <i class="fas fa-book-open"></i>
+                    <h3>Escola Bíblica Dominical</h3>
+                    <p><strong>Dia:</strong> Domingo</p>
+                    <p><strong>Horário:</strong> 9:00h</p>
+                    <p>Estudo sistemático da Palavra de Deus</p>
+                </div>
+
+                <div class="schedule-card">
+                    <i class="fas fa-calendar-day"></i>
+                    <h3>Culto Principal</h3>
+                    <p><strong>Dia:</strong> Domingo</p>
+                    <p><strong>Horário:</strong> 19:00h</p>
+                    <p>Culto principal com toda a família</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ministries Section -->
+    <section id="ministries" class="ministries">
+        <div class="container">
+            <h2 class="section-title">Nossos Ministérios</h2>
+            <p class="section-subtitle">Cada membro tem um lugar especial no Corpo de Cristo</p>
+            
+            <div class="ministries-grid">
+                <!-- Ministério de Louvor -->
+                <div class="ministry-card">
+                    <i class="fas fa-music"></i>
+                    <h3>Ministério de Louvor e Adoração</h3>
+                    <p>Conduzindo a igreja em momentos de adoração e exaltação ao nome do Senhor através da música.</p>
+                    
+                    <!-- Imagens do Ministério -->
+                    <div class="ministry-images">
+                        <img src="images/ministries/louvor/equipe-completa.jpg" alt="Equipe de Louvor" onerror="this.style.display='none';">
+                        <img src="images/ministries/louvor/ensaio-01.jpg" alt="Ensaio do Louvor" onerror="this.style.display='none';">
+                    </div>
+                </div>
+                
+                <!-- Ministério Infantil -->
+                <div class="ministry-card">
+                    <i class="fas fa-child"></i>
+                    <h3>Ministério Infantil</h3>
+                    <p>Cuidando e ensinando as crianças sobre o amor de Jesus de forma lúdica e educativa.</p>
+                    
+                    <!-- Imagens do Ministério -->
+                    <div class="ministry-images">
+                        <img src="images/ministries/infantil/criancas-ebd.jpg" alt="Crianças na EBD" onerror="this.style.display='none';">
+                        <img src="images/ministries/infantil/atividade-01.jpg" alt="Atividade Infantil" onerror="this.style.display='none';">
+                    </div>
+                    
+                    <!-- Integração do Site Pequenos Discípulos - CORRIGIDA -->
+                    <div class="pequenos-discipulos-integration">
+                        <h4>
+                            <i class="fas fa-external-link-alt" style="margin-right: 0.5rem;"></i>
+                            Site dos Pequenos Discípulos
+                        </h4>
+                        
+                        <iframe src="https://pequenos-discipulos-cristo-vive-pbi.netlify.app/" 
+                                width="100%" 
+                                height="300" 
+                                frameborder="0" 
+                                allowfullscreen
+                                sandbox="allow-scripts allow-same-origin allow-forms allow-popups"
+                                style="border-radius: 8px; box-shadow: 0 3px 10px rgba(0,0,0,0.1);">
+                        </iframe>
+                        
+                        <div class="btn-container">
+                            <a href="https://pequenos-discipulos-cristo-vive-pbi.netlify.app/" 
+                               
+                               class="btn">
+                                <i class="fas fa-external-link-alt"></i>
+                                Visitar Site Completo
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+        <!-- Gallery Section -->
+    <section id="gallery">
+        <div class="container">
+            <h2 class="section-title">Galeria de Fotos</h2>
+            <p class="section-subtitle">Momentos especiais da nossa comunidade de fé</p>
+            
+            <div class="gallery-filters">
+                <button class="filter-btn active" data-filter="all">Todas</button>
+                <button class="filter-btn" data-filter="cultos">Cultos</button>
+                <button class="filter-btn" data-filter="confraternizacoes">Confraternizações</button>
+                <button class="filter-btn" data-filter="acoes-sociais">Ações Sociais</button>
+                <button class="filter-btn" data-filter="eventos">Eventos</button>
+                <button class="filter-btn" data-filter="batismos">Batismos</button>
+                <button class="filter-btn" data-filter="ebd">EBD</button>
+            </div>
+            
+            <div class="gallery-grid">
+                <div class="gallery-item" data-category="cultos">
+                    <div class="fallback-content">
+                        <i class="fas fa-camera" style="font-size: 2rem; margin-bottom: 0.5rem;"></i>
+                        <p>Cultos e Celebrações</p>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="confraternizacoes">
+                    <div class="fallback-content">
+                        <i class="fas fa-users" style="font-size: 2rem; margin-bottom: 0.5rem;"></i>
+                        <p>Confraternizações</p>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="acoes-sociais">
+                    <div class="fallback-content">
+                        <i class="fas fa-heart" style="font-size: 2rem; margin-bottom: 0.5rem;"></i>
+                        <p>Ações Sociais</p>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="eventos">
+                    <div class="fallback-content">
+                        <i class="fas fa-birthday-cake" style="font-size: 2rem; margin-bottom: 0.5rem;"></i>
+                        <p>Eventos Especiais</p>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="batismos">
+                    <div class="fallback-content">
+                        <i class="fas fa-water" style="font-size: 2rem; margin-bottom: 0.5rem;"></i>
+                        <p>Batismos</p>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="ebd">
+                    <div class="fallback-content">
+                        <i class="fas fa-graduation-cap" style="font-size: 2rem; margin-bottom: 0.5rem;"></i>
+                        <p>Formandos EBD</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Agenda Section -->
+    <section id="agenda" class="agenda">
+        <div class="container">
+            <h2 class="section-title">Agenda de Eventos</h2>
+            <p class="section-subtitle">Fique por dentro dos próximos eventos da nossa igreja</p>
+            
+            <div class="agenda-grid">
+                <div class="agenda-item">
+                    <div class="agenda-date">01/11/2025</div>
+                    <div class="agenda-title">Culto em Comemoração aos 508 anos da Reforma Protestante</div>
+                    <p>Um culto especial para celebrarmos os 508 anos da Reforma Protestante, lembrando dos princípios que fundamentam nossa fé evangélica.</p>
+                    
+                    <div class="solas-grid">
+                        <div class="sola-card">
+                            <h5>Sola Scriptura</h5>
+                            <p>Somente as Escrituras são a autoridade final</p>
+                        </div>
+                        <div class="sola-card">
+                            <h5>Sola Gratia</h5>
+                            <p>Salvação somente pela graça de Deus</p>
+                        </div>
+                        <div class="sola-card">
+                            <h5>Sola Fide</h5>
+                            <p>Justificação somente pela fé em Cristo</p>
+                        </div>
+                        <div class="sola-card">
+                            <h5>Solus Christus</h5>
+                            <p>Cristo é o único mediador</p>
+                        </div>
+                        <div class="sola-card">
+                            <h5>Soli Deo Gloria</h5>
+                            <p>Toda glória pertence somente a Deus</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pastor Section -->
+    <section id="pastor" class="pastor-section">
+        <div class="container">
+            <h2 class="section-title">Liderança Pastoral</h2>
+            
+            <div class="pastor-content">
+                <div class="pastor-image">
+                    <i class="fas fa-user" style="font-size: 4rem;"></i>
+                </div>
+                <div class="pastor-info">
+                    <h3>Pastor José Marcos da Silva</h3>
+                    <p class="title">Pastor Presidente</p>
+                    <p>Servo de Deus comprometido com a obra do Senhor, dedicado ao pastoreio e cuidado do rebanho.</p>
+                    
+                    <blockquote style="border-left: 4px solid var(--secondary-color); padding-left: 1rem; margin: 2rem 0; font-style: italic; color: var(--text-light);">
+                        "Meu desejo é ver vidas transformadas pelo poder do Evangelho e famílias restauradas pelo amor de Cristo."
+                    </blockquote>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Prayer Request Section -->
+    <section id="prayer">
+        <div class="container">
+            <h2 class="section-title">Pedidos de Oração</h2>
+            <p class="section-subtitle">Compartilhe seu pedido conosco. A oração move o coração de Deus!</p>
+            
+            <form class="prayer-form">
+                <div class="form-group">
+                    <label for="name">Nome:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">E-mail (opcional):</label>
+                    <input type="email" id="email" name="email">
+                </div>
+                
+                <div class="form-group">
+                    <label for="prayer-request">Seu Pedido de Oração:</label>
+                    <textarea id="prayer-request" name="prayer-request" placeholder="Compartilhe seu pedido conosco..." required></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="confidential" name="confidential">
+                        <label for="confidential">Pedido confidencial (apenas para a liderança)</label>
+                    </div>
+                </div>
+                
+                <button type="submit" class="btn btn-primary" style="width: 100%;">
+                    <i class="fas fa-praying-hands"></i>
+                    Enviar Pedido de Oração
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Collaboration Section -->
+    <section id="collaboration" class="collaboration">
+        <div class="container">
+            <h2 class="section-title">Seja também um colaborador desta obra!</h2>
+            <div class="collaboration-content">
+                <p style="font-size: 1.2rem; margin-bottom: 2rem;">
+                    Sua contribuição é fundamental para o crescimento do Reino de Deus!
+                </p>
+                
+                <div class="collaboration-options">
+                    <div class="collaboration-card">
+                        <i class="fas fa-heart"></i>
+                        <h3>Dízimos e Ofertas</h3>
+                        <p>Contribua para a manutenção e crescimento da obra de Deus.</p>
+                    </div>
+                    
+                    <div class="collaboration-card">
+                        <i class="fas fa-hands-helping"></i>
+                        <h3>Trabalho Voluntário</h3>
+                        <p>Doe seu tempo e talentos para servir nos ministérios.</p>
+                    </div>
+                    
+                    <div class="collaboration-card">
+                        <i class="fas fa-pray"></i>
+                        <h3>Oração e Intercessão</h3>
+                        <p>Participe da corrente de oração pela igreja.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+        <!-- Contact Section -->
+    <section id="contact">
+        <div class="container">
+            <h2 class="section-title">Localização e Contato</h2>
+            
+            <div class="contact-info">
+               <div class="contact-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <div>
+                        <h4>Endereço</h4>
+                        <p>Estrada Eduardo Pereira Dias Junior, 149<br>
+                        Lages, Paracambi<br>
+                        CEP: 26.600-000</p>
+                    </div>
+                </div>
+                
+                <div class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <div>
+                        <h4>Telefone/WhatsApp</h4>
+                        <p>(21) 98786-0391</p>
+                    </div>
+                </div>
+                
+                <div class="contact-item">
+                    <i class="fas fa-clock"></i>
+                    <div>
+                        <h4>Horários dos Cultos</h4>
+                        <p>Terças: 19:30h (Oração)<br>
+                        Domingos: 9:00h (EBD)<br>
+                        Domingos: 19:00h (Principal)</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Mapa do Google Maps -->
+            <div class="map-container">
+                <iframe src="https://www.google.com/maps?q=Estrada+Eduardo+Pereira+Dias+Junior+149+Lages+Paracambi+RJ&output=embed" 
+                        width="100%" 
+                        height="400" 
+                        style="border:0;" 
+                        allowfullscreen="" 
+                        loading="lazy">
+                </iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Igreja Cristo Vive</h3>
+                    <p>A Igreja que Anuncia Vida em Abundância!</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="https://wa.me/5521987860391"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Contato</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> Estrada Eduardo Pereira Dias Junior, 149 - Lages, Paracambi - CEP: 26.600-000</p>
+                    <p><i class="fas fa-phone"></i> (21) 98786-0391</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Horários</h3>
+                    <p><strong>Terças:</strong> 19:30h (Oração)</p>
+                    <p><strong>Domingos:</strong> 9:00h (EBD)</p>
+                    <p><strong>Domingos:</strong> 19:00h (Principal)</p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 Igreja Evangélica Cristo Vive de Paracambi/RJ. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Float Button -->
+    <a href="https://wa.me/5521987860391" class="whatsapp-float">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+<style>
 /* Gallery Filters */
 .gallery-filters {
     display: flex;
@@ -1074,302 +1571,81 @@ footer {
     color: #6b7280;
     font-size: 0.9rem;
 }
-
-/* FORÇAR com !important em tudo */
-a[href="#schedule"],
-a[href="#"] {
-    background: transparent !important;
-    background-color: transparent !important;
-    color: var(--primary-color) !important;
-    border: 2px solid var(--primary-color) !important;
-}
-
-/* Remover destaque ativo do botão Cultos */
-.nav-links a.active,
-.nav-links a[href="#schedule"].active,
-.nav-links li.active a {
-    background: transparent !important;
-    background-color: transparent !important;
-    color: var(--primary-color) !important;
-}
-
-/* Forçar todos os links sem fundo */
-.nav-links a {
-    background: transparent !important;
-    background-color: transparent !important;
-}
-
-.schedule-header {
-    background: transparent !important;
-    color: var(--primary-color) !important;
-    padding: 1rem 0 !important;
-}
-
-.schedule-header h2 {
-    color: var(--primary-color) !important;
-    background: none !important;
-}
-
-/* Novo logo da igreja */
-.church-name {
-    font-family: 'Montserrat', sans-serif !important;
-    text-align: center;
-    line-height: 1;
-}
-
-.igreja-evangelica {
-    font-size: 26.6px !important;
-    color: var(--primary-color) !important;
-    font-weight: 600;
-}
-
-.cristo-vive {
-    font-size: 83.6px !important;
-    color: var(--primary-color) !important;
-    font-weight: 700;
-}
-
-.de-paracambi {
-    font-size: 24px !important;
-    background: var(--primary-color) !important;
-    color: white !important;
-    padding: 2px 8px;
-    border-radius: 4px;
-    font-weight: 600;
-    margin-top: 2px;
-}
-
-/* Forçar posicionamento à esquerda */
-.logo {
-    position: relative !important;
-    left: -20px !important;
-    justify-content: flex-start !important;
-}
 </style>
- 
-</head>
-<body>
-    <!-- Header -->
-    <header>
-        <nav class="container">
-            <div class="logo">
-    <div class="church-name">
-        <div class="igreja-evangelica">IGREJA EVANGÉLICA</div>
-        <div class="cristo-vive">CRISTO VIVE</div>
-        <div class="de-paracambi">DE PARACAMBI</div>
-    </div>
-</div>
-            <ul class="nav-links">
-                <li><a href="#home">Início</a></li>
-                <li><a href="#about">Sobre</a></li>
-                <li><a href="#schedule">Cultos</a></li>
-                <li><a href="#ministries">Ministérios</a></li>
-                <li><a href="#gallery">Galeria</a></li>
-                <li><a href="#agenda">Agenda</a></li>
-                <li><a href="#pastor">Pastor</a></li>
-                <li><a href="#prayer">Oração</a></li>
-                <li><a href="#collaboration">Colabore</a></li>
-                <li><a href="#contact">Contato</a></li>
-            </ul>
-            <button class="mobile-menu">
-                <i class="fas fa-bars"></i>
-            </button>
-        </nav>
-    </header>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="container">
-            <div class="hero-content fade-in">
-                <div class="verse-day">
-    <p style="font-style: italic; font-size: 2rem; margin-bottom: 1rem; color: white;">
-        "Eu sou a ressurreição e a vida; quem crê em mim, ainda que morra, viverá."
-    </p>
-    <h1 style="color: var(--secondary-color); font-size: 4rem; margin: 0;">JESUS</h1>
-</div>
-                
-                
-                
+    <!-- JavaScript -->
+    <script>
+        // Gallery Filter Functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const filterBtns = document.querySelectorAll('.filter-btn');
+            const galleryItems = document.querySelectorAll('.gallery-item');
 
-                <div class="cta-buttons">
-                    
-                </div>
-            </div>
-        </div>
-    </section>
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    filterBtns.forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
 
-    <!-- About Section -->
-    <section id="about" class="about">
-        <div class="container">
-            <h2 class="section-title">Sobre Nossa Igreja</h2>
-            <div class="about-content">
-                <div class="about-text">
-                    <h3>Nossa História</h3>
-                    <p>A Igreja Evangélica Cristo Vive de Paracambi/RJ é uma comunidade de fé comprometida em proclamar o Evangelho de Jesus Cristo e transformar vidas através do amor de Deus.</p>
-                    
-                    <h3>Nossa Missão</h3>
-                    <p>Anunciar a vida abundante em Cristo, discipular vidas e ser uma igreja relevante na comunidade de Paracambi, demonstrando o amor de Deus através de ações práticas.</p>
-                    
-                    <h3>Nossa Visão</h3>
-                    <p>Ser uma igreja que impacta vidas, famílias e a sociedade, levando esperança e transformação através da Palavra de Deus.</p>
-                </div>
-                <div class="about-image">
-                    <i class="fas fa-church" style="font-size: 4rem; color: var(--primary-color);"></i>
-                </div>
-            </div>
+                    const filter = btn.getAttribute('data-filter');
 
-            <!-- History Gallery -->
-            <div class="history-gallery">
-                <h3>Nossa Jornada em Imagens</h3>
-                <div class="history-grid">
-                    <div class="history-item">
-                        <div class="history-image">
-                            <img src="images/history/terreno-antes.jpg" alt="Terreno antes da construção" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                            <div class="fallback-content" style="display: none;">
-                                <i class="fas fa-seedling" style="font-size: 2rem; color: var(--primary-color); margin-bottom: 0.5rem;"></i>
-                                <p>Foto do Terreno - Antes da Construção</p>
-                            </div>
-                        </div>
-                        <div class="history-content">
-                            <h4>O Início</h4>
-                            <p>O terreno onde Deus nos abençoou para edificar Sua casa. Um sonho que se tornou realidade através da fé.</p>
-                        </div>
-                    </div>
+                    galleryItems.forEach(item => {
+                        if (filter === 'all' || item.getAttribute('data-category') === filter) {
+                            item.style.display = 'block';
+                        } else {
+                            item.style.display = 'none';
+                        }
+                    });
+                });
+            });
+        });
 
-                    <div class="history-item">
-                        <div class="history-image">
-                            <img src="images/history/igreja-atual.jpg" alt="Igreja atual" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                            <div class="fallback-content" style="display: none;">
-                                <i class="fas fa-church" style="font-size: 2rem; color: var(--primary-color); margin-bottom: 0.5rem;"></i>
-                                <p>Fotos Atuais do Templo</p>
-                            </div>
-                        </div>
-                        <div class="history-content">
-                            <h4>Hoje</h4>
-                            <p>Nossa igreja atual, onde congregamos e adoramos ao Senhor. Um lugar de encontro com Deus e comunhão fraternal.</p>
-                        </div>
-                    </div>
+        // Ministry Participation Function
+        function participarMinisterio(ministerio) {
+            const message = `Olá! Tenho interesse em participar do Ministério de ${ministerio}. Gostaria de mais informações.`;
+            const whatsappUrl = `https://wa.me/5521987860391?text=${encodeURIComponent(message)}`;
+            window.open(whatsappUrl, '_blank');
+        }
 
-                    <div class="history-item">
-                        <div class="history-image">
-                            <img src="images/history/projeto-futuro.jpg" alt="Projeto de expansão" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                            <div class="fallback-content" style="display: none;">
-                                <i class="fas fa-drafting-compass" style="font-size: 2rem; color: var(--primary-color); margin-bottom: 0.5rem;"></i>
-                                <p>Projeto Futuro - Expansão</p>
-                            </div>
-                        </div>
-                        <div class="history-content">
-                            <h4>O Futuro</h4>
-                            <p>Os planos de expansão do templo. Deus tem grandes projetos para nossa comunidade de fé.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Schedule Section -->
-    <section id="schedule">
-        <div class="container">
-            <h2 class="section-title">Programação de Cultos</h2>
-            <p class="section-subtitle">Venha adorar conosco! Todos são bem-vindos em nossa casa.</p>
+        // Prayer Form Submission
+        document.querySelector('.prayer-form').addEventListener('submit', function(e) {
+            e.preventDefault();
             
-            <div class="schedule-grid">
-                <div class="schedule-card">
-                    <i class="fas fa-praying-hands"></i>
-                    <h3>Culto de Oração</h3>
-                    <p><strong>Dia:</strong> Terça-feira</p>
-                    <p><strong>Horário:</strong> 19:30h</p>
-                    <p>Momento especial de oração e busca a Deus</p>
-                </div>
-                
-                <div class="schedule-card">
-                    <i class="fas fa-book-open"></i>
-                    <h3>Escola Bíblica Dominical</h3>
-                    <p><strong>Dia:</strong> Domingo</p>
-                    <p><strong>Horário:</strong> 9:00h</p>
-                    <p>Estudo sistemático da Palavra de Deus</p>
-                </div>
-
-                <div class="schedule-card">
-                    <i class="fas fa-calendar-day"></i>
-                    <h3>Culto Principal</h3>
-                    <p><strong>Dia:</strong> Domingo</p>
-                    <p><strong>Horário:</strong> 19:00h</p>
-                    <p>Culto principal com toda a família</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-   <!-- Ministries Section -->
-    <section id="ministries" class="ministries">
-        <div class="container">
-            <h2 class="section-title">Nossos Ministérios</h2>
-            <p class="section-subtitle">Cada membro tem um lugar especial no Corpo de Cristo</p>
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const request = document.getElementById('prayer-request').value;
+            const confidential = document.getElementById('confidential').checked;
             
-            <div class="ministries-grid">
-                <!-- Ministério de Louvor -->
-                <div class="ministry-card">
-                    <i class="fas fa-music"></i>
-                    <h3>Ministério de Louvor e Adoração</h3>
-                    <p>Conduzindo a igreja em momentos de adoração e exaltação ao nome do Senhor através da música.</p>
-                    
-                    <!-- Imagens do Ministério -->
-                    <div class="ministry-images">
-                        <img src="images/ministries/louvor/equipe-completa.jpg" alt="Equipe de Louvor" onerror="this.style.display='none';">
-                        <img src="images/ministries/louvor/ensaio-01.jpg" alt="Ensaio do Louvor" onerror="this.style.display='none';">
-                    </div>
-                </div>
-                
-                <!-- Ministério Infantil -->
-                <div class="ministry-card">
-                    <i class="fas fa-child"></i>
-                    <h3>Ministério Infantil</h3>
-                    <p>Cuidando e ensinando as crianças sobre o amor de Jesus de forma lúdica e educativa.</p>
-                    
-                    <!-- Imagens do Ministério -->
-                    <div class="ministry-images">
-                        <img src="images/ministries/infantil/criancas-ebd.jpg" alt="Crianças na EBD" onerror="this.style.display='none';">
-                        <img src="images/ministries/infantil/atividade-01.jpg" alt="Atividade Infantil" onerror="this.style.display='none';">
-                    </div>
-                    
-                    <!-- Integração do Site Pequenos Discípulos - CORRIGIDA -->
-                    <div class="pequenos-discipulos-integration">
-                        <h4>
-                            <i class="fas fa-external-link-alt" style="margin-right: 0.5rem;"></i>
-                            Site dos Pequenos Discípulos
-                        </h4>
-                        
-                        <iframe src="https://pequenos-discipulos-cristo-vive-pbi.netlify.app/" 
-                                width="100%" 
-                                height="300" 
-                                frameborder="0" 
-                                allowfullscreen
-                                sandbox="allow-scripts allow-same-origin allow-forms allow-popups"
-                                style="border-radius: 8px; box-shadow: 0 3px 10px rgba(0,0,0,0.1);">
-                        </iframe>
-                        
-                        <div class="btn-container">
-                            <a href="https://pequenos-discipulos-cristo-vive-pbi.netlify.app/" 
-                               
-                               class="btn">
-                                <i class="fas fa-external-link-alt"></i>
-                                Visitar Site Completo
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Gallery Section -->
-    <section id="gallery">
-        <div class="container">
-            <h2 class="section-title">Galeria de Fotos</h2>
-            <p class="section-subtitle">Momentos especiais da nossa comunidade de fé</p>
+            const message = `🙏 PEDIDO DE ORAÇÃO\n\nNome: ${name}\nEmail: ${email || 'Não informado'}\nPedido: ${request}\nConfidencial: ${confidential ? 'Sim' : 'Não'}`;
             
-            <div class="gallery-filters">
-                <button class="filter-btn active" data-filter="all">Todas</button>
-                <button class="
+            const whatsappUrl = `https://wa.me/5521987860391?text=${encodeURIComponent(message)}`;
+            window.open(whatsappUrl, '_blank');
+            
+            // Reset form
+            this.reset();
+            alert('Pedido enviado! Você será redirecionado para o WhatsApp.');
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Mobile menu toggle
+        const mobileMenu = document.querySelector('.mobile-menu');
+        const navLinks = document.querySelector('.nav-links');
+
+        mobileMenu.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+    </script>
+
+</body>
+</html>
