@@ -490,11 +490,19 @@ section {
     letter-spacing: 0.3px !important;
 }
 
-/* MINISTÉRIO INFANTIL */
+/* MINISTÉRIO INFANTIL - CORRIGIDO */
+.ministry-card:nth-child(2) {
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: flex-start !important;
+    padding: 2rem !important;
+    min-height: auto !important;
+}
+
 .ministry-card:nth-child(2) i {
     color: var(--primary-color) !important;
     font-size: 2.5rem !important;
-    margin-bottom: 1rem !important;
+    margin-bottom: 0.5rem !important;
     display: block !important;
     text-align: center !important;
 }
@@ -519,9 +527,9 @@ section {
     letter-spacing: 0.3px !important;
 }
 
-/* INTEGRAÇÃO PEQUENOS DISCÍPULOS - CORRIGIDA */
+/* INTEGRAÇÃO PEQUENOS DISCÍPULOS - DENTRO DO CARD */
 .ministry-card:nth-child(2) .pequenos-discipulos-integration {
-    margin-top: 1.5rem !important;
+    margin-top: 0 !important;
     padding: 1rem !important;
     background: var(--background-light) !important;
     border-radius: 10px !important;
@@ -1649,3 +1657,4 @@ footer {
 
 </body>
 </html>
+
