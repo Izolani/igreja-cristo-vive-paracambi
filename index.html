@@ -24,6 +24,25 @@
     justify-content: flex-start !important;
     width: auto !important;
     min-width: 120px !important;
+    text-decoration: none;
+    font-family: 'Montserrat', sans-serif;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+.logo h1 {
+    font-size: 1.5rem;
+    margin: 0;
+    line-height: 1.2;
+    font-weight: 700;
+    text-transform: uppercase;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+    width: 100%;
 }
 
 .church-name {
@@ -36,22 +55,26 @@
 }
 
 .igreja-evangelica {
-    font-size: 10px !important;
-    color: var(--primary-color) !important;
+    font-size: 1.2rem !important; /* MAIOR que os 10px atuais */
+    color: var(--logo-light-blue) !important; /* AZUL CLARA */
     font-weight: 600;
     margin: 0;
     padding: 0;
     line-height: 1.2;
+    display: block;
+    text-align: left;
 }
 
 .cristo-vive {
-    font-size: 12px !important;
-    color: var(--primary-color) !important;
-    font-weight: 700;
+    font-size: 2.2rem !important; /* MAIOR para destaque */
+    color: var(--primary-color) !important; /* AZUL ESCURA */
+    font-weight: 900 !important; /* MAIS NEGRITO */
     margin: 0;
+    margin-top: 0.2rem;
     padding: 0;
-    line-height: 1;
-    margin-top: 2px;
+    line-height: 1.1;
+    display: block;
+    text-align: left;
 }
 
 .de-paracambi {
@@ -62,13 +85,12 @@
     border-radius: 2px;
     font-weight: 600;
     margin-top: 2px;
-    display: block;
-    position: relative !important;
-    left: 365px !important;
-    text-align: left !important;
+    display: block !important;
     width: fit-content !important;
+    text-align: left !important;
+    margin-left: 45px !important; /* ALINHAMENTO COM "VIVE" */
+    white-space: nowrap;
 }
-
 /* Links ULTRA FORÇADOS à direita */
 .nav-links {
     margin-left: auto !important;
@@ -129,6 +151,7 @@ header {
     --text-dark: #1f2937;
     --text-light: #6b7280;
     --background-light: #f8fafc;
+     --logo-light-blue: #60a5fa; /* NOVA COR AZUL CLARA PARA "IGREJA EVANGÉLICA" */
 }
 
 body {
@@ -1657,4 +1680,5 @@ footer {
 
 </body>
 </html>
+
 
