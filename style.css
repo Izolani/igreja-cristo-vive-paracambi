@@ -288,7 +288,280 @@ footer i {
         grid-template-columns: 1fr;
     }
     
-    .services-grid {
+        .services-grid {
         grid-template-columns: 1fr;
     }
+}
+
+/* Seção Versículo do Dia */
+.daily-verse-section {
+    padding: 4rem 0;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.daily-verse-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="50" cy="50" r="1" fill="white" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+    opacity: 0.3;
+}
+
+.daily-verse-card {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 3rem;
+    text-align: center;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    position: relative;
+    z-index: 1;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.verse-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.verse-header i {
+    font-size: 2rem;
+    color: #667eea;
+}
+
+.verse-header h2 {
+    color: #333;
+    font-size: 2.2rem;
+    font-weight: 600;
+    margin: 0;
+}
+
+.verse-content {
+    margin-bottom: 2rem;
+}
+
+#daily-verse-text {
+    font-size: 1.4rem;
+    line-height: 1.8;
+    color: #444;
+    font-style: italic;
+    margin: 0 0 1rem 0;
+    padding: 0;
+    border: none;
+    position: relative;
+}
+
+#daily-verse-text::before,
+#daily-verse-text::after {
+    content: '"';
+    font-size: 3rem;
+    color: #667eea;
+    font-family: serif;
+    position: absolute;
+    top: -10px;
+}
+
+#daily-verse-text::before {
+    left: -20px;
+}
+
+#daily-verse-text::after {
+    right: -20px;
+}
+
+#daily-verse-reference {
+    font-size: 1.1rem;
+    color: #666;
+    font-weight: 600;
+    font-style: normal;
+}
+
+.verse-date {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    color: #777;
+    font-size: 1rem;
+}
+
+.verse-date i {
+    color: #667eea;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+    .daily-verse-card {
+        padding: 2rem 1.5rem;
+        margin: 0 1rem;
+    }
+    
+    .verse-header h2 {
+        font-size: 1.8rem;
+    }
+    
+    #daily-verse-text {
+        font-size: 1.2rem;
+    }
+    
+    #daily-verse-text::before,
+    #daily-verse-text::after {
+        font-size: 2rem;
+        top: -5px;
+    }
+    
+    #daily-verse-text::before {
+        left: -10px;
+    }
+    
+    #daily-verse-text::after {
+        right: -10px;
+    }
+}
+.daily-verse-section {
+    padding: 4rem 0;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.daily-verse-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="50" cy="50" r="1" fill="white" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+    opacity: 0.3;
+}
+
+.daily-verse-card {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 3rem;
+    text-align: center;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    position: relative;
+    z-index: 1;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.verse-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.verse-header i {
+    font-size: 2rem;
+    color: #667eea;
+}
+
+.verse-header h2 {
+    color: #333;
+    font-size: 2.2rem;
+    font-weight: 600;
+    margin: 0;
+}
+
+.verse-content {
+    margin-bottom: 2rem;
+}
+
+#daily-verse-text {
+    font-size: 1.4rem;
+    line-height: 1.8;
+    color: #444;
+    font-style: italic;
+    margin: 0 0 1rem 0;
+    padding: 0;
+    border: none;
+    position: relative;
+}
+
+#daily-verse-text::before,
+#daily-verse-text::after {
+    content: '"';
+    font-size: 3rem;
+    color: #667eea;
+    font-family: serif;
+    position: absolute;
+    top: -10px;
+}
+
+#daily-verse-text::before {
+    left: -20px;
+}
+
+#daily-verse-text::after {
+    right: -20px;
+}
+
+#daily-verse-reference {
+    font-size: 1.1rem;
+    color: #666;
+    font-weight: 600;
+    font-style: normal;
+}
+
+.verse-date {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    color: #777;
+    font-size: 1rem;
+}
+
+.verse-date i {
+    color: #667eea;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+    .daily-verse-card {
+        padding: 2rem 1.5rem;
+        margin: 0 1rem;
+    }
+    
+    .verse-header h2 {
+        font-size: 1.8rem;
+    }
+    
+    #daily-verse-text {
+        font-size: 1.2rem;
+    }
+    
+    #daily-verse-text::before,
+    #daily-verse-text::after {
+        font-size: 2rem;
+        top: -5px;
+    }
+    
+    #daily-verse-text::before {
+        left: -10px;
+    }
+    
+    #daily-verse-text::after {
+        right: -10px;
+    }
+}
+
+}
 }
