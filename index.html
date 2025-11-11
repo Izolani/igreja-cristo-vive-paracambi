@@ -332,37 +332,11 @@ section {
     max-width: 600px;
     margin: 0 auto 3rem;
 }
-</section>
 
-    <!-- Seção Versículo do Dia -->
-    <section class="daily-verse-section">
-        <div class="container">
-            <div class="daily-verse-card">
-                <div class="verse-header">
-                    <i class="fas fa-bible"></i>
-                    <h2>Versículo do Dia</h2>
-                </div>
-                <div class="verse-content">
-                    <blockquote id="daily-verse-text">
-                        "Porque Deus amou o mundo de tal maneira que deu o seu Filho unigênito, para que todo aquele que nele crê não pereça, mas tenha a vida eterna."
-                    </blockquote>
-                    <cite id="daily-verse-reference">João 3:16</cite>
-                </div>
-                <div class="verse-date">
-                    <i class="fas fa-calendar-day"></i>
-                    <span id="current-date"></span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about" class="about">
 /* About Section */
 .about {
     background: var(--background-light);
 }
-
 .about-content {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -676,6 +650,7 @@ section {
         </nav>
     </header>
 
+    
     <!-- Hero Section -->
     <section id="home" class="hero">
         <div class="container">
@@ -690,6 +665,56 @@ section {
         </div>
     </section>
 
+    <!-- Daily Verse Section -->
+    <section id="daily-verse" class="daily-verse-section">
+        <div class="container">
+            <div class="daily-verse-card">
+                <div class="verse-header">
+                    <i class="fas fa-bible"></i>
+                    <h2>Versículo do Dia</h2>
+                </div>
+               <div class="verse-content">
+    <!-- BOTÕES E VERSÍCULO -->
+    <div class="verse-container">
+        <!-- Botões -->
+        <div class="verse-navigation">
+            <button id="prev-verse-btn" class="nav-btn">
+                ← VERSÍCULO ANTERIOR
+            </button>
+            <button id="next-verse-btn" class="nav-btn">
+                PRÓXIMO VERSÍCULO →
+            </button>
+        </div>
+        
+        <!-- Versículo -->
+        <div class="daily-verse">
+            <blockquote>
+                <p id="daily-verse-text">Carregando versículo...</p>
+            </blockquote>
+            <cite id="daily-verse-reference"></cite>
+        </div>
+        
+        <!-- Contador -->
+        <div class="verse-info">
+            <span id="verse-counter">Versículo 1 de 365</span>
+        </div>
+    </div>
+</div>
+    
+    <!-- Contador de versículos -->
+    <div class="verse-info">
+        <span id="verse-counter">Versículo 1 de 365</span>
+    </div>
+</div>
+<div class="verse-date">
+    <i class="fas fa-calendar-day"></i>
+    <span id="current-date">Domingo, 10 de novembro de 2024</span>
+</div>
+</div>
+</div>
+</section>
+
+   
     <!-- About Section -->
     <section id="about" class="about">
         <div class="container">
@@ -1101,6 +1126,57 @@ section {
     </a>
 
 <style>
+/* ESTILOS DOS BOTÕES DE VERSÍCULOS */
+.verse-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.verse-navigation {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    gap: 10px;
+}
+
+.nav-btn {
+    background: #4CAF50;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    min-width: 180px;
+}
+
+.nav-btn:hover {
+    background: #45a049;
+    transform: translateY(-2px);
+}
+
+.verse-info {
+    text-align: center;
+    color: #666;
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+/* Para celular */
+@media (max-width: 768px) {
+    .verse-navigation {
+        flex-direction: column;
+    }
+    
+    .nav-btn {
+        min-width: 100%;
+    }
+}
+
+/* AQUI CONTINUA O SEU CSS ANTIGO... */
 /* Gallery Filters */
 .gallery-filters {
     display: flex;
@@ -1601,81 +1677,181 @@ footer {
 </style>
 
     <!-- JavaScript -->
-    <script>
-        // Gallery Filter Functionality
-        document.addEventListener('DOMContentLoaded', function() {
-            const filterBtns = document.querySelectorAll('.filter-btn');
-            const galleryItems = document.querySelectorAll('.gallery-item');
+   <script>
+// NOVO CÓDIGO COM BOTÕES
+let currentVerseIndex = 0;
 
-            filterBtns.forEach(btn => {
-                btn.addEventListener('click', () => {
-                    filterBtns.forEach(b => b.classList.remove('active'));
-                    btn.classList.add('active');
+function updateVerse(index) {
+    if (index < 0) index = dailyVerses.length - 1;
+    if (index >= dailyVerses.length) index = 0;
+    
+    currentVerseIndex = index;
+    const selectedVerse = dailyVerses[currentVerseIndex];
+    
+    document.getElementById('daily-verse-text').textContent = selectedVerse.text;
+    document.getElementById('daily-verse-reference').textContent = selectedVerse.reference;
+    document.getElementById('verse-counter').textContent = `Versículo ${currentVerseIndex + 1} de ${dailyVerses.length}`;
+}
 
-                    const filter = btn.getAttribute('data-filter');
+function previousVerse() {
+    updateVerse(currentVerseIndex - 1);
+}
 
-                    galleryItems.forEach(item => {
-                        if (filter === 'all' || item.getAttribute('data-category') === filter) {
-                            item.style.display = 'block';
-                        } else {
-                            item.style.display = 'none';
-                        }
-                    });
-                });
-            });
-        });
+function nextVerse() {
+    updateVerse(currentVerseIndex + 1);
+}
 
-        // Ministry Participation Function
-        function participarMinisterio(ministerio) {
-            const message = `Olá! Tenho interesse em participar do Ministério de ${ministerio}. Gostaria de mais informações.`;
-            const whatsappUrl = `https://wa.me/5521987860391?text=${encodeURIComponent(message)}`;
-            window.open(whatsappUrl, '_blank');
-        }
+function updateDailyVerse() {
+    const today = new Date();
+    const dayOfYear = Math.floor((today - new Date(today.getFullYear(), 0, 0)) / 86400000);
+    const verseIndex = dayOfYear % dailyVerses.length;
+    
+    updateVerse(verseIndex);
+}
 
-        // Prayer Form Submission
-        document.querySelector('.prayer-form').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            const name = document.getElementById('name').value;
-            const email = document.getElementById('email').value;
-            const request = document.getElementById('prayer-request').value;
-            const confidential = document.getElementById('confidential').checked;
-            
-            const message = `🙏 PEDIDO DE ORAÇÃO\n\nNome: ${name}\nEmail: ${email || 'Não informado'}\nPedido: ${request}\nConfidencial: ${confidential ? 'Sim' : 'Não'}`;
-            
-            const whatsappUrl = `https://wa.me/5521987860391?text=${encodeURIComponent(message)}`;
-            window.open(whatsappUrl, '_blank');
-            
-            // Reset form
-            this.reset();
-            alert('Pedido enviado! Você será redirecionado para o WhatsApp.');
-        });
+document.addEventListener('DOMContentLoaded', function() {
+    updateDailyVerse();
+    
+    document.getElementById('prev-verse-btn').addEventListener('click', previousVerse);
+    document.getElementById('next-verse-btn').addEventListener('click', nextVerse);
+    
+    // Navegação com teclado (setas)
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'ArrowLeft') previousVerse();
+        if (e.key === 'ArrowRight') nextVerse();
+    });
+});
+// Array de versículos bíblicos
+const dailyVerses = [
+    { 
+        text: "Porque Deus amou o mundo de tal maneira que deu o seu Filho unigênito, para que todo aquele que nele crê não pereça, mas tenha a vida eterna.", 
+        reference: "João 3:16" 
+    },
+    { 
+        text: "O Senhor é o meu pastor; nada me faltará.", 
+        reference: "Salmos 23:1" 
+    },
+    { 
+        text: "Posso todas as coisas naquele que me fortalece.", 
+        reference: "Filipenses 4:13" 
+    },
+    { 
+        text: "Confia no Senhor de todo o teu coração e não te estribes no teu próprio entendimento.", 
+        reference: "Provérbios 3:5" 
+    },
+    { 
+        text: "Eu sou o caminho, e a verdade, e a vida. Ninguém vem ao Pai senão por mim.", 
+        reference: "João 14:6" 
+    },
+    { 
+        text: "Eu sou a ressurreição e a vida; quem crê em mim, ainda que morra, viverá.", 
+        reference: "João 11:25" 
+    },
+    { 
+        text: "Entrega o teu caminho ao Senhor; confia nele, e ele o fará.", 
+        reference: "Salmos 37:5" 
+    }
+];
 
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
+// Função para atualizar versículo baseado no dia
+function updateDailyVerse() {
+    const today = new Date();
+    const dayOfYear = Math.floor((today - new Date(today.getFullYear(), 0, 0)) / 86400000);
+    const verseIndex = dayOfYear % dailyVerses.length;
+    
+    const selectedVerse = dailyVerses[verseIndex];
+    
+    // Atualizar elementos
+    document.getElementById('daily-verse-text').textContent = selectedVerse.text;
+    document.getElementById('daily-verse-reference').textContent = selectedVerse.reference;
+    
+    // Atualizar data
+    const options = { 
+        weekday: 'long', 
+        year: 'numeric', 
+        month: 'long', 
+        day: 'numeric' 
+    };
+    document.getElementById('current-date').textContent = today.toLocaleDateString('pt-BR', options);
+}
+
+// Gallery Filter Functionality
+document.addEventListener('DOMContentLoaded', function() {
+    // Executar versículo do dia
+    updateDailyVerse();
+    
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const galleryItems = document.querySelectorAll('.gallery-item');
+
+    filterBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            filterBtns.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+
+            const filter = btn.getAttribute('data-filter');
+
+            galleryItems.forEach(item => {
+                if (filter === 'all' || item.getAttribute('data-category') === filter) {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = 'none';
                 }
             });
         });
+    });
+});
 
-        // Mobile menu toggle
-        const mobileMenu = document.querySelector('.mobile-menu');
-        const navLinks = document.querySelector('.nav-links');
+// Ministry Participation Function
+function participarMinisterio(ministerio) {
+    const message = `Olá! Tenho interesse em participar do Ministério de ${ministerio}. Gostaria de mais informações.`;
+    const whatsappUrl = `https://wa.me/5521987860391?text=${encodeURIComponent(message)}`;
+    window.open(whatsappUrl, '_blank');
+}
 
-        mobileMenu.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-        });
-    </script>
+// Prayer Form Submission
+document.querySelector('.prayer-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    const request = document.getElementById('prayer-request').value;
+    const confidential = document.getElementById('confidential').checked;
+    
+    const message = `🙏 PEDIDO DE ORAÇÃO\n\nNome: ${name}\nEmail: ${email || 'Não informado'}\nPedido: ${request}\nConfidencial: ${confidential ? 'Sim' : 'Não'}`;
+    
+    const whatsappUrl = `https://wa.me/5521987860391?text=${encodeURIComponent(message)}`;
+    window.open(whatsappUrl, '_blank');
+    
+    // Reset form
+    this.reset();
+    alert('Pedido enviado! Você será redirecionado para o WhatsApp.');
+});
 
+// Smooth scrolling for navigation links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+            target.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+        }
+    });
+});
+
+// Mobile menu toggle
+const mobileMenu = document.querySelector('.mobile-menu');
+const navLinks = document.querySelector('.nav-links');
+
+mobileMenu.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+});
+</script>
 </body>
 </html>
+
 
 
 
