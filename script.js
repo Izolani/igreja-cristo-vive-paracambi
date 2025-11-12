@@ -1,166 +1,425 @@
 <script>
 // Array de versículos bíblicos
-const dailyVerses = [
-    { 
-        text: "Porque Deus amou o mundo de tal maneira que deu o seu Filho unigênito, para que todo aquele que nele crê não pereça, mas tenha a vida eterna.", 
-        reference: "João 3:16" 
-    },
-    { 
-        text: "O Senhor é o meu pastor; nada me faltará.", 
-        reference: "Salmos 23:1" 
-    },
-    { 
-        text: "Posso todas as coisas naquele que me fortalece.", 
-        reference: "Filipenses 4:13" 
-    },
-    { 
-        text: "Confia no Senhor de todo o teu coração e não te estribes no teu próprio entendimento.", 
-        reference: "Provérbios 3:5" 
-    },
-    { 
-        text: "Eu sou o caminho, e a verdade, e a vida. Ninguém vem ao Pai senão por mim.", 
-        reference: "João 14:6" 
-    },
-    { 
-        text: "Eu sou a ressurreição e a vida; quem crê em mim, ainda que morra, viverá.", 
-        reference: "João 11:25" 
-    },
-    { 
-        text: "Entrega o teu caminho ao Senhor; confia nele, e ele o fará.", 
-        reference: "Salmos 37:5" 
-    }
+const dailyVerses = [    { text: "Porque Deus amou o mundo de tal maneira que deu o seu Filho unigênito, para que todo aquele que nele crê não pereça, mas tenha a vida eterna.", reference: "João 3:16" },
+    { text: "O Senhor é o meu pastor; nada me faltará.", reference: "Salmos 23:1" },
+    { text: "Posso todas as coisas naquele que me fortalece.", reference: "Filipenses 4:13" },
+    { text: "Confia no Senhor de todo o teu coração e não te estribes no teu próprio entendimento.", reference: "Provérbios 3:5" },
+    { text: "Eu sou o caminho, e a verdade, e a vida. Ninguém vem ao Pai senão por mim.", reference: "João 14:6" },
+    { text: "Eu sou a ressurreição e a vida; quem crê em mim, ainda que morra, viverá.", reference: "João 11:25" },
+    { text: "Entrega o teu caminho ao Senhor; confia nele, e ele o fará.", reference: "Salmos 37:5" },
+    { text: "Bendito seja o Deus e Pai de nosso Senhor Jesus Cristo, que nos abençoou com todas as bênçãos espirituais nos lugares celestiais em Cristo.", reference: "Efésios 1:3" },
+    { text: "E sabemos que todas as coisas contribuem juntamente para o bem daqueles que amam a Deus.", reference: "Romanos 8:28" },
+    { text: "Não temas, porque eu sou contigo; não te assombres, porque eu sou teu Deus; eu te fortaleço, e te ajudo, e te sustento com a destra da minha justiça.", reference: "Isaías 41:10" },
+    { text: "O Senhor é a minha luz e a minha salvação; a quem temerei? O Senhor é a força da minha vida; de quem me recearei?", reference: "Salmos 27:1" },
+    { text: "Porque pela graça sois salvos, por meio da fé; e isto não vem de vós, é dom de Deus.", reference: "Efésios 2:8" },
+    { text: "Mas os que esperam no Senhor renovarão as forças, subirão com asas como águias; correrão, e não se cansarão; caminharão, e não se fatigarão.", reference: "Isaías 40:31" },
+    { text: "Porque eu bem sei os pensamentos que tenho a vosso respeito, diz o Senhor; pensamentos de paz, e não de mal, para vos dar o fim que esperais.", reference: "Jeremias 29:11" },
+    { text: "Buscai primeiro o reino de Deus, e a sua justiça, e todas estas coisas vos serão acrescentadas.", reference: "Mateus 6:33" },
+    { text: "Vinde a mim, todos os que estais cansados e oprimidos, e eu vos aliviarei.", reference: "Mateus 11:28" },
+    { text: "Porque onde estiverem dois ou três reunidos em meu nome, aí estou eu no meio deles.", reference: "Mateus 18:20" },
+    { text: "Lança o teu cuidado sobre o Senhor, e ele te susterá; nunca permitirá que o justo seja abalado.", reference: "Salmos 55:22" },
+    { text: "O Senhor é bom, uma fortaleza no dia da angústia; e conhece os que confiam nele.", reference: "Naum 1:7" },
+    { text: "Alegrai-vos sempre no Senhor; outra vez digo, alegrai-vos.", reference: "Filipenses 4:4" },
+    { text: "Porque o Senhor, teu Deus, está contigo por onde quer que andares.", reference: "Josué 1:9" },
+    { text: "O amor nunca falha.", reference: "1 Coríntios 13:8" },
+    { text: "Porque Deus não nos deu o espírito de temor, mas de fortaleza, e de amor, e de moderação.", reference: "2 Timóteo 1:7" },
+    { text: "E a paz de Deus, que excede todo o entendimento, guardará os vossos corações e os vossos sentimentos em Cristo Jesus.", reference: "Filipenses 4:7" },
+    { text: "Porque nele vivemos, e nos movemos, e existimos.", reference: "Atos 17:28" },
+    { text: "O Senhor é o meu rochedo, e o meu lugar forte, e o meu libertador; o meu Deus, a minha fortaleza, em quem confio.", reference: "Salmos 18:2" },
+    { text: "Porque o salário do pecado é a morte, mas o dom gratuito de Deus é a vida eterna, por Cristo Jesus nosso Senhor.", reference: "Romanos 6:23" },
+    { text: "Portanto, se alguém está em Cristo, nova criatura é; as coisas velhas já passaram; eis que tudo se fez novo.", reference: "2 Coríntios 5:17" },
+    { text: "Porque eu estou persuadido de que, nem a morte, nem a vida, nem os anjos, nem os principados, nem as potestades, nem o presente, nem o porvir, nem a altura, nem a profundidade, nem alguma outra criatura nos poderá separar do amor de Deus, que está em Cristo Jesus nosso Senhor.", reference: "Romanos 8:38-39" },
+    { text: "Porque a palavra de Deus é viva e eficaz, e mais penetrante do que espada alguma de dois gumes.", reference: "Hebreus 4:12" },
+    { text: "Sede sóbrios; vigiai; porque o diabo, vosso adversário, anda em derredor, bramando como leão, buscando a quem possa tragar.", reference: "1 Pedro 5:8" },
+    { text: "Mas o fruto do Espírito é: amor, gozo, paz, longanimidade, benignidade, bondade, fé, mansidão, temperança.", reference: "Gálatas 5:22-23" },
+    { text: "Porque Deus é amor.", reference: "1 João 4:8" },
+    { text: "Nisto conhecemos o amor de Deus: em que Cristo deu a sua vida por nós.", reference: "1 João 3:16" },
+    { text: "Porque Cristo, estando nós ainda fracos, morreu a seu tempo pelos ímpios.", reference: "Romanos 5:6" },
+    { text: "Mas Deus prova o seu amor para conosco, em que Cristo morreu por nós, sendo nós ainda pecadores.", reference: "Romanos 5:8" },
+    { text: "Porque todo o que é nascido de Deus vence o mundo; e esta é a vitória que vence o mundo, a nossa fé.", reference: "1 João 5:4" },
+    { text: "Quem nos separará do amor de Cristo? A tribulação, ou a angústia, ou a perseguição, ou a fome, ou a nudez, ou o perigo, ou a espada?", reference: "Romanos 8:35" },
+    { text: "Mas em todas estas coisas somos mais do que vencedores, por aquele que nos amou.", reference: "Romanos 8:37" },
+    { text: "Porque não temos que lutar contra a carne e o sangue, mas, sim, contra os principados, contra as potestades, contra os príncipes das trevas deste século, contra as hostes espirituais da maldade, nos lugares celestiais.", reference: "Efésios 6:12" },
+    { text: "Revesti-vos de toda a armadura de Deus, para que possais estar firmes contra as astutas ciladas do diabo.", reference: "Efésios 6:11" },
+    { text: "Por isso tomai toda a armadura de Deus, para que possais resistir no dia mau e, havendo feito tudo, ficar firmes.", reference: "Efésios 6:13" },
+    { text: "Estai, pois, firmes, tendo cingidos os vossos lombos com a verdade, e vestida a couraça da justiça.", reference: "Efésios 6:14" },
+    { text: "E calçados os pés na preparação do evangelho da paz.", reference: "Efésios 6:15" },
+    { text: "Tomando sobretudo o escudo da fé, com o qual podereis apagar todos os dardos inflamados do maligno.", reference: "Efésios 6:16" },
+    { text: "Tomai também o capacete da salvação, e a espada do Espírito, que é a palavra de Deus.", reference: "Efésios 6:17" },
+    { text: "Orando em todo o tempo com toda a oração e súplica no Espírito, e vigiando nisto com toda a perseverança e súplica por todos os santos.", reference: "Efésios 6:18" },
+    { text: "E tudo quanto fizerdes por palavras ou por obras, fazei-o em nome do Senhor Jesus, dando por ele graças a Deus Pai.", reference: "Colossenses 3:17" },
+    { text: "Portanto, quer comais quer bebais, ou façais outra qualquer coisa, fazei tudo para glória de Deus.", reference: "1 Coríntios 10:31" },
+    { text: "Porque somos feitura sua, criados em Cristo Jesus para as boas obras, as quais Deus preparou para que andássemos nelas.", reference: "Efésios 2:10" },
+    { text: "Porque nós somos cooperadores de Deus; vós sois lavoura de Deus e edifício de Deus.", reference: "1 Coríntios 3:9" },
+    { text: "Não sabeis vós que sois o templo de Deus e que o Espírito de Deus habita em vós?", reference: "1 Coríntios 3:16" },
+    { text: "Se alguém destruir o templo de Deus, Deus o destruirá; porque o templo de Deus, que sois vós, é santo.", reference: "1 Coríntios 3:17" },
+    { text: "Ou não sabeis que o vosso corpo é o templo do Espírito Santo, que habita em vós, proveniente de Deus, e que não sois de vós mesmos?", reference: "1 Coríntios 6:19" },
+    { text: "Porque fostes comprados por bom preço; glorificai, pois, a Deus no vosso corpo, e no vosso espírito, os quais pertencem a Deus.", reference: "1 Coríntios 6:20" },
+    { text: "Mas o que se ajunta com o Senhor é um mesmo espírito.", reference: "1 Coríntios 6:17" },
+    { text: "Porque qual dos homens sabe as coisas do homem, senão o espírito do homem, que nele está? Assim também ninguém sabe as coisas de Deus, senão o Espírito de Deus.", reference: "1 Coríntios 2:11" },
+    { text: "Mas nós não recebemos o espírito do mundo, mas o Espírito que provém de Deus, para que pudéssemos conhecer o que nos é dado gratuitamente por Deus.", reference: "1 Coríntios 2:12" },
+    { text: "As quais também falamos, não com palavras de sabedoria humana, mas com as que o Espírito Santo ensina, comparando as coisas espirituais com as espirituais.", reference: "1 Coríntios 2:13" },
+    { text: "Ora, o homem natural não compreende as coisas do Espírito de Deus, porque lhe parecem loucura; e não pode entendê-las, porque elas se discernem espiritualmente.", reference: "1 Coríntios 2:14" },
+    { text: "Mas o que é espiritual discerne bem tudo, e ele de ninguém é discernido.", reference: "1 Coríntios 2:15" },
+    { text: "Porque, quem conheceu a mente do Senhor, para que possa instruí-lo? Mas nós temos a mente de Cristo.", reference: "1 Coríntios 2:16" },
+    { text: "Porque, se anuncio o evangelho, não tenho de que me gloriar, pois me é imposta essa obrigação; e ai de mim, se não anunciar o evangelho!", reference: "1 Coríntios 9:16" },
+    { text: "Porque, se o faço de boa mente, terei prêmio; mas, se de má vontade, apenas uma dispensação me é confiada.", reference: "1 Coríntios 9:17" },
+    { text: "Logo, que prêmio tenho? Que, evangelizando, proponha de graça o evangelho de Cristo, para não abusar do meu poder no evangelho.", reference: "1 Coríntios 9:18" },
+    { text: "Porque, sendo livre para com todos, fiz-me servo de todos para ganhar ainda mais.", reference: "1 Coríntios 9:19" },
+    { text: "E fiz-me como judeu para os judeus, para ganhar os judeus; para os que estão debaixo da lei, como se estivesse debaixo da lei, para ganhar os que estão debaixo da lei.", reference: "1 Coríntios 9:20" },
+    { text: "Para os que estão sem lei, como se estivesse sem lei (não estando sem lei para com Deus, mas debaixo da lei de Cristo), para ganhar os que estão sem lei.", reference: "1 Coríntios 9:21" },
+    { text: "Fiz-me como fraco para os fracos, para ganhar os fracos. Fiz-me tudo para todos, para por todos os meios chegar a salvar alguns.", reference: "1 Coríntios 9:22" },
+    { text: "E eu faço isto por causa do evangelho, para ser também participante dele.", reference: "1 Coríntios 9:23" },
+    { text: "Não sabeis vós que os que correm no estádio, todos, na verdade, correm, mas um só leva o prêmio? Correi de tal maneira que o alcanceis.", reference: "1 Coríntios 9:24" },
+    { text: "E todo aquele que luta de tudo se abstém; eles o fazem para alcançar uma coroa corruptível; nós, porém, uma incorruptível.", reference: "1 Coríntios 9:25" },
+    { text: "Pois eu assim corro, não como a coisa incerta; assim combato, não como batendo no ar.", reference: "1 Coríntios 9:26" },
+    { text: "Antes subjugo o meu corpo, e o reduzo à servidão, para que, pregando aos outros, eu mesmo não venha de alguma maneira a ficar reprovado.", reference: "1 Coríntios 9:27" },
+    { text: "Ora, irmãos, não quero que ignoreis que nossos pais estiveram todos debaixo da nuvem, e todos passaram pelo mar.", reference: "1 Coríntios 10:1" },
+    { text: "E todos foram batizados em Moisés, na nuvem e no mar.", reference: "1 Coríntios 10:2" },
+    { text: "E todos comeram de uma mesma comida espiritual.", reference: "1 Coríntios 10:3" },
+    { text: "E beberam todos de uma mesma bebida espiritual, porque bebiam da pedra espiritual que os seguia; e a pedra era Cristo.", reference: "1 Coríntios 10:4" },
+    { text: "Mas Deus não se agradou da maior parte deles, por isso foram prostrados no deserto.", reference: "1 Coríntios 10:5" },
+    { text: "E estas coisas foram-nos feitas em figura, para que não cobicemos as coisas más, como eles cobiçaram.", reference: "1 Coríntios 10:6" },
+    { text: "Não vos façais, pois, idólatras, como alguns deles, conforme está escrito: O povo assentou-se a comer e a beber, e levantou-se para folgar.", reference: "1 Coríntios 10:7" },
+    { text: "E não nos prostituamos, como alguns deles fizeram; e caíram num dia vinte e três mil.", reference: "1 Coríntios 10:8" },
+    { text: "E não tentemos a Cristo, como alguns deles também tentaram, e pereceram pelas serpentes.", reference: "1 Coríntios 10:9" },
+    { text: "E não murmureis, como também alguns deles murmuraram, e pereceram pelo destruidor.", reference: "1 Coríntios 10:10" },
+    { text: "Ora, tudo isto lhes sobreveio como figuras, e estão escritas para aviso nosso, para quem já são chegados os fins dos séculos.", reference: "1 Coríntios 10:11" },
+    { text: "Aquele, pois, que cuida estar em pé, olhe não caia.", reference: "1 Coríntios 10:12" },
+    { text: "Não veio sobre vós tentação, senão humana; mas fiel é Deus, que não vos deixará tentar acima do que podeis, antes com a tentação dará também o escape, para que a possais suportar.", reference: "1 Coríntios 10:13" },
+    { text: "Portanto, meus amados, fugi da idolatria.", reference: "1 Coríntios 10:14" },
+    { text: "Falo como a entendidos; julgai vós mesmos o que digo.", reference: "1 Coríntios 10:15" },
+    { text: "Porventura o cálice de bênção, que abençoamos, não é a comunhão do sangue de Cristo? O pão que partimos não é porventura a comunhão do corpo de Cristo?", reference: "1 Coríntios 10:16" },
+    { text: "Porque nós, sendo muitos, somos um só pão e um só corpo, porque todos participamos do mesmo pão.", reference: "1 Coríntios 10:17" },
+    { text: "Vede a Israel segundo a carne; os que comem os sacrifícios não são porventura participantes do altar?", reference: "1 Coríntios 10:18" },
+    { text: "Que digo, pois? Que o ídolo é alguma coisa? Ou que o sacrificado ao ídolo é alguma coisa?", reference: "1 Coríntios 10:19" },
+    { text: "Antes digo que as coisas que os gentios sacrificam, as sacrificam aos demônios, e não a Deus. E não quero que sejais participantes com os demônios.", reference: "1 Coríntios 10:20" },
+    { text: "Não podeis beber o cálice do Senhor e o cálice dos demônios; não podeis ser participantes da mesa do Senhor e da mesa dos demônios.", reference: "1 Coríntios 10:21" },
+    { text: "Ou irritaremos o Senhor? Somos nós mais fortes do que ele?", reference: "1 Coríntios 10:22" },
+    { text: "Todas as coisas são lícitas, mas nem todas as coisas convêm; todas as coisas são lícitas, mas nem todas as coisas edificam.", reference: "1 Coríntios 10:23" },
+    { text: "Ninguém busque o proveito próprio, antes cada um o que é de outrem.", reference: "1 Coríntios 10:24" },
+    { text: "Comei de tudo quanto se vende no açougue, sem perguntar nada, por causa da consciência.", reference: "1 Coríntios 10:25" },
+    { text: "Porque do Senhor é a terra e a sua plenitude.", reference: "1 Coríntios 10:26" },
+    { text: "E, se algum dos infiéis vos convidar, e quiserdes ir, comei de tudo o que se puser diante de vós, sem nada perguntar, por causa da consciência.", reference: "1 Coríntios 10:27" },
+    { text: "Mas, se alguém vos disser: Isto foi sacrificado aos ídolos, não comais, por causa daquele que vos advertiu e por causa da consciência; porque do Senhor é a terra e a sua plenitude.", reference: "1 Coríntios 10:28" },
+    { text: "E digo consciência, não a tua, mas a do outro. Pois, por que há de a minha liberdade ser julgada pela consciência de outrem?", reference: "1 Coríntios 10:29" },
+    { text: "E, se eu com graça participo, por que sou blasfemado naquilo por que dou graças?", reference: "1 Coríntios 10:30" },
+    { text: "Não deis escândalo nem aos judeus, nem aos gregos, nem à igreja de Deus.", reference: "1 Coríntios 10:32" },
+    { text: "Como também eu em tudo agrado a todos, não buscando o meu próprio proveito, mas o de muitos, para que assim se possam salvar.", reference: "1 Coríntios 10:33" },
+    { text: "Sede meus imitadores, como também eu de Cristo.", reference: "1 Coríntios 11:1" },
+    { text: "E louvo-vos, irmãos, porque em tudo vos lembrais de mim, e retendes os preceitos como vo-los entreguei.", reference: "1 Coríntios 11:2" },
+    { text: "Mas quero que saibais que Cristo é a cabeça de todo o varão, e o varão a cabeça da mulher; e Deus a cabeça de Cristo.", reference: "1 Coríntios 11:3" },
+    { text: "Todo o varão que ora ou profetiza, tendo a cabeça coberta, desonra a sua própria cabeça.", reference: "1 Coríntios 11:4" },
+    { text: "Mas toda a mulher que ora ou profetiza com a cabeça descoberta, desonra a sua própria cabeça, porque é como se estivesse rapada.", reference: "1 Coríntios 11:5" },
+    { text: "Portanto, se a mulher não se cobre com véu, tosquie-se também; mas, se para a mulher é coisa indecente tosquiar-se ou rapar-se, que se cubra com véu.", reference: "1 Coríntios 11:6" },
+    { text: "O varão, pois, não deve cobrir a cabeça, porque é a imagem e glória de Deus, mas a mulher é a glória do varão.", reference: "1 Coríntios 11:7" },
+    { text: "Porque o varão não provém da mulher, mas a mulher do varão.", reference: "1 Coríntios 11:8" },
+    { text: "Nem também o varão foi criado por causa da mulher, mas a mulher por causa do varão.", reference: "1 Coríntios 11:9" },
+    { text: "Portanto, a mulher deve ter sobre a cabeça sinal de poderio, por causa dos anjos.", reference: "1 Coríntios 11:10" },
+    { text: "Todavia, nem o varão é sem a mulher, nem a mulher sem o varão, no Senhor.", reference: "1 Coríntios 11:11" },
+    { text: "Porque, como a mulher provém do varão, assim também o varão provém da mulher, mas tudo vem de Deus.", reference: "1 Coríntios 11:12" },
+    { text: "Julgai entre vós mesmos: é decente que a mulher ore a Deus descoberta?", reference: "1 Coríntios 11:13" },
+    { text: "Ou não vos ensina a mesma natureza que é desonra para o varão ter cabelo crescido?", reference: "1 Coríntios 11:14" },
+    { text: "Mas ter a mulher cabelo crescido lhe é honroso, porque o cabelo lhe foi dado em lugar de véu.", reference: "1 Coríntios 11:15" },
+    { text: "Mas, se alguém quiser ser contencioso, nós não temos tal costume, nem as igrejas de Deus.", reference: "1 Coríntios 11:16" },
+    { text: "Nisto, porém, que vou dizer, não vos louvo; porquanto vos ajuntais, não para melhor, mas para pior.", reference: "1 Coríntios 11:17" },
+    { text: "Porque antes de tudo ouço que, quando vos ajuntais na igreja, há entre vós dissensões; e em parte o creio.", reference: "1 Coríntios 11:18" },
+    { text: "E até importa que haja entre vós heresias, para que os que são sinceros se manifestem entre vós.", reference: "1 Coríntios 11:19" },
+    { text: "De sorte que, quando vos ajuntais num lugar, não é para comer a ceia do Senhor.", reference: "1 Coríntios 11:20" },
+    { text: "Porque cada um toma antecipadamente a sua própria ceia; e assim um tem fome e outro embriaga-se.", reference: "1 Coríntios 11:21" },
+    { text: "Não tendes porventura casas onde comer e beber? Ou desprezais a igreja de Deus, e envergonhais os que não têm nada? Que vos direi? Louvar-vos-ei? Nisto não vos louvo.", reference: "1 Coríntios 11:22" },
+    { text: "Porque eu recebi do Senhor o que também vos ensinei: que o Senhor Jesus, na noite em que foi traído, tomou o pão.", reference: "1 Coríntios 11:23" },
+    { text: "E, tendo dado graças, o partiu e disse: Tomai, comei; isto é o meu corpo que é partido por vós; fazei isto em memória de mim.", reference: "1 Coríntios 11:24" },
+    { text: "Semelhantemente também, depois de cear, tomou o cálice, dizendo: Este cálice é o novo testamento no meu sangue; fazei isto, todas as vezes que beberdes, em memória de mim.", reference: "1 Coríntios 11:25" },
+    { text: "Porque todas as vezes que comerdes este pão e beberdes este cálice anunciais a morte do Senhor, até que venha.", reference: "1 Coríntios 11:26" },
+    { text: "Portanto, qualquer que comer este pão, ou beber o cálice do Senhor indignamente, será culpado do corpo e do sangue do Senhor.", reference: "1 Coríntios 11:27" },
+    { text: "Examine-se, pois, o homem a si mesmo, e assim coma deste pão e beba deste cálice.", reference: "1 Coríntios 11:28" },
+    { text: "Porque o que come e bebe indignamente, come e bebe para sua própria condenação, não discernindo o corpo do Senhor.", reference: "1 Coríntios 11:29" },
+    { text: "Por causa disto há entre vós muitos fracos e doentes, e muitos que dormem.", reference: "1 Coríntios 11:30" },
+    { text: "Porque, se nós nos julgássemos a nós mesmos, não seríamos julgados.", reference: "1 Coríntios 11:31" },
+    { text: "Mas, quando somos julgados, somos repreendidos pelo Senhor, para não sermos condenados com o mundo.", reference: "1 Coríntios 11:32" },
+    { text: "Portanto, meus irmãos, quando vos ajuntais para comer, esperai uns pelos outros.", reference: "1 Coríntios 11:33" },
+    { text: "Mas, se alguém tiver fome, coma em casa, para que não vos ajunteis para condenação. Quanto às demais coisas, ordená-las-ei quando for.", reference: "1 Coríntios 11:34" },
+    { text: "Acerca dos dons espirituais, não quero, irmãos, que sejais ignorantes.", reference: "1 Coríntios 12:1" },
+    { text: "Vós bem sabeis que éreis gentios, levados aos ídolos mudos, conforme éreis guiados.", reference: "1 Coríntios 12:2" },
+    { text: "Portanto, vos quero fazer compreender que ninguém que fala pelo Espírito de Deus diz: Jesus é anátema, e ninguém pode dizer que Jesus é o Senhor, senão pelo Espírito Santo.", reference: "1 Coríntios 12:3" },
+    { text: "Ora, há diversidade de dons, mas o Espírito é o mesmo.", reference: "1 Coríntios 12:4" },
+    { text: "E há diversidade de ministérios, mas o Senhor é o mesmo.", reference: "1 Coríntios 12:5" },
+    { text: "E há diversidade de operações, mas é o mesmo Deus que opera tudo em todos.", reference: "1 Coríntios 12:6" },
+    { text: "Mas a manifestação do Espírito é dada a cada um, para o que for útil.", reference: "1 Coríntios 12:7" },
+    { text: "Porque a um pelo Espírito é dada a palavra da sabedoria; e a outro, pelo mesmo Espírito, a palavra da ciência.", reference: "1 Coríntios 12:8" },
+    { text: "E a outro, pelo mesmo Espírito, a fé; e a outro, pelo mesmo Espírito, os dons de curar.", reference: "1 Coríntios 12:9" },
+    { text: "E a outro a operação de maravilhas; e a outro a profecia; e a outro o dom de discernir os espíritos; e a outro a variedade de línguas; e a outro a interpretação das línguas.", reference: "1 Coríntios 12:10" },
+    { text: "Mas um só e o mesmo Espírito opera todas estas coisas, repartindo particularmente a cada um como quer.", reference: "1 Coríntios 12:11" },
+    { text: "Porque, assim como o corpo é um, e tem muitos membros, e todos os membros, sendo muitos, são um só corpo, assim é Cristo também.", reference: "1 Coríntios 12:12" },
+    { text: "Pois todos nós fomos batizados em um Espírito, formando um corpo, quer judeus, quer gregos, quer servos, quer livres, e todos temos bebido de um Espírito.", reference: "1 Coríntios 12:13" },
+    { text: "Porque também o corpo não é um só membro, mas muitos.", reference: "1 Coríntios 12:14" },
+    { text: "Se o pé disser: Porque não sou mão, não sou do corpo; não será por isso do corpo?", reference: "1 Coríntios 12:15" },
+    { text: "E se a orelha disser: Porque não sou olho não sou do corpo; não será por isso do corpo?", reference: "1 Coríntios 12:16" },
+    { text: "Se todo o corpo fosse olho, onde estaria o ouvido? Se todo fosse ouvido, onde estaria o olfato?", reference: "1 Coríntios 12:17" },
+    { text: "Mas agora Deus colocou os membros no corpo, cada um deles como quis.", reference: "1 Coríntios 12:18" },
+    { text: "E, se todos fossem um só membro, onde estaria o corpo?", reference: "1 Coríntios 12:19" },
+    { text: "Agora, pois, há muitos membros, mas um corpo.", reference: "1 Coríntios 12:20" },
+    { text: "E o olho não pode dizer à mão: Não tenho necessidade de ti; nem ainda a cabeça aos pés: Não tenho necessidade de vós.", reference: "1 Coríntios 12:21" },
+    { text: "Antes, os membros do corpo que parecem ser os mais fracos são necessários.", reference: "1 Coríntios 12:22" },
+    { text: "E os que reputamos serem menos honrosos no corpo, a esses honramos muito mais; e aos que em nós são menos decorosos damos muito mais honra.", reference: "1 Coríntios 12:23" },
+    { text: "Porque os que em nós são mais honrosos não têm necessidade; mas Deus assim formou o corpo, dando muito mais honra ao que tinha falta dela.", reference: "1 Coríntios 12:24" },
+    { text: "Para que não haja divisão no corpo, mas antes tenham os membros igual cuidado uns dos outros.", reference: "1 Coríntios 12:25" },
+    { text: "De maneira que, se um membro padece, todos os membros padecem com ele; e, se um membro é honrado, todos os membros se regozijam com ele.", reference: "1 Coríntios 12:26" },
+    { text: "Ora, vós sois o corpo de Cristo, e seus membros em particular.", reference: "1 Coríntios 12:27" },
+    { text: "E a uns pôs Deus na igreja, primeiramente apóstolos, em segundo lugar profetas, em terceiro doutores, depois milagres, depois dons de curar, socorros, governos, variedades de línguas.", reference: "1 Coríntios 12:28" },
+    { text: "Porventura são todos apóstolos? São todos profetas? São todos doutores? São todos operadores de milagres?", reference: "1 Coríntios 12:29" },
+    { text: "Têm todos os dons de curar? Falam todos diversas línguas? Interpretam todos?", reference: "1 Coríntios 12:30" },
+    { text: "Portanto, procurai com zelo os melhores dons; e eu vos mostrarei um caminho mais excelente.", reference: "1 Coríntios 12:31" },
+    { text: "Ainda que eu falasse as línguas dos homens e dos anjos, e não tivesse amor, seria como o metal que soa ou como o sino que tine.", reference: "1 Coríntios 13:1" },
+    { text: "E ainda que tivesse o dom de profecia, e conhecesse todos os mistérios e toda a ciência, e ainda que tivesse toda a fé, de maneira tal que transportasse os montes, e não tivesse amor, nada seria.", reference: "1 Coríntios 13:2" },
+    { text: "E ainda que distribuísse toda a minha fortuna para sustento dos pobres, e ainda que entregasse o meu corpo para ser queimado, e não tivesse amor, nada disso me aproveitaria.", reference: "1 Coríntios 13:3" },
+    { text: "O amor é sofredor, é benigno; o amor não é invejoso; o amor não trata com leviandade, não se ensoberbece.", reference: "1 Coríntios 13:4" },
+    { text: "Não se porta com indecência, não busca os seus interesses, não se irrita, não suspeita mal.", reference: "1 Coríntios 13:5" },
+    { text: "Não folga com a injustiça, mas folga com a verdade.", reference: "1 Coríntios 13:6" },
+    { text: "Tudo sofre, tudo crê, tudo espera, tudo suporta.", reference: "1 Coríntios 13:7" },
+    { text: "Agora, pois, permanecem a fé, a esperança e o amor, estes três, mas o maior destes é o amor.", reference: "1 Coríntios 13:13" },
+    { text: "Segui o amor, e procurai com zelo os dons espirituais, mas principalmente o de profetizar.", reference: "1 Coríntios 14:1" },
+    { text: "Porque o que fala em língua desconhecida não fala aos homens, senão a Deus; porque ninguém o entende, e em espírito fala mistérios.", reference: "1 Coríntios 14:2" },
+    { text: "Mas o que profetiza fala aos homens, para edificação, exortação e consolação.", reference: "1 Coríntios 14:3" },
+    { text: "O que fala em língua desconhecida edifica-se a si mesmo, mas o que profetiza edifica a igreja.", reference: "1 Coríntios 14:4" },
+    { text: "E eu quero que todos vós faleis em línguas, mas muito mais que profetizeis; porque o que profetiza é maior do que o que fala em línguas, a não ser que também interprete para que a igreja receba edificação.", reference: "1 Coríntios 14:5" },
+    { text: "E agora, irmãos, se eu for ter convosco falando em línguas, que vos aproveitarei, se não vos falar ou por meio da revelação, ou da ciência, ou da profecia, ou da doutrina?", reference: "1 Coríntios 14:6" },
+    { text: "Da mesma sorte, se as coisas inanimadas, que fazem som, seja flauta, seja cítara, não formarem sons distintos, como se conhecerá o que se toca com a flauta ou com a cítara?", reference: "1 Coríntios 14:7" },
+    { text: "Porque, se a trombeta der sonido incerto, quem se preparará para a batalha?", reference: "1 Coríntios 14:8" },
+    { text: "Assim também vós, se com a língua não pronunciardes palavras bem inteligíveis, como se entenderá o que se diz? porque estareis como que falando ao ar.", reference: "1 Coríntios 14:9" },
+    { text: "Há, por exemplo, tanta espécie de vozes no mundo, e nenhuma delas é sem significação.", reference: "1 Coríntios 14:10" },
+    { text: "Mas, se eu ignorar o sentido da voz, serei bárbaro para aquele que fala; e o que fala será bárbaro para mim.", reference: "1 Coríntios 14:11" },
+    { text: "Assim também vós, como desejais dons espirituais, procurai abundar neles, para edificação da igreja.", reference: "1 Coríntios 14:12" },
+    { text: "Por isso, o que fala em língua desconhecida, ore para que a possa interpretar.", reference: "1 Coríntios 14:13" },
+    { text: "Porque, se eu orar em língua desconhecida, o meu espírito ora bem, mas o meu entendimento fica sem fruto.", reference: "1 Coríntios 14:14" },
+    { text: "Que farei, pois? Orarei com o espírito, mas também orarei com o entendimento; cantarei com o espírito, mas também cantarei com o entendimento.", reference: "1 Coríntios 14:15" },
+    { text: "De outra maneira, se tu bendisseres com o espírito, como dirá o que ocupa o lugar do indouto, o Amém, sobre a tua ação de graças, visto que não sabe o que dizes?", reference: "1 Coríntios 14:16" },
+    { text: "Porque tu, na verdade, dás bem as graças, mas o outro não é edificado.", reference: "1 Coríntios 14:17" },
+    { text: "Dou graças ao meu Deus, porque falo mais línguas do que vós todos.", reference: "1 Coríntios 14:18" },
+    { text: "Todavia eu antes quero falar na igreja cinco palavras na minha própria inteligência, para que possa também instruir os outros, do que dez mil palavras em língua desconhecida.", reference: "1 Coríntios 14:19" },
+    { text: "Irmãos, não sejais meninos no entendimento, mas sede meninos na malícia, e adultos no entendimento.", reference: "1 Coríntios 14:20" },
+    { text: "Está escrito na lei: Por gente de outras línguas, e por outros lábios, falarei a este povo; e ainda assim me não ouvirão, diz o Senhor.", reference: "1 Coríntios 14:21" },
+    { text: "De sorte que as línguas são um sinal, não para os fiéis, mas para os infiéis; e a profecia não é sinal para os infiéis, mas para os fiéis.", reference: "1 Coríntios 14:22" },
+    { text: "Se, pois, toda a igreja se congregar num lugar, e todos falarem em línguas, e entrarem indoutos ou infiéis, não dirão porventura que estais loucos?", reference: "1 Coríntios 14:23" },
+    { text: "Mas, se todos profetizarem, e algum indouto ou infiel entrar, de todos é convencido, de todos é julgado.", reference: "1 Coríntios 14:24" },
+    { text: "Os segredos do seu coração ficarão manifestos, e assim, lançando-se sobre o seu rosto, adorará a Deus, publicando que Deus está verdadeiramente entre vós.", reference: "1 Coríntios 14:25" },
+    { text: "Que fareis, pois, irmãos? Quando vos ajuntais, cada um de vós tem salmo, tem doutrina, tem revelação, tem língua, tem interpretação. Faça-se tudo para edificação.", reference: "1 Coríntios 14:26" },
+    { text: "E, se alguém falar em língua desconhecida, faça-se isso por dois, ou quando muito três, e por sua vez, e haja intérprete.", reference: "1 Coríntios 14:27" },
+    { text: "Mas, se não houver intérprete, esteja calado na igreja, e fale consigo mesmo, e com Deus.", reference: "1 Coríntios 14:28" },
+    { text: "E falem dois ou três profetas, e os outros julguem.", reference: "1 Coríntios 14:29" },
+    { text: "Mas, se a outro, que estiver assentado, for revelada alguma coisa, cale-se o primeiro.", reference: "1 Coríntios 14:30" },
+    { text: "Porque todos podereis profetizar, uns depois dos outros; para que todos aprendam, e todos sejam consolados.", reference: "1 Coríntios 14:31" },
+    { text: "E os espíritos dos profetas estão sujeitos aos profetas.", reference: "1 Coríntios 14:32" },
+    { text: "Porque Deus não é Deus de confusão, senão de paz, como em todas as igrejas dos santos.", reference: "1 Coríntios 14:33" }
+    { text: "As mulheres estejam caladas nas igrejas; porque não lhes é permitido falar; mas estejam sujeitas, como também ordena a lei.", reference: "1 Coríntios 14:34" },
+    { text: "E, se querem aprender alguma coisa, interroguem em casa a seus próprios maridos; porque é vergonhoso que as mulheres falem na igreja.", reference: "1 Coríntios 14:35" },
+    { text: "Porventura saiu dentre vós a palavra de Deus? Ou veio ela somente para vós?", reference: "1 Coríntios 14:36" },
+    { text: "Se alguém cuida ser profeta, ou espiritual, reconheça que as coisas que vos escrevo são mandamentos do Senhor.", reference: "1 Coríntios 14:37" },
+    { text: "Mas, se alguém ignora isto, que ignore.", reference: "1 Coríntios 14:38" },
+    { text: "Portanto, irmãos, procurai, com zelo, profetizar, e não proibais falar línguas.", reference: "1 Coríntios 14:39" },
+    { text: "Mas faça-se tudo decentemente e com ordem.", reference: "1 Coríntios 14:40" },
+    { text: "Também vos notifico, irmãos, o evangelho que já vos tenho anunciado; o qual também recebestes; no qual também permaneceis.", reference: "1 Coríntios 15:1" },
+    { text: "Pelo qual também sois salvos se o retiverdes tal como vo-lo tenho anunciado; se não é que crestes em vão.", reference: "1 Coríntios 15:2" },
+    { text: "Porque primeiramente vos entreguei o que também recebi: que Cristo morreu por nossos pecados, segundo as Escrituras.", reference: "1 Coríntios 15:3" },
+    { text: "E que foi sepultado, e que ressuscitou ao terceiro dia, segundo as Escrituras.", reference: "1 Coríntios 15:4" },
+    { text: "E que foi visto por Cefas, e depois pelos doze.", reference: "1 Coríntios 15:5" },
+    { text: "Depois foi visto, uma vez, por mais de quinhentos irmãos, dos quais vive ainda a maior parte, mas alguns já dormem também.", reference: "1 Coríntios 15:6" },
+    { text: "Depois foi visto por Tiago, depois por todos os apóstolos.", reference: "1 Coríntios 15:7" },
+    { text: "E por derradeiro de todos me apareceu também a mim, como a um abortivo.", reference: "1 Coríntios 15:8" },
+    { text: "Porque eu sou o menor dos apóstolos, que não sou digno de ser chamado apóstolo, pois que persegui a igreja de Deus.", reference: "1 Coríntios 15:9" },
+    { text: "Mas pela graça de Deus sou o que sou; e a sua graça para comigo não foi vã, antes trabalhei muito mais do que todos eles; todavia não eu, mas a graça de Deus, que está comigo.", reference: "1 Coríntios 15:10" },
+    { text: "Então, quer seja eu quer sejam eles, assim pregamos e assim haveis crido.", reference: "1 Coríntios 15:11" },
+    { text: "Ora, se se prega que Cristo ressuscitou dentre os mortos, como dizem alguns dentre vós que não há ressurreição de mortos?", reference: "1 Coríntios 15:12" },
+    { text: "E, se não há ressurreição de mortos, também Cristo não ressuscitou.", reference: "1 Coríntios 15:13" },
+    { text: "E, se Cristo não ressuscitou, logo é vã a nossa pregação, e também é vã a vossa fé.", reference: "1 Coríntios 15:14" },
+    { text: "E assim somos também considerados como falsas testemunhas de Deus, pois testificamos de Deus, que ressuscitou a Cristo, ao qual, porém, não ressuscitou, se, na verdade, os mortos não ressuscitam.", reference: "1 Coríntios 15:15" },
+    { text: "Porque, se os mortos não ressuscitam, também Cristo não ressuscitou.", reference: "1 Coríntios 15:16" },
+    { text: "E, se Cristo não ressuscitou, é vã a vossa fé, e ainda permaneceis nos vossos pecados.", reference: "1 Coríntios 15:17" },
+    { text: "E também os que dormiram em Cristo estão perdidos.", reference: "1 Coríntios 15:18" },
+    { text: "Se esperamos em Cristo só nesta vida, somos os mais miseráveis de todos os homens.", reference: "1 Coríntios 15:19" },
+    { text: "Mas de fato Cristo ressuscitou dentre os mortos, e foi feito as primícias dos que dormem.", reference: "1 Coríntios 15:20" },
+    { text: "Porque assim como a morte veio por um homem, também a ressurreição dos mortos veio por um homem.", reference: "1 Coríntios 15:21" },
+    { text: "Porque, assim como todos morrem em Adão, assim também todos serão vivificados em Cristo.", reference: "1 Coríntios 15:22" },
+    { text: "Mas cada um por sua ordem: Cristo as primícias, depois os que são de Cristo, na sua vinda.", reference: "1 Coríntios 15:23" },
+    { text: "Depois virá o fim, quando tiver entregado o reino a Deus, ao Pai, e quando houver aniquilado todo o império, e toda a potestade e força.", reference: "1 Coríntios 15:24" },
+    { text: "Porque convém que reine até que haja posto a todos os inimigos debaixo de seus pés.", reference: "1 Coríntios 15:25" },
+    { text: "Ora, o último inimigo que há de ser aniquilado é a morte.", reference: "1 Coríntios 15:26" },
+    { text: "Porque todas as coisas sujeitou debaixo de seus pés. Mas, quando diz que todas as coisas lhe estão sujeitas, claro está que se excetua aquele que lhe sujeitou todas as coisas.", reference: "1 Coríntios 15:27" },
+    { text: "E, quando todas as coisas lhe estiverem sujeitas, então também o mesmo Filho se sujeitará àquele que todas as coisas lhe sujeitou, para que Deus seja tudo em todos.", reference: "1 Coríntios 15:28" },
+    { text: "Doutra maneira, que farão os que se batizam pelos mortos, se absolutamente os mortos não ressuscitam? Por que se batizam eles então pelos mortos?", reference: "1 Coríntios 15:29" },
+    { text: "Por que estamos nós também a toda a hora em perigo?", reference: "1 Coríntios 15:30" },
+    { text: "Eu protesto pela vossa glória, a qual tenho em Cristo Jesus nosso Senhor, que cada dia morro.", reference: "1 Coríntios 15:31" },
+    { text: "Se, como homem, combati em Éfeso contra as feras, que me aproveita isso, se os mortos não ressuscitam? Comamos e bebamos, que amanhã morreremos.", reference: "1 Coríntios 15:32" },
+    { text: "Não erreis: as más conversações corrompem os bons costumes.", reference: "1 Coríntios 15:33" },
+    { text: "Vigiai justamente e não pequeis; porque alguns ainda não têm o conhecimento de Deus; digo-o para vossa vergonha.", reference: "1 Coríntios 15:34" },
+    { text: "Mas alguém dirá: Como ressuscitarão os mortos? E com que corpo virão?", reference: "1 Coríntios 15:35" },
+    { text: "Insensato! o que tu semeias não é vivificado, se primeiro não morrer.", reference: "1 Coríntios 15:36" },
+    { text: "E, quando semeias, não semeias o corpo que há de nascer, mas o simples grão, como de trigo, ou de outra qualquer semente.", reference: "1 Coríntios 15:37" },
+    { text: "Mas Deus dá-lhe o corpo como quer, e a cada semente o seu próprio corpo.", reference: "1 Coríntios 15:38" },
+    { text: "Nem toda a carne é uma mesma carne, mas uma é a carne dos homens, e outra a carne dos animais, e outra a dos peixes e outra a das aves.", reference: "1 Coríntios 15:39" },
+    { text: "E há corpos celestiais e corpos terrestres, mas uma é a glória dos celestiais e outra a dos terrestres.", reference: "1 Coríntios 15:40" },
+    { text: "Uma é a glória do sol, e outra a glória da lua, e outra a glória das estrelas; porque uma estrela difere em glória de outra estrela.", reference: "1 Coríntios 15:41" },
+    { text: "Assim também a ressurreição dentre os mortos. Semeia-se o corpo em corrupção; ressuscitará em incorrupção.", reference: "1 Coríntios 15:42" },
+    { text: "Semeia-se em vileza, ressuscitará em glória. Semeia-se em fraqueza, ressuscitará com vigor.", reference: "1 Coríntios 15:43" },
+    { text: "Semeia-se corpo natural, ressuscitará corpo espiritual. Se há corpo natural, há também corpo espiritual.", reference: "1 Coríntios 15:44" },
+    { text: "Assim está também escrito: O primeiro homem, Adão, foi feito em alma vivente; o último Adão em espírito vivificante.", reference: "1 Coríntios 15:45" },
+    { text: "Mas não é primeiro o espiritual, senão o natural; depois o espiritual.", reference: "1 Coríntios 15:46" },
+    { text: "O primeiro homem, da terra, é terreno; o segundo homem, o Senhor, é do céu.", reference: "1 Coríntios 15:47" },
+    { text: "Qual o terreno, tais são também os terrestres; e, qual o celestial, tais também os celestiais.", reference: "1 Coríntios 15:48" },
+    { text: "E, assim como trouxemos a imagem do terreno, assim traremos também a imagem do celestial.", reference: "1 Coríntios 15:49" },
+    { text: "E agora digo isto, irmãos: que a carne e o sangue não podem herdar o reino de Deus, nem a corrupção herdar a incorrupção.", reference: "1 Coríntios 15:50" },
+    { text: "Eis aqui vos digo um mistério: Na verdade, nem todos dormiremos, mas todos seremos transformados.", reference: "1 Coríntios 15:51" },
+    { text: "Num momento, num abrir e fechar de olhos, ante a última trombeta; porque a trombeta soará, e os mortos ressuscitarão incorruptíveis, e nós seremos transformados.", reference: "1 Coríntios 15:52" },
+    { text: "Porque convém que isto que é corruptível se revista da incorruptibilidade, e que isto que é mortal se revista da imortalidade.", reference: "1 Coríntios 15:53" },
+    { text: "E, quando isto que é corruptível se revestir da incorruptibilidade, e isto que é mortal se revestir da imortalidade, então cumprir-se-á a palavra que está escrita: Tragada foi a morte na vitória.", reference: "1 Coríntios 15:54" },
+    { text: "Onde está, ó morte, o teu aguilhão? Onde está, ó inferno, a tua vitória?", reference: "1 Coríntios 15:55" },
+    { text: "Ora, o aguilhão da morte é o pecado, e a força do pecado é a lei.", reference: "1 Coríntios 15:56" },
+    { text: "Mas graças a Deus que nos dá a vitória por nosso Senhor Jesus Cristo.", reference: "1 Coríntios 15:57" },
+    { text: "Portanto, meus amados irmãos, sede firmes e constantes, sempre abundantes na obra do Senhor, sabendo que o vosso trabalho não é vão no Senhor.", reference: "1 Coríntios 15:58" },
+    { text: "Ora, quanto à coleta que se faz para os santos, fazei vós também o mesmo que ordenei às igrejas da Galácia.", reference: "1 Coríntios 16:1" },
+    { text: "No primeiro dia da semana cada um de vós ponha de parte o que puder ajuntar, conforme a sua prosperidade, para que não se façam as coletas quando eu chegar.", reference: "1 Coríntios 16:2" },
+    { text: "E, quando tiver chegado, mandarei os que por cartas aprovardes, para que levem a vossa beneficência a Jerusalém.", reference: "1 Coríntios 16:3" },
+    { text: "E, se convier que eu também vá, irão comigo.", reference: "1 Coríntios 16:4" },
+    { text: "Irei ter convosco quando tiver passado pela Macedônia (porque passei pela Macedônia).", reference: "1 Coríntios 16:5" },
+    { text: "E poderá ser que convosco me demore, ou ainda que passe o inverno, para que me encaminheis para onde quer que eu for.", reference: "1 Coríntios 16:6" },
+    { text: "Porque não quero agora ver-vos só de passagem; mas espero deter-me convosco algum tempo, se o Senhor o permitir.", reference: "1 Coríntios 16:7" },
+    { text: "Mas estarei em Éfeso até ao Pentecostes.", reference: "1 Coríntios 16:8" },
+    { text: "Porque se me abriu uma porta grande e eficaz; e há muitos adversários.", reference: "1 Coríntios 16:9" },
+    { text: "E, se Timóteo for, vede que esteja convosco sem temor; porque trabalha na obra do Senhor, como eu também.", reference: "1 Coríntios 16:10" },
+    { text: "Portanto ninguém o despreze; antes encaminhai-o em paz, para que venha ter comigo, porque o espero com os irmãos.", reference: "1 Coríntios 16:11" },
+    { text: "E, acerca do irmão Apolo, muito o roguei que fosse ter convosco com os irmãos; mas de maneira nenhuma quis ir agora; porém, quando tiver oportunidade, irá.", reference: "1 Coríntios 16:12" },
+    { text: "Vigiai, estai firmes na fé, portai-vos varonilmente, e fortalecei-vos.", reference: "1 Coríntios 16:13" },
+    { text: "Fazei todas as vossas coisas com amor.", reference: "1 Coríntios 16:14" },
+    { text: "E rogo-vos, irmãos (sabeis que a família de Estéfanas são as primícias da Acaia, e que se têm dedicado ao ministério dos santos).", reference: "1 Coríntios 16:15" },
+    { text: "Que também vos sujeiteis aos tais, e a todo aquele que auxilia na obra e trabalha.", reference: "1 Coríntios 16:16" },
+    { text: "E folgo com a vinda de Estéfanas, e de Fortunato, e de Acaico; porque estes supriram o que da vossa parte me faltava.", reference: "1 Coríntios 16:17" },
+    { text: "Porque recrearam o meu espírito e o vosso. Reconhecei, pois, aos tais.", reference: "1 Coríntios 16:18" },
+    { text: "As igrejas da Ásia vos saúdam. Áquila e Priscila, com a igreja que está em sua casa, muito vos saúdam no Senhor.", reference: "1 Coríntios 16:19" },
+    { text: "Todos os irmãos vos saúdam. Saudai-vos uns aos outros com santo ósculo.", reference: "1 Coríntios 16:20" },
+    { text: "A saudação é de meu punho, de Paulo.", reference: "1 Coríntios 16:21" },
+    { text: "Se alguém não ama ao Senhor Jesus Cristo, seja anátema. Maranata.", reference: "1 Coríntios 16:22" },
+    { text: "A graça de nosso Senhor Jesus Cristo seja convosco.", reference: "1 Coríntios 16:23" },
+    { text: "O meu amor seja com todos vós em Cristo Jesus. Amém.", reference: "1 Coríntios 16:24" },
+    { text: "Bendito seja o Deus e Pai de nosso Senhor Jesus Cristo, o Pai das misericórdias e o Deus de toda a consolação.", reference: "2 Coríntios 1:3" },
+    { text: "Que nos consola em toda a nossa tribulação, para que também possamos consolar os que estiverem em alguma tribulação, com a consolação com que nós mesmos somos consolados por Deus.", reference: "2 Coríntios 1:4" },
+    { text: "Porque, como as aflições de Cristo são abundantes em nós, assim também é abundante a nossa consolação por meio de Cristo.", reference: "2 Coríntios 1:5" },
+    { text: "Mas, se somos atribulados, é para vossa consolação e salvação; ou, se somos consolados, para vossa consolação é, a qual se opera suportando com paciência as mesmas aflições que nós também padecemos.", reference: "2 Coríntios 1:6" },
+    { text: "E a nossa esperança acerca de vós é firme, sabendo que, como sois participantes das aflições, assim o sereis também da consolação.", reference: "2 Coríntios 1:7" },
+    { text: "Porque não queremos, irmãos, que ignoreis a tribulação que nos sobreveio na Ásia, pois que fomos sobremaneira agravados mais do que podíamos suportar, de modo tal que até da vida desesperamos.", reference: "2 Coríntios 1:8" },
+    { text: "Mas já em nós mesmos tínhamos a sentença de morte, para que não confiássemos em nós, mas em Deus, que ressuscita os mortos.", reference: "2 Coríntios 1:9" },
+    { text: "O qual nos livrou de tão grande morte, e livra; em quem esperamos que também nos livrará ainda.", reference: "2 Coríntios 1:10" },
+    { text: "Cooperando também vós a favor de nós com orações, para que pela mercê, que por muitas pessoas nos foi feita, por muitas também sejam dadas graças por nós.", reference: "2 Coríntios 1:11" },
+    { text: "Porque a nossa glória é esta: o testemunho da nossa consciência, de que com simplicidade e sinceridade de Deus, não com sabedoria carnal, mas com a graça de Deus, temos vivido no mundo, e mormente para convosco.", reference: "2 Coríntios 1:12" },
+    { text: "Porque nenhumas outras coisas vos escrevemos, senão as que já sabeis ou também reconheceis; e espero que também até ao fim as reconhecereis.", reference: "2 Coríntios 1:13" },
+    { text: "Como também já em parte nos haveis reconhecido que somos a vossa glória, como também vós sereis a nossa no dia de nosso Senhor Jesus Cristo.", reference: "2 Coríntios 1:14" },
+    { text: "E nesta confiança, quis primeiro ir ter convosco, para que tivésseis uma segunda graça.", reference: "2 Coríntios 1:15" },
+    { text: "E passar por vós à Macedônia, e da Macedônia voltar outra vez a vós, e ser encaminhado por vós à Judéia.", reference: "2 Coríntios 1:16" },
+    { text: "Assim, pois, querendo eu isto, usei porventura de leviandade? Ou o que projeto, projeto segundo a carne, para que haja em mim o sim, sim, e o não, não?", reference: "2 Coríntios 1:17" },
+    { text: "Antes, como Deus é fiel, a nossa palavra para convosco não foi sim e não.", reference: "2 Coríntios 1:18" },
+    { text: "Porque o Filho de Deus, Jesus Cristo, que entre vós foi pregado por nós, isto é, por mim, e Silvano, e Timóteo, não foi sim e não; mas nele houve sim.", reference: "2 Coríntios 1:19" },
+    { text: "Porque todas quantas promessas há de Deus, são nele sim, e por ele o Amém, para glória de Deus por nós.", reference: "2 Coríntios 1:20" },
+    { text: "Ora, o que nos confirma convosco em Cristo, e o que nos ungiu, é Deus.", reference: "2 Coríntios 1:21" },
+    { text: "O qual também nos selou e deu o penhor do Espírito em nossos corações.", reference: "2 Coríntios 1:22" },
+    { text: "Mas por minha vida tomo a Deus por testemunha de que, para vos poupar, não tenho ainda ido a Corinto.", reference: "2 Coríntios 1:23" },
+    { text: "Não que tenhamos domínio sobre a vossa fé, mas porque somos cooperadores de vosso gozo; porque pela fé estais em pé.", reference: "2 Coríntios 1:24" },
+    { text: "Mas determinei isto mesmo: não ir outra vez a vós com tristeza.", reference: "2 Coríntios 2:1" },
+    { text: "Porque, se eu vos entristeço, quem é logo aquele que me alegra, senão aquele que por mim foi entristecido?", reference: "2 Coríntios 2:2" },
+    { text: "E isto mesmo vos escrevi para que, quando for, não tenha tristeza sobre tristeza daqueles de quem me devia gozar; confiando de vós todos que o meu gozo é o de todos vós.", reference: "2 Coríntios 2:3" },
+    { text: "Porque de muita tribulação e angústia do coração vos escrevi, com muitas lágrimas, não para que vos entristecêsseis, mas para que conhecêsseis o amor que abundantemente vos tenho.", reference: "2 Coríntios 2:4" },
+    { text: "Mas, se alguém me contristou, não me contristou a mim somente, mas em parte também a todos vós, para que não vos sobrecarregue.", reference: "2 Coríntios 2:5" },
+    { text: "Basta-lhe ao tal esta repreensão feita por muitos.", reference: "2 Coríntios 2:6" },
+    { text: "De maneira que pelo contrário, deveis antes perdoar-lhe e consolá-lo, para que o tal não seja de modo algum devorado de demasiada tristeza.", reference: "2 Coríntios 2:7" },
+    { text: "Por isso vos rogo que confirmeis para com ele o vosso amor.", reference: "2 Coríntios 2:8" },
+    { text: "Porque também para este fim vos escrevi, para por esta prova saber se sois obedientes em tudo.", reference: "2 Coríntios 2:9" },
+    { text: "E a quem perdoardes alguma coisa, também eu; porque, o que eu perdoei, se é que tenho perdoado, por amor de vós o fiz na presença de Cristo.", reference: "2 Coríntios 2:10" },
+    { text: "Para que Satanás não alcance vantagem sobre nós, porque não ignoramos os seus ardis.", reference: "2 Coríntios 2:11" },
+    { text: "Quando cheguei a Trôade para pregar o evangelho de Cristo, e uma porta se me abriu no Senhor.", reference: "2 Coríntios 2:12" },
+    { text: "Não tive, contudo, descanso no meu espírito, porque não achei ali meu irmão Tito; mas, despedindo-me deles, parti para a Macedônia.", reference: "2 Coríntios 2:13" },
+    { text: "Mas graças a Deus, que sempre nos faz triunfar em Cristo, e por nós manifesta em todo o lugar a fragrância do seu conhecimento.", reference: "2 Coríntios 2:14" },
+    { text: "Porque para Deus somos o bom perfume de Cristo, nos que se salvam e nos que se perdem.", reference: "2 Coríntios 2:15" },
+    { text: "Para estes certamente cheiro de morte para morte; mas para aqueles cheiro de vida para vida. E para estas coisas quem é idôneo?", reference: "2 Coríntios 2:16" },
+    { text: "Porque nós não somos, como muitos, falsificadores da palavra de Deus, antes falamos de Cristo com sinceridade, como de Deus na presença de Deus.", reference: "2 Coríntios 2:17" },
+    { text: "Porventura começamos outra vez a louvar-nos a nós mesmos? Ou necessitamos, como alguns, de cartas de recomendação para vós, ou de recomendação de vós?", reference: "2 Coríntios 3:1" },
+    { text: "Vós sois a nossa carta, escrita em nossos corações, conhecida e lida por todos os homens.", reference: "2 Coríntios 3:2" },
+    { text: "Porque já é manifesto que vós sois a carta de Cristo, ministrada por nós, e escrita, não com tinta, mas com o Espírito do Deus vivo, não em tábuas de pedra, mas nas tábuas de carne do coração.", reference: "2 Coríntios 3:3" },
+    { text: "E é por Cristo que temos tal confiança em Deus.", reference: "2 Coríntios 3:4" },
+    { text: "Não que sejamos capazes, por nós, de pensar alguma coisa, como de nós mesmos; mas a nossa capacidade vem de Deus.", reference: "2 Coríntios 3:5" },
+    { text: "O qual nos fez também capazes de ser ministros de um novo testamento, não da letra, mas do espírito; porque a letra mata e o espírito vivifica.", reference: "2 Coríntios 3:6" },
+    { text: "E, se o ministério da morte, gravado com letras em pedras, veio em glória, de maneira que os filhos de Israel não podiam fitar os olhos na face de Moisés, por causa da glória do seu rosto, a qual era transitória.", reference: "2 Coríntios 3:7" },
+    { text: "Como não será de maior glória o ministério do Espírito?", reference: "2 Coríntios 3:8" },
+    { text: "Porque, se o ministério da condenação foi glorioso, muito mais excederá em glória o ministério da justiça.", reference: "2 Coríntios 3:9" },
+    { text: "Porque também o que foi glorificado nesta parte não foi glorificado, por causa desta excelente glória.", reference: "2 Coríntios 3:10" },
+    { text: "Porque, se o que era transitório foi para glória, muito mais é em glória o que permanece.", reference: "2 Coríntios 3:11" },
+    { text: "Tendo, pois, tal esperança, usamos de muita ousadia no falar.", reference: "2 Coríntios 3:12" },
+    { text: "E não somos como Moisés, que punha um véu sobre a sua face, para que os filhos de Israel não olhassem firmemente para o fim daquilo que era transitório.", reference: "2 Coríntios 3:13" },
+    { text: "Mas os seus sentidos foram endurecidos; porque até hoje o mesmo véu está por levantar na lição do velho testamento, o qual foi por Cristo abolido.", reference: "2 Coríntios 3:14" },
+    { text: "E até hoje, quando é lido Moisés, o véu está posto sobre o coração deles.", reference: "2 Coríntios 3:15" },
+    { text: "Mas, quando se converterem ao Senhor, então o véu se tirará.", reference: "2 Coríntios 3:16" },
+    { text: "Ora, o Senhor é Espírito; e onde está o Espírito do Senhor aí há liberdade.", reference: "2 Coríntios 3:17" },
+    { text: "Mas todos nós, com rosto descoberto, refletindo como um espelho a glória do Senhor, somos transformados de glória em glória na mesma imagem, como pelo Espírito do Senhor.", reference: "2 Coríntios 3:18" },
+    { text: "Por isso, tendo este ministério, segundo a misericórdia que alcançamos, não desfalecemos.", reference: "2 Coríntios 4:1" },
+    { text: "Antes rejeitamos as coisas que por vergonha se ocultam, não andando com astúcia nem falsificando a palavra de Deus; mas, pela manifestação da verdade, tornando-nos recomendáveis à consciência de todo o homem diante de Deus.", reference: "2 Coríntios 4:2" },
+    { text: "Mas, se ainda o nosso evangelho está encoberto, para os que se perdem está encoberto.", reference: "2 Coríntios 4:3" },
+    { text: "Nos quais o deus deste século cegou os entendimentos dos incrédulos, para que lhes não resplandeça a luz do evangelho da glória de Cristo, que é a imagem de Deus.", reference: "2 Coríntios 4:4" },
+    { text: "Porque não nos pregamos a nós mesmos, mas a Cristo Jesus, o Senhor; e nós mesmos somos vossos servos por amor de Jesus.", reference: "2 Coríntios 4:5" },
+    { text: "Porque Deus, que disse que das trevas resplandecesse a luz, é quem resplandeceu em nossos corações, para iluminação do conhecimento da glória de Deus, na face de Jesus Cristo.", reference: "2 Coríntios 4:6" },
+    { text: "Temos, porém, este tesouro em vasos de barro, para que a excelência do poder seja de Deus, e não de nós.", reference: "2 Coríntios 4:7" },
+    { text: "Em tudo somos atribulados, mas não angustiados; perplexos, mas não desanimados.", reference: "2 Coríntios 4:8" },
+    { text: "Perseguidos, mas não desamparados; abatidos, mas não destruídos.", reference: "2 Coríntios 4:9" },
+    { text: "Trazendo sempre por toda a parte a mortificação do Senhor Jesus no nosso corpo, para que a vida de Jesus se manifeste também nos nossos corpos.", reference: "2 Coríntios 4:10" },
+    { text: "E assim nós, que vivemos, estamos sempre entregues à morte por amor de Jesus, para que a vida de Jesus se manifeste também na nossa carne mortal.", reference: "2 Coríntios 4:11" },
+    { text: "De maneira que em nós opera a morte, mas em vós a vida.", reference: "2 Coríntios 4:12" },
+    { text: "E temos portanto o mesmo espírito de fé, como está escrito: Cri, por isso falei; nós cremos também, por isso também falamos.", reference: "2 Coríntios 4:13" },
+    { text: "Sabendo que o que ressuscitou o Senhor Jesus nos ressuscitará também por Jesus, e nos apresentará convosco.", reference: "2 Coríntios 4:14" },
+    { text: "Porque tudo isto é por amor de vós, para que a graça, multiplicada por meio de muitos, faça abundar a ação de graças para glória de Deus.", reference: "2 Coríntios 4:15" },
+    { text: "Por isso não desfalecemos; mas, ainda que o nosso homem exterior se corrompa, o interior, contudo, se renova de dia em dia.", reference: "2 Coríntios 4:16" },
+    { text: "Porque a nossa leve e momentânea tribulação produz para nós um peso eterno de glória mui excelente.", reference: "2 Coríntios 4:17" },
+    { text: "Não atentando nós nas coisas que se vêem, mas nas que se não vêem; porque as que se vêem são temporais, e as que se não vêem são eternas.", reference: "2 Coríntios 4:18" },
+    { text: "Porque sabemos que, se a nossa casa terrestre deste tabernáculo se desfizer, temos de Deus um edifício, uma casa não feita por mãos, eterna, nos céus.", reference: "2 Coríntios 5:1" },
+    { text: "E por isso também gememos, desejando ser revestidos da nossa habitação, que é do céu.", reference: "2 Coríntios 5:2" },
+    { text: "Se, todavia, estando vestidos, não formos achados nus.", reference: "2 Coríntios 5:3" },
+    { text: "Porque também nós, os que estamos neste tabernáculo, gememos carregados; não porque queremos ser despidos, mas revestidos, para que o mortal seja absorvido pela vida.", reference: "2 Coríntios 5:4" },
+    { text: "Ora, quem para isto mesmo nos preparou foi Deus, o qual nos deu também o penhor do Espírito.", reference: "2 Coríntios 5:5" },
+    { text: "Por isso estamos sempre de bom ânimo, sabendo que, enquanto estamos no corpo, vivemos ausentes do Senhor.", reference: "2 Coríntios 5:6" },
+    { text: "(Porque andamos por fé, e não por vista.)", reference: "2 Coríntios 5:7" },
+    { text: "Mas temos confiança e desejamos antes deixar este corpo, para habitar com o Senhor.", reference: "2 Coríntios 5:8" },
+    { text: "Por isso procuramos também ser-lhe agradáveis, quer presentes, quer ausentes.", reference: "2 Coríntios 5:9" },
+    { text: "Porque todos devemos comparecer ante o tribunal de Cristo, para que cada um receba segundo o que tiver feito por meio do corpo, ou bem, ou mal.", reference: "2 Coríntios 5:10" },
+    { text: "Conhecendo, pois, o temor que se deve ao Senhor, persuadimos os homens e somos manifestos a Deus; e espero que também sejamos manifestos nas vossas consciências.", reference: "2 Coríntios 5:11" },
+    { text: "Porque não nos recomendamos outra vez a vós; mas damo-vos ocasião de vos gloriardes de nós, para que tenhais que responder aos que se gloriam na aparência e não no coração.", reference: "2 Coríntios 5:12" },
+    { text: "Porque, se enlouquecemos, é para Deus; se conservamos o juízo, é para vós.", reference: "2 Coríntios 5:13" },
+    { text: "Porque o amor de Cristo nos constrange, julgando nós assim: que, se um morreu por todos, logo todos morreram.", reference: "2 Coríntios 5:14" },
+    { text: "E ele morreu por todos, para que os que vivem não vivam mais para si, mas para aquele que por eles morreu e ressuscitou.", reference: "2 Coríntios 5:15" },
+    { text: "Assim que daqui por diante a ninguém conhecemos segundo a carne, e, ainda que também tenhamos conhecido Cristo segundo a carne, contudo agora já não o conhecemos deste modo.", reference: "2 Coríntios 5:16" },
+    { text: "E tudo isto provém de Deus, que nos reconciliou consigo mesmo por Jesus Cristo, e nos deu o ministério da reconciliação.", reference: "2 Coríntios 5:18" },
+    { text: "Isto é, Deus estava em Cristo reconciliando consigo o mundo, não lhes imputando os seus pecados; e pôs em nós a palavra da reconciliação.", reference: "2 Coríntios 5:19" },
+    { text: "De sorte que somos embaixadores da parte de Cristo, como se Deus por nós rogasse. Rogamo-vos, pois, da parte de Cristo, que vos reconcilieis com Deus.", reference: "2 Coríntios 5:20" },
+    { text: "Àquele que não conheceu pecado, o fez pecado por nós; para que nele fôssemos feitos justiça de Deus.", reference: "2 Coríntios 5:21" }
 ];
 
-// NOVO CÓDIGO COM VERIFICAÇÃO SEGURA
-let currentVerseIndex = 0;
-
-function updateVerse(index) {
-    if (index < 0) index = dailyVerses.length - 1;
-    if (index >= dailyVerses.length) index = 0;
-    
-    currentVerseIndex = index;
-    const selectedVerse = dailyVerses[currentVerseIndex];
-    
-    // VERIFICAR SE ELEMENTOS EXISTEM
-    const verseText = document.getElementById('daily-verse-text');
-    const verseRef = document.getElementById('daily-verse-reference');
-    const verseCounter = document.getElementById('verse-counter');
-    
-    if (verseText) verseText.textContent = selectedVerse.text;
-    if (verseRef) verseRef.textContent = selectedVerse.reference;
-    if (verseCounter) verseCounter.textContent = `Versículo ${currentVerseIndex + 1} de ${dailyVerses.length}`;
-}
-
-function previousVerse() {
-    updateVerse(currentVerseIndex - 1);
-}
-
-function nextVerse() {
-    updateVerse(currentVerseIndex + 1);
-}
-
+// Função para atualizar versículo baseado no dia
 function updateDailyVerse() {
     const today = new Date();
     const dayOfYear = Math.floor((today - new Date(today.getFullYear(), 0, 0)) / 86400000);
     const verseIndex = dayOfYear % dailyVerses.length;
     
-    updateVerse(verseIndex);
+    const selectedVerse = dailyVerses[verseIndex];
     
-    // Atualizar data APENAS se elemento existir
-    const dateElement = document.getElementById('current-date');
-    if (dateElement) {
-        const options = { 
-            weekday: 'long', 
-            year: 'numeric', 
-            month: 'long', 
-            day: 'numeric' 
-        };
-        dateElement.textContent = today.toLocaleDateString('pt-BR', options);
-    }
+    // Atualizar elementos
+    document.getElementById('daily-verse-text').textContent = selectedVerse.text;
+    document.getElementById('daily-verse-reference').textContent = selectedVerse.reference;
+    
+    // Atualizar data
+    const options = { 
+        weekday: 'long', 
+        year: 'numeric', 
+        month: 'long', 
+        day: 'numeric' 
+    };
+    document.getElementById('current-date').textContent = today.toLocaleDateString('pt-BR', options);
 }
 
-document.addEventListener('DOMContentLoaded', function() {
-    updateDailyVerse();
-    
-    // VERIFICAR SE BOTÕES EXISTEM
-    const prevBtn = document.getElementById('prev-verse-btn');
-    const nextBtn = document.getElementById('next-verse-btn');
-    
-    if (prevBtn) prevBtn.addEventListener('click', previousVerse);
-    if (nextBtn) nextBtn.addEventListener('click', nextVerse);
-    
-    // Gallery Filter - VERIFICAR SE EXISTEM
-    const filterBtns = document.querySelectorAll('.filter-btn');
-    const galleryItems = document.querySelectorAll('.gallery-item');
-
-    if (filterBtns.length > 0) {
-        filterBtns.forEach(btn => {
-            btn.addEventListener('click', () => {
-                filterBtns.forEach(b => b.classList.remove('active'));
-                btn.classList.add('active');
-
-                const filter = btn.getAttribute('data-filter');
-
-                galleryItems.forEach(item => {
-                    if (filter === 'all' || item.getAttribute('data-category') === filter) {
-                        item.style.display = 'block';
-                    } else {
-                        item.style.display = 'none';
-                    }
-                });
-            });
-        });
-    }
-    
-    // Navegação com teclado (setas)
-    document.addEventListener('keydown', function(e) {
-        if (e.key === 'ArrowLeft') previousVerse();
-        if (e.key === 'ArrowRight') nextVerse();
-    });
-});
-
-// Prayer Form - VERIFICAR SE EXISTE
-const prayerForm = document.querySelector('.prayer-form');
-if (prayerForm) {
-    prayerForm.addEventListener('submit', function(e) {
-        e.preventDefault();
-        
-        const name = document.getElementById('name').value;
-        const email = document.getElementById('email').value;
-        const request = document.getElementById('prayer-request').value;
-        const confidential = document.getElementById('confidential').checked;
-        
-        const message = `🙏 PEDIDO DE ORAÇÃO\n\nNome: ${name}\nEmail: ${email || 'Não informado'}\nPedido: ${request}\nConfidencial: ${confidential ? 'Sim' : 'Não'}`;
-        
-        const whatsappUrl = `https://wa.me/5521987860391?text=${encodeURIComponent(message)}`;
-        window.open(whatsappUrl, '_blank');
-        
-        this.reset();
-        alert('Pedido enviado! Você será redirecionado para o WhatsApp.');
-    });
-}
-
-// Smooth scrolling
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-            target.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
-            });
-        }
-    });
-});
-
-// Mobile menu
-const mobileMenu = document.querySelector('.mobile-menu');
-const navLinks = document.querySelector('.nav-links');
-
-if (mobileMenu && navLinks) {
-    mobileMenu.addEventListener('click', () => {
-        navLinks.classList.toggle('active');
-    });
-}
+// Executar quando a página carregar
+window.addEventListener('load', updateDailyVerse);
 </script>
