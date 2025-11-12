@@ -1,338 +1,166 @@
-// Sistema de 365 Versículos do Dia
+<script>
+// Array de versículos bíblicos
 const dailyVerses = [
-    // Janeiro (31 dias)
-    { text: "Porque Deus amou o mundo de tal maneira que deu o seu Filho unigênito, para que todo aquele que nele crê não pereça, mas tenha a vida eterna.", reference: "João 3:16" },
-    { text: "O Senhor é o meu pastor; nada me faltará.", reference: "Salmos 23:1" },
-    { text: "Posso todas as coisas naquele que me fortalece.", reference: "Filipenses 4:13" },
-    { text: "Confia no Senhor de todo o teu coração e não te estribes no teu próprio entendimento.", reference: "Provérbios 3:5" },
-    { text: "Eu sou o caminho, e a verdade, e a vida. Ninguém vem ao Pai senão por mim.", reference: "João 14:6" },
-    { text: "E sabemos que todas as coisas contribuem juntamente para o bem daqueles que amam a Deus.", reference: "Romanos 8:28" },
-    { text: "Lançando sobre ele toda a vossa ansiedade, porque ele tem cuidado de vós.", reference: "1 Pedro 5:7" },
-    { text: "Buscai primeiro o Reino de Deus, e a sua justiça, e todas essas coisas vos serão acrescentadas.", reference: "Mateus 6:33" },
-    { text: "Porque onde estiver o vosso tesouro, aí estará também o vosso coração.", reference: "Mateus 6:21" },
-    { text: "Alegrai-vos sempre no Senhor; outra vez digo, alegrai-vos.", reference: "Filipenses 4:4" },
-    { text: "Não temas, porque eu sou contigo; não te assombres, porque eu sou o teu Deus.", reference: "Isaías 41:10" },
-    { text: "O amor é paciente, o amor é bondoso. Não inveja, não se vangloria, não se orgulha.", reference: "1 Coríntios 13:4" },
-    { text: "Porque pela graça sois salvos, por meio da fé; e isto não vem de vós, é dom de Deus.", reference: "Efésios 2:8" },
-    { text: "Se confessarmos os nossos pecados, ele é fiel e justo para nos perdoar.", reference: "1 João 1:9" },
-    { text: "Vinde a mim, todos os que estais cansados e oprimidos, e eu vos aliviarei.", reference: "Mateus 11:28" },
-    { text: "Porque eu sei os pensamentos que tenho a vosso respeito, diz o Senhor; pensamentos de paz.", reference: "Jeremias 29:11" },
-    { text: "O Senhor pelejar por vós; vós vos calareis.", reference: "Êxodo 14:14" },
-    { text: "Tudo tem o seu tempo determinado, e há tempo para todo o propósito debaixo do céu.", reference: "Eclesiastes 3:1" },
-    { text: "Mas os que esperam no Senhor renovarão as suas forças.", reference: "Isaías 40:31" },
-    { text: "Porque nele vivemos, e nos movemos, e existimos.", reference: "Atos 17:28" },
-    { text: "O Senhor é bom, uma fortaleza no dia da angústia.", reference: "Naum 1:7" },
-    { text: "Entrega o teu caminho ao Senhor; confia nele, e ele o fará.", reference: "Salmos 37:5" },
-    { text: "A palavra de Deus é viva e eficaz, e mais penetrante do que espada alguma.", reference: "Hebreus 4:12" },
-    { text: "Porque onde estiverem dois ou três reunidos em meu nome, aí estou eu no meio deles.", reference: "Mateus 18:20" },
-    { text: "Sede fortes e corajosos; não temais nem vos espanteis.", reference: "Josué 1:9" },
-    { text: "O Senhor é a minha luz e a minha salvação; a quem temerei?", reference: "Salmos 27:1" },
-    { text: "Aquietai-vos e sabei que eu sou Deus.", reference: "Salmos 46:10" },
-    { text: "Porque o Senhor, vosso Deus, é o que vai convosco.", reference: "Deuteronômio 31:6" },
-    { text: "Em tudo dai graças, porque esta é a vontade de Deus.", reference: "1 Tessalonicenses 5:18" },
-    { text: "O Senhor abençoe-te e te guarde.", reference: "Números 6:24" },
-    { text: "Porque grande é o Senhor, e muito digno de louvor.", reference: "Salmos 96:4" },
+    { 
+        text: "Porque Deus amou o mundo de tal maneira que deu o seu Filho unigênito, para que todo aquele que nele crê não pereça, mas tenha a vida eterna.", 
+        reference: "João 3:16" 
+    },
+    { 
+        text: "O Senhor é o meu pastor; nada me faltará.", 
+        reference: "Salmos 23:1" 
+    },
+    { 
+        text: "Posso todas as coisas naquele que me fortalece.", 
+        reference: "Filipenses 4:13" 
+    },
+    { 
+        text: "Confia no Senhor de todo o teu coração e não te estribes no teu próprio entendimento.", 
+        reference: "Provérbios 3:5" 
+    },
+    { 
+        text: "Eu sou o caminho, e a verdade, e a vida. Ninguém vem ao Pai senão por mim.", 
+        reference: "João 14:6" 
+    },
+    { 
+        text: "Eu sou a ressurreição e a vida; quem crê em mim, ainda que morra, viverá.", 
+        reference: "João 11:25" 
+    },
+    { 
+        text: "Entrega o teu caminho ao Senhor; confia nele, e ele o fará.", 
+        reference: "Salmos 37:5" 
+    }
+];
+
+// NOVO CÓDIGO COM VERIFICAÇÃO SEGURA
+let currentVerseIndex = 0;
+
+function updateVerse(index) {
+    if (index < 0) index = dailyVerses.length - 1;
+    if (index >= dailyVerses.length) index = 0;
     
-    // Fevereiro (28 dias)
-    { text: "Novo sou eu, eis que faço novas todas as coisas.", reference: "Apocalipse 21:5" },
-    { text: "O amor nunca falha.", reference: "1 Coríntios 13:8" },
-    { text: "Deus é amor.", reference: "1 João 4:8" },
-    { text: "Nisto todos conhecerão que sois meus discípulos: se vos amardes uns aos outros.", reference: "João 13:35" },
-    { text: "Amai-vos uns aos outros, como eu vos amei.", reference: "João 15:12" },
-    { text: "Não há maior amor do que este: de dar alguém a sua vida pelos seus amigos.", reference: "João 15:13" },
-    { text: "Porque Deus não nos deu o espírito de temor, mas de fortaleza, e de amor.", reference: "2 Timóteo 1:7" },
-    { text: "Sede uns para com os outros benignos, misericordiosos.", reference: "Efésios 4:32" },
-    { text: "Levai as cargas uns dos outros e assim cumprireis a lei de Cristo.", reference: "Gálatas 6:2" },
-    { text: "Sobre tudo isto, vesti-vos de amor, que é o vínculo da perfeição.", reference: "Colossenses 3:14" },
-    { text: "Amados, amemo-nos uns aos outros; porque o amor é de Deus.", reference: "1 João 4:7" },
-    { text: "Nós o amamos a ele porque ele nos amou primeiro.", reference: "1 João 4:19" },
-    { text: "Quem não ama não conhece a Deus; porque Deus é amor.", reference: "1 João 4:8" },
-    { text: "E conhecemos, e cremos no amor que Deus nos tem.", reference: "1 João 4:16" },
-    { text: "No amor não há temor, antes o perfeito amor lança fora o temor.", reference: "1 João 4:18" },
-    { text: "Porque o amor de Cristo nos constrange.", reference: "2 Coríntios 5:14" },
-    { text: "Nada poderá nos separar do amor de Deus, que está em Cristo Jesus.", reference: "Romanos 8:39" },
-    { text: "Mas Deus prova o seu amor para conosco, em que Cristo morreu por nós.", reference: "Romanos 5:8" },
-    { text: "Porque o amor de Deus está derramado em nossos corações.", reference: "Romanos 5:5" },
-    { text: "Quem ama a Deus, ama também a seu irmão.", reference: "1 João 4:21" },
-    { text: "O amor é o cumprimento da lei.", reference: "Romanos 13:10" },
-    { text: "Segui o amor, e procurai com zelo os dons espirituais.", reference: "1 Coríntios 14:1" },
-    { text: "E eu vos dou um novo mandamento: Que vos ameis uns aos outros.", reference: "João 13:34" },
-    { text: "Maior amor não há do que este: de dar alguém a vida pelos seus amigos.", reference: "João 15:13" },
-    { text: "Porque o amor cobre multidão de pecados.", reference: "1 Pedro 4:8" },
-    { text: "E a esperança não traz confusão, porque o amor de Deus está derramado.", reference: "Romanos 5:5" },
-    { text: "Aquele que ama a seu irmão está na luz.", reference: "1 João 2:10" },
-    { text: "Filhinhos, não amemos de palavra, nem de língua, mas por obra e em verdade.", reference: "1 João 3:18" },
+    currentVerseIndex = index;
+    const selectedVerse = dailyVerses[currentVerseIndex];
+    
+    // VERIFICAR SE ELEMENTOS EXISTEM
+    const verseText = document.getElementById('daily-verse-text');
+    const verseRef = document.getElementById('daily-verse-reference');
+    const verseCounter = document.getElementById('verse-counter');
+    
+    if (verseText) verseText.textContent = selectedVerse.text;
+    if (verseRef) verseRef.textContent = selectedVerse.reference;
+    if (verseCounter) verseCounter.textContent = `Versículo ${currentVerseIndex + 1} de ${dailyVerses.length}`;
+}
 
-    // Março (31 dias)
-    { text: "Eis que estou à porta e bato; se alguém ouvir a minha voz e abrir a porta, entrarei.", reference: "Apocalipse 3:20" },
-    { text: "Porque eu vivo, e vós vivereis.", reference: "João 14:19" },
-    { text: "Eu sou a ressurreição e a vida; quem crê em mim, ainda que morra, viverá.", reference: "João 11:25" },
-    { text: "Bem-aventurados os que têm fome e sede de justiça, porque eles serão fartos.", reference: "Mateus 5:6" },
-    { text: "Bem-aventurados os misericordiosos, porque eles alcançarão misericórdia.", reference: "Mateus 5:7" },
-    { text: "Bem-aventurados os limpos de coração, porque eles verão a Deus.", reference: "Mateus 5:8" },
-    { text: "Bem-aventurados os pacificadores, porque eles serão chamados filhos de Deus.", reference: "Mateus 5:9" },
-    { text: "Bem-aventurados os que sofrem perseguição por causa da justiça.", reference: "Mateus 5:10" },
-    { text: "Vós sois a luz do mundo; não se pode esconder uma cidade edificada sobre um monte.", reference: "Mateus 5:14" },
-    { text: "Assim resplandeça a vossa luz diante dos homens.", reference: "Mateus 5:16" },
-    { text: "Não ajunteis tesouros na terra, onde a traça e a ferrugem tudo consomem.", reference: "Mateus 6:19" },
-    { text: "Mas ajuntai tesouros no céu, onde nem a traça nem a ferrugem consomem.", reference: "Mateus 6:20" },
-    { text: "Ninguém pode servir a dois senhores.", reference: "Mateus 6:24" },
-    { text: "Portanto, não vos inquieteis pelo dia de amanhã.", reference: "Mateus 6:34" },
-    { text: "Pedi, e dar-se-vos-á; buscai, e encontrareis; batei, e abrir-se-vos-á.", reference: "Mateus 7:7" },
-    { text: "Porque qualquer que pede, recebe; e quem busca, encontra.", reference: "Mateus 7:8" },
-    { text: "Portanto, tudo o que vós quereis que os homens vos façam, fazei-lho também vós.", reference: "Mateus 7:12" },
-    { text: "Entrai pela porta estreita; porque larga é a porta, e espaçoso o caminho que conduz à perdição.", reference: "Mateus 7:13" },
-    { text: "E estreita é a porta, e apertado o caminho que leva à vida.", reference: "Mateus 7:14" },
-    { text: "Pelos seus frutos os conhecereis.", reference: "Mateus 7:16" },
-    { text: "Toda árvore boa produz bons frutos.", reference: "Mateus 7:17" },
-    { text: "Nem todo o que me diz: Senhor, Senhor! entrará no reino dos céus.", reference: "Mateus 7:21" },
-    { text: "Todo aquele, pois, que escuta estas minhas palavras, e as pratica.", reference: "Mateus 7:24" },
-    { text: "E eis que eu estou convosco todos os dias, até a consumação dos séculos.", reference: "Mateus 28:20" },
-    { text: "O ladrão não vem senão a roubar, a matar, e a destruir; eu vim para que tenham vida.", reference: "João 10:10" },
-    { text: "Eu sou o bom Pastor; o bom Pastor dá a sua vida pelas ovelhas.", reference: "João 10:11" },
-    { text: "As minhas ovelhas ouvem a minha voz, e eu conheço-as, e elas me seguem.", reference: "João 10:27" },
-    { text: "E dou-lhes a vida eterna, e nunca hão de perecer.", reference: "João 10:28" },
-    { text: "Eu e o Pai somos um.", reference: "João 10:30" },
-    { text: "Jesus chorou.", reference: "João 11:35" },
-    { text: "Disse-lhe Jesus: Eu sou a ressurreição e a vida.", reference: "João 11:25" },
+function previousVerse() {
+    updateVerse(currentVerseIndex - 1);
+}
 
-    // Abril (30 dias)
-    { text: "Na verdade, na verdade vos digo que aquele que crê em mim também fará as obras que eu faço.", reference: "João 14:12" },
-    { text: "E tudo quanto pedirdes em meu nome eu o farei.", reference: "João 14:13" },
-    { text: "Se me amais, guardai os meus mandamentos.", reference: "João 14:15" },
-    { text: "E eu rogarei ao Pai, e ele vos dará outro Consolador.", reference: "João 14:16" },
-    { text: "Não vos deixarei órfãos; voltarei para vós.", reference: "João 14:18" },
-    { text: "A paz vos deixo, a minha paz vos dou.", reference: "João 14:27" },
-    { text: "Não se turbe o vosso coração, nem se atemorize.", reference: "João 14:27" },
-    { text: "Eu sou a videira verdadeira, e meu Pai é o lavrador.", reference: "João 15:1" },
-    { text: "Permanecei em mim, e eu em vós.", reference: "João 15:4" },
-    { text: "Quem permanece em mim, e eu nele, esse dá muito fruto.", reference: "João 15:5" },
-    { text: "Sem mim nada podeis fazer.", reference: "João 15:5" },
-    { text: "Se permanecerdes em mim, e as minhas palavras permanecerem em vós.", reference: "João 15:7" },
-    { text: "Nisto é glorificado meu Pai: que deis muito fruto.", reference: "João 15:8" },
-    { text: "Como o Pai me amou, também eu vos amei; permanecei no meu amor.", reference: "João 15:9" },
-    { text: "Estas coisas vos tenho dito, para que o meu gozo permaneça em vós.", reference: "João 15:11" },
-    { text: "E o vosso gozo seja completo.", reference: "João 15:11" },
-    { text: "Vós sereis meus amigos, se fizerdes o que eu vos mando.", reference: "João 15:14" },
-    { text: "Já vos não chamarei servos, porque o servo não sabe o que faz o seu senhor.", reference: "João 15:15" },
-    { text: "Mas tenho-vos chamado amigos.", reference: "João 15:15" },
-    { text: "Não me escolhestes vós a mim, mas eu vos escolhi a vós.", reference: "João 15:16" },
-    { text: "E vos nomeei, para que vades e deis fruto.", reference: "João 15:16" },
-    { text: "E o vosso fruto permaneça.", reference: "João 15:16" },
-    { text: "Se o mundo vos odeia, sabei que, primeiro do que a vós, me odiou a mim.", reference: "João 15:18" },
-    { text: "Se fôsseis do mundo, o mundo amaria o que era seu.", reference: "João 15:19" },
-    { text: "Mas porque não sois do mundo, antes eu vos escolhi do mundo.", reference: "João 15:19" },
-    { text: "Lembrai-vos da palavra que vos disse: Não é o servo maior do que o seu senhor.", reference: "João 15:20" },
-    { text: "Mas quando vier o Consolador, que eu da parte do Pai vos hei de enviar.", reference: "João 15:26" },
-    { text: "Ele testificará de mim.", reference: "João 15:26" },
-    { text: "E vós também testificareis, pois estivestes comigo desde o princípio.", reference: "João 15:27" },
-    { text: "Tenho-vos dito isto, para que não vos escandalizeis.", reference: "João 16:1" },
+function nextVerse() {
+    updateVerse(currentVerseIndex + 1);
+}
 
-    // Maio (31 dias)
-    { text: "Mas quando vier aquele Espírito de verdade, ele vos guiará em toda a verdade.", reference: "João 16:13" },
-    { text: "Um pouco, e já não me vereis; e outra vez um pouco, e ver-me-eis.", reference: "João 16:16" },
-    { text: "A vossa tristeza se convertará em gozo.", reference: "João 16:20" },
-    { text: "Vós, pois, agora, na verdade, tendes tristeza; mas outra vez vos verei.", reference: "João 16:22" },
-    { text: "E o vosso coração se alegrará, e a vossa alegria ninguém vo-la tirará.", reference: "João 16:22" },
-    { text: "E naquele dia nada me perguntareis.", reference: "João 16:23" },
-    { text: "Na verdade, na verdade vos digo que tudo quanto pedirdes ao Pai, em meu nome, ele vo-lo há de dar.", reference: "João 16:23" },
-    { text: "Até agora nada pedistes em meu nome; pedi, e recebereis.", reference: "João 16:24" },
-    { text: "Para que o vosso gozo se cumpra.", reference: "João 16:24" },
-    { text: "Tenho-vos dito isto em alegorias; chega, porém, a hora em que vos não falarei mais em alegorias.", reference: "João 16:25" },
-    { text: "Mas abertamente vos falarei acerca do Pai.", reference: "João 16:25" },
-    { text: "Naquele dia pedireis em meu nome.", reference: "João 16:26" },
-    { text: "Porque o mesmo Pai vos ama; visto como vós me amastes.", reference: "João 16:27" },
-    { text: "Saí do Pai, e vim ao mundo; outra vez deixo o mundo, e vou para o Pai.", reference: "João 16:28" },
-    { text: "Agora conhecemos que sabes tudo.", reference: "João 16:30" },
-    { text: "Respondeu-lhes Jesus: Agora credes?", reference: "João 16:31" },
-    { text: "Eis que chega a hora, e já chegou, em que vos haveis de dispersar.", reference: "João 16:32" },
-    { text: "E me deixareis só; mas não estou só, porque o Pai está comigo.", reference: "João 16:32" },
-    { text: "Tenho-vos dito isto, para que em mim tenhais paz.", reference: "João 16:33" },
-    { text: "No mundo tereis aflições, mas tende bom ânimo, eu venci o mundo.", reference: "João 16:33" },
-    { text: "E a vida eterna é esta: que te conheçam, a ti só, por único Deus verdadeiro.", reference: "João 17:3" },
-    { text: "E a Jesus Cristo, a quem enviaste.", reference: "João 17:3" },
-    { text: "Eu glorifiquei-te na terra, tendo consumado a obra que me deste a fazer.", reference: "João 17:4" },
-    { text: "E agora glorifica-me tu, ó Pai, junto de ti mesmo.", reference: "João 17:5" },
-    { text: "Manifestei o teu nome aos homens que do mundo me deste.", reference: "João 17:6" },
-    { text: "Teus eram, e tu mos deste, e guardaram a tua palavra.", reference: "João 17:6" },
-    { text: "Agora já têm conhecido que tudo quanto me deste provém de ti.", reference: "João 17:7" },
-    { text: "Porque lhes dei as palavras que tu me deste.", reference: "João 17:8" },
-    { text: "E eles as receberam, e têm verdadeiramente conhecido que saí de ti.", reference: "João 17:8" },
-    { text: "E creram que me enviaste.", reference: "João 17:8" },
-    { text: "Eu rogo por eles; não rogo pelo mundo, mas por aqueles que me deste.", reference: "João 17:9" },
+function updateDailyVerse() {
+    const today = new Date();
+    const dayOfYear = Math.floor((today - new Date(today.getFullYear(), 0, 0)) / 86400000);
+    const verseIndex = dayOfYear % dailyVerses.length;
+    
+    updateVerse(verseIndex);
+    
+    // Atualizar data APENAS se elemento existir
+    const dateElement = document.getElementById('current-date');
+    if (dateElement) {
+        const options = { 
+            weekday: 'long', 
+            year: 'numeric', 
+            month: 'long', 
+            day: 'numeric' 
+        };
+        dateElement.textContent = today.toLocaleDateString('pt-BR', options);
+    }
+}
 
-    // Junho (30 dias)
-    { text: "E todas as minhas coisas são tuas, e as tuas coisas são minhas.", reference: "João 17:10" },
-    { text: "E neles sou glorificado.", reference: "João 17:10" },
-    { text: "E já não estou mais no mundo, mas eles estão no mundo.", reference: "João 17:11" },
-    { text: "Pai santo, guarda em teu nome aqueles que me deste.", reference: "João 17:11" },
-    { text: "Para que sejam um, assim como nós.", reference: "João 17:11" },
-    { text: "Estando eu com eles no mundo, guardava-os em teu nome.", reference: "João 17:12" },
-    { text: "Mas agora vou para ti, e digo isto no mundo.", reference: "João 17:13" },
-    { text: "Para que tenham a minha alegria completa em si mesmos.", reference: "João 17:13" },
-    { text: "Dei-lhes a tua palavra, e o mundo os odiou.", reference: "João 17:14" },
-    { text: "Porque não são do mundo, assim como eu não sou do mundo.", reference: "João 17:14" },
-    { text: "Não peço que os tires do mundo, mas que os livres do mal.", reference: "João 17:15" },
-    { text: "Não são do mundo, como eu do mundo não sou.", reference: "João 17:16" },
-    { text: "Santifica-os na tua verdade; a tua palavra é a verdade.", reference: "João 17:17" },
-    { text: "Assim como tu me enviaste ao mundo, também eu os enviei ao mundo.", reference: "João 17:18" },
-    { text: "E por eles me santifico a mim mesmo.", reference: "João 17:19" },
-    { text: "Para que também eles sejam santificados na verdade.", reference: "João 17:19" },
-    { text: "E não rogo somente por estes, mas também por aqueles que pela sua palavra hão de crer em mim.", reference: "João 17:20" },
-    { text: "Para que todos sejam um, como tu, ó Pai, o és em mim, e eu em ti.", reference: "João 17:21" },
-    { text: "Para que também eles sejam um em nós.", reference: "João 17:21" },
-    { text: "Para que o mundo creia que tu me enviaste.", reference: "João 17:21" },
-    { text: "E eu dei-lhes a glória que a mim me deste.", reference: "João 17:22" },
-    { text: "Para que sejam um, como nós somos um.", reference: "João 17:22" },
-    { text: "Eu neles, e tu em mim, para que eles sejam perfeitos em unidade.", reference: "João 17:23" },
-    { text: "E para que o mundo conheça que tu me enviaste a mim.", reference: "João 17:23" },
-    { text: "E que os tens amado a eles como me tens amado a mim.", reference: "João 17:23" },
-    { text: "Pai, aqueles que me deste quero que, onde eu estiver, também eles estejam comigo.", reference: "João 17:24" },
-    { text: "Para que vejam a minha glória que me deste.", reference: "João 17:24" },
-    { text: "Porque tu me tens amado antes da fundação do mundo.", reference: "João 17:24" },
-    { text: "Pai justo, o mundo não te conheceu; mas eu te conheci.", reference: "João 17:25" },
-    { text: "E estes conheceram que tu me enviaste.", reference: "João 17:25" },
+document.addEventListener('DOMContentLoaded', function() {
+    updateDailyVerse();
+    
+    // VERIFICAR SE BOTÕES EXISTEM
+    const prevBtn = document.getElementById('prev-verse-btn');
+    const nextBtn = document.getElementById('next-verse-btn');
+    
+    if (prevBtn) prevBtn.addEventListener('click', previousVerse);
+    if (nextBtn) nextBtn.addEventListener('click', nextVerse);
+    
+    // Gallery Filter - VERIFICAR SE EXISTEM
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const galleryItems = document.querySelectorAll('.gallery-item');
 
-    // Julho (31 dias)
-    { text: "E eu lhes fiz conhecer o teu nome, e lho farei conhecer mais.", reference: "João 17:26" },
-    { text: "Para que o amor com que me tens amado esteja neles, e eu neles esteja.", reference: "João 17:26" },
-    { text: "E, chegando a hora sexta, houve trevas sobre toda a terra até à hora nona.", reference: "Marcos 15:33" },
-    { text: "E à hora nona Jesus clamou com grande voz, dizendo: Eloí, Eloí, lamá sabactâni?", reference: "Marcos 15:34" },
-    { text: "Que, traduzido, é: Deus meu, Deus meu, por que me desamparaste?", reference: "Marcos 15:34" },
-    { text: "E Jesus, clamando outra vez com grande voz, rendeu o espírito.", reference: "Mateus 27:50" },
-    { text: "E eis que o véu do templo se rasgou em dois, de alto a baixo.", reference: "Mateus 27:51" },
-    { text: "E a terra tremeu, e as pedras se fenderam.", reference: "Mateus 27:51" },
-    { text: "E abriram-se os sepulcros, e muitos corpos de santos que dormiam foram ressuscitados.", reference: "Mateus 27:52" },
-    { text: "E, saindo dos sepulcros, depois da ressurreição dele, entraram na cidade santa.", reference: "Mateus 27:53" },
-    { text: "E apareceram a muitos.", reference: "Mateus 27:53" },
-    { text: "E o centurião, e os que com ele guardavam a Jesus, vendo o terremoto.", reference: "Mateus 27:54" },
-    { text: "E as coisas que haviam sucedido, tiveram grande temor, e disseram: Verdadeiramente este era Filho de Deus.", reference: "Mateus 27:54" },
-    { text: "E no fim do sábado, quando já despontava o primeiro dia da semana.", reference: "Mateus 28:1" },
-    { text: "Maria Madalena e a outra Maria foram ver o sepulcro.", reference: "Mateus 28:1" },
-    { text: "E eis que houvera um grande terremoto, porque um anjo do Senhor, descendo do céu.", reference: "Mateus 28:2" },
-    { text: "E chegando, removera a pedra da porta, e estava assentado sobre ela.", reference: "Mateus 28:2" },
-    { text: "E o seu aspecto era como um relâmpago, e a sua veste branca como a neve.", reference: "Mateus 28:3" },
-    { text: "E os guardas tremeram espantados, e ficaram como mortos.", reference: "Mateus 28:4" },
-    { text: "Mas o anjo, respondendo, disse às mulheres: Não temais vós.", reference: "Mateus 28:5" },
-    { text: "Pois eu sei que buscais a Jesus, que foi crucificado.", reference: "Mateus 28:5" },
-    { text: "Não está aqui, porque já ressuscitou, como havia dito.", reference: "Mateus 28:6" },
-    { text: "Vinde, vede o lugar onde o Senhor jazia.", reference: "Mateus 28:6" },
-    { text: "E ide depressa, e dizei aos seus discípulos que já ressuscitou dentre os mortos.", reference: "Mateus 28:7" },
-    { text: "E eis que ele vai adiante de vós para a Galiléia; ali o vereis.", reference: "Mateus 28:7" },
-    { text: "Eis que eu vo-lo tenho dito.", reference: "Mateus 28:7" },
-    { text: "E, saindo elas pressurosamente do sepulcro, com temor e grande gozo.", reference: "Mateus 28:8" },
-    { text: "Correram a anunciá-lo aos seus discípulos.", reference: "Mateus 28:8" },
-    { text: "E, indo elas a dar as novas aos discípulos, eis que Jesus lhes sai ao encontro.", reference: "Mateus 28:9" },
-    { text: "Dizendo: Eu vos saúdo. E elas, chegando, abraçaram os seus pés, e o adoraram.", reference: "Mateus 28:9" },
-    { text: "Então Jesus disse-lhes: Não temais; ide dizer a meus irmãos que vão à Galiléia.", reference: "Mateus 28:10" },
+    if (filterBtns.length > 0) {
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                filterBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
 
-    // Agosto (31 dias)
-    { text: "E ali me verão.", reference: "Mateus 28:10" },
-    { text: "E os onze discípulos partiram para a Galiléia, para o monte que Jesus lhes tinha designado.", reference: "Mateus 28:16" },
-    { text: "E, quando o viram, o adoraram; mas alguns duvidaram.", reference: "Mateus 28:17" },
-    { text: "E, chegando-se Jesus, falou-lhes, dizendo: É-me dado todo o poder no céu e na terra.", reference: "Mateus 28:18" },
-    { text: "Portanto ide, fazei discípulos de todas as nações.", reference: "Mateus 28:19" },
-    { text: "Batizando-os em nome do Pai, e do Filho, e do Espírito Santo.", reference: "Mateus 28:19" },
-    { text: "Ensinando-os a guardar todas as coisas que eu vos tenho mandado.", reference: "Mateus 28:20" },
-    { text: "E eis que eu estou convosco todos os dias, até a consumação dos séculos. Amém.", reference: "Mateus 28:20" },
-    { text: "Porque não me envergonho do evangelho de Cristo.", reference: "Romanos 1:16" },
-    { text: "Pois é o poder de Deus para salvação de todo aquele que crê.", reference: "Romanos 1:16" },
-    { text: "Primeiro do judeu, e também do grego.", reference: "Romanos 1:16" },
-    { text: "Porque nele se descobre a justiça de Deus de fé em fé.", reference: "Romanos 1:17" },
-    { text: "Como está escrito: Mas o justo viverá da fé.", reference: "Romanos 1:17" },
-    { text: "Porque do céu se manifesta a ira de Deus sobre toda a impiedade.", reference: "Romanos 1:18" },
-    { text: "E injustiça dos homens que detêm a verdade em injustiça.", reference: "Romanos 1:18" },
-    { text: "Porquanto o que de Deus se pode conhecer neles se manifesta.", reference: "Romanos 1:19" },
-    { text: "Porque Deus lho manifestou.", reference: "Romanos 1:19" },
-    { text: "Porque as suas coisas invisíveis, desde a criação do mundo.", reference: "Romanos 1:20" },
-    { text: "Tanto o seu eterno poder, como a sua divindade, se entendem.", reference: "Romanos 1:20" },
-    { text: "E se veem pelas coisas que estão criadas.", reference: "Romanos 1:20" },
-    { text: "Para que eles fiquem inescusáveis.", reference: "Romanos 1:20" },
-    { text: "Porquanto, tendo conhecido a Deus, não o glorificaram como Deus.", reference: "Romanos 1:21" },
-    { text: "Nem lhe deram graças, antes em seus discursos se desvaneceram.", reference: "Romanos 1:21" },
-    { text: "E o seu coração insensato se obscureceu.", reference: "Romanos 1:21" },
-    { text: "Dizendo-se sábios, tornaram-se loucos.", reference: "Romanos 1:22" },
-    { text: "E mudaram a glória do Deus incorruptível em semelhança da imagem do homem corruptível.", reference: "Romanos 1:23" },
-    { text: "E de aves, e de quadrúpedes, e de répteis.", reference: "Romanos 1:23" },
-    { text: "Por isso também Deus os entregou às concupiscências de seus corações.", reference: "Romanos 1:24" },
-    { text: "À imundícia, para desonrarem seus corpos entre si.", reference: "Romanos 1:24" },
-    { text: "Pois mudaram a verdade de Deus em mentira.", reference: "Romanos 1:25" },
-    { text: "E honraram e serviram mais a criatura do que o Criador.", reference: "Romanos 1:25" },
+                const filter = btn.getAttribute('data-filter');
 
-    // Setembro (30 dias)
-    { text: "Que é bendito eternamente. Amém.", reference: "Romanos 1:25" },
-    { text: "Por isso Deus os abandonou às paixões infames.", reference: "Romanos 1:26" },
-    { text: "Porque até as suas mulheres mudaram o uso natural, no contrário à natureza.", reference: "Romanos 1:26" },
-    { text: "E, semelhantemente, também os homens, deixando o uso natural da mulher.", reference: "Romanos 1:27" },
-    { text: "Se inflamaram em sua sensualidade uns para com os outros.", reference: "Romanos 1:27" },
-    { text: "Homens com homens, cometendo torpeza e recebendo em si mesmos a recompensa que convinha ao seu erro.", reference: "Romanos 1:27" },
-    { text: "E, como eles não se importaram de ter conhecimento de Deus.", reference: "Romanos 1:28" },
-    { text: "Assim Deus os entregou a um sentimento perverso.", reference: "Romanos 1:28" },
-    { text: "Para fazerem coisas que não convêm.", reference: "Romanos 1:28" },
-    { text: "Estando cheios de toda a iniquidade, prostituição, malícia, avareza, maldade.", reference: "Romanos 1:29" },
-    { text: "Cheios de inveja, homicídio, contenda, engano, malignidade.", reference: "Romanos 1:29" },
-    { text: "Sendo murmuradores, detratores, aborrecedores de Deus, injuriadores, soberbos, presunçosos.", reference: "Romanos 1:30" },
-    { text: "Inventores de males, desobedientes aos pais.", reference: "Romanos 1:30" },
-    { text: "Néscios, infiéis nos contratos, sem afeição natural, irreconciliáveis, sem misericórdia.", reference: "Romanos 1:31" },
-    { text: "Os quais, conhecendo o juízo de Deus (que são dignos de morte os que tais coisas praticam).", reference: "Romanos 1:32" },
-    { text: "Não somente as fazem, mas também consentem aos que as fazem.", reference: "Romanos 1:32" },
-    { text: "Portanto, és inescusável quando julgas, ó homem, quem quer que sejas.", reference: "Romanos 2:1" },
-    { text: "Porque te condenas a ti mesmo naquilo em que julgas a outro.", reference: "Romanos 2:1" },
-    { text: "Pois tu, que julgas, fazes o mesmo.", reference: "Romanos 2:1" },
-    { text: "E bem sabemos que o juízo de Deus é segundo a verdade.", reference: "Romanos 2:2" },
-    { text: "Sobre os que tais coisas fazem.", reference: "Romanos 2:2" },
-    { text: "E tu, ó homem, que julgas os que fazem tais coisas, cuidas que, fazendo-as tu.", reference: "Romanos 2:3" },
-    { text: "Escaparás ao juízo de Deus?", reference: "Romanos 2:3" },
-    { text: "Ou desprezas tu as riquezas da sua benignidade, paciência e longanimidade.", reference: "Romanos 2:4" },
-    { text: "Ignorando que a benignidade de Deus te leva ao arrependimento?", reference: "Romanos 2:4" },
-    { text: "Mas, segundo a tua dureza e teu coração impenitente.", reference: "Romanos 2:5" },
-    { text: "Entesouras ira para ti no dia da ira e da manifestação do juízo de Deus.", reference: "Romanos 2:5" },
-    { text: "O qual recompensará cada um segundo as suas obras.", reference: "Romanos 2:6" },
-    { text: "A saber: A vida eterna aos que, com perseverança em fazer bem.", reference: "Romanos 2:7" },
-    { text: "Procuram glória, honra e incorrupção.", reference: "Romanos 2:7" },
+                galleryItems.forEach(item => {
+                    if (filter === 'all' || item.getAttribute('data-category') === filter) {
+                        item.style.display = 'block';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+            });
+        });
+    }
+    
+    // Navegação com teclado (setas)
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'ArrowLeft') previousVerse();
+        if (e.key === 'ArrowRight') nextVerse();
+    });
+});
 
-    // Outubro (31 dias)
-    { text: "Mas a indignação e a ira aos que são contenciosos.", reference: "Romanos 2:8" },
-    { text: "E desobedientes à verdade e obedientes à iniquidade.", reference: "Romanos 2:8" },
-    { text: "Tribulação e angústia sobre toda a alma do homem que faz o mal.", reference: "Romanos 2:9" },
-    { text: "Primeiramente do judeu e também do grego.", reference: "Romanos 2:9" },
-    { text: "Glória, porém, e honra e paz a qualquer que faz o bem.", reference: "Romanos 2:10" },
-    { text: "Primeiramente ao judeu e também ao grego.", reference: "Romanos 2:10" },
-    { text: "Porque, para com Deus, não há acepção de pessoas.", reference: "Romanos 2:11" },
-    { text: "Porque todos os que sem lei pecaram, também sem lei perecerão.", reference: "Romanos 2:12" },
-    { text: "E todos os que sob a lei pecaram, pela lei serão julgados.", reference: "Romanos 2:12" },
-    { text: "Porque os que ouvem a lei não são justos diante de Deus.", reference: "Romanos 2:13" },
-    { text: "Mas os que praticam a lei hão de ser justificados.", reference: "Romanos 2:13" },
-    { text: "Porque, quando os gentios, que não têm lei, fazem naturalmente as coisas que são da lei.", reference: "Romanos 2:14" },
-    { text: "Estes, que não têm lei, para si mesmos são lei.", reference: "Romanos 2:14" },
-    { text: "Os quais mostram a obra da lei escrita em seus corações.", reference: "Romanos 2:15" },
-    { text: "Testificando juntamente a sua consciência.", reference: "Romanos 2:15" },
-    { text: "E os seus pensamentos, que se acusam ou defendem uns aos outros.", reference: "Romanos 2:15" },
-    { text: "No dia em que Deus há de julgar os segredos dos homens por Jesus Cristo.", reference: "Romanos 2:16" },
-    { text: "Segundo o meu evangelho.", reference: "Romanos 2:16" },
-    { text: "Eis que tu tens por sobrenome judeu, e repousas na lei.", reference: "Romanos 2:17" },
-    { text: "E te glorias em Deus.", reference: "Romanos 2:17" },
-    { text: "E sabes a sua vontade e aprovas as coisas excelentes.", reference: "Romanos 2:18" },
-    { text: "Sendo instruído pela lei.", reference: "Romanos 2:18" },
-    { text: "E confias que és guia dos cegos, luz dos que estão em trevas.", reference: "Romanos 2:19" },
-    { text: "Instruidor dos néscios, mestre de crianças.", reference: "Romanos 2:20" },
-    { text: "Que tens na lei a forma da ciência e da verdade.", reference: "Romanos 2:20" },
-    { text: "Tu, pois, que ensinas a outro, não te ensinas a ti mesmo?", reference: "Romanos 2:21" },
-    { text: "Tu, que pregas que não se deve furtar, furtas?", reference: "Romanos 2:21" },
-    { text: "Tu, que dizes que não se deve adulterar, adulteras?", reference: "Romanos 2:22" },
-    { text: "Tu, que abominas os ídolos, cometes sacrilégio?", reference: "Romanos 2:22" },
-    { text: "Tu, que te glorias na lei, desonras a Deus pela transgressão da lei?", reference: "Romanos 2:23" },
-    { text: "Porque, como está escrito, o nome de Deus é blasfemado entre os gentios por causa de vós.", reference: "Romanos 2:24" },
+// Prayer Form - VERIFICAR SE EXISTE
+const prayerForm = document.querySelector('.prayer-form');
+if (prayerForm) {
+    prayerForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        const name = document.getElementById('name').value;
+        const email = document.getElementById('email').value;
+        const request = document.getElementById('prayer-request').value;
+        const confidential = document.getElementById('confidential').checked;
+        
+        const message = `🙏 PEDIDO DE ORAÇÃO\n\nNome: ${name}\nEmail: ${email || 'Não informado'}\nPedido: ${request}\nConfidencial: ${confidential ? 'Sim' : 'Não'}`;
+        
+        const whatsappUrl = `https://wa.me/5521987860391?text=${encodeURIComponent(message)}`;
+        window.open(whatsappUrl, '_blank');
+        
+        this.reset();
+        alert('Pedido enviado! Você será redirecionado para o WhatsApp.');
+    });
+}
 
-    // Novembro (30 dias)
-    { text: "Porque a circuncisão é, na verdade, proveitosa, se tu guardares a lei.", reference: "Romanos 2:25" },
-    { text: "Mas, se tu és transgressor da lei, a tua circuncisão se torna incircuncisão.", reference: "Romanos 2:25" },
-    { text: "Se, pois, a incircuncisão guardar os preceitos da lei.", reference: "Romanos 2:26" },
-    { text: "Porventura a incircuncisão não será reputada como circuncisão?", reference: "Romanos 2:26" },
-    { text: "E a incircuncisão que por natureza o é, se cumpre a lei.", reference: "Romanos 2:27" },
-    { text: "Te julgará a ti, que pela letra e circuncisão és transgressor da lei.", reference: "Romanos 2:27" },
-    { text: "Porque não é judeu o que o é exteriormente.", reference: "Romanos 2:28" },
-    { text: "Nem é circuncisão a que o é exteriormente na carne.", reference: "Romanos 2:28" },
-    { text: "Mas é judeu o que o é no interior.", reference: "Romanos 2:29" },
-    { text: "E circuncisão a que é do coração, no espírito, não na letra.", reference: "Romanos 2:29" },
-    { text: "Cujo louvor não provém dos homens, mas de Deus.", reference:
+// Smooth scrolling
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+            target.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+        }
+    });
+});
+
+// Mobile menu
+const mobileMenu = document.querySelector('.mobile-menu');
+const navLinks = document.querySelector('.nav-links');
+
+if (mobileMenu && navLinks) {
+    mobileMenu.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+    });
+}
+</script>
