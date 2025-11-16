@@ -840,15 +840,23 @@ section {
                 </div>
                 
                 <!-- Ministério Infantil -->
-                <div class="ministry-card">
+<div class="ministry-card">
     <i class="fas fa-child"></i>
     <h3>Ministério Infantil</h3>
-    <p>Dedicado ao cuidado, ensino e formação espiritual...</p>
+    <p>Dedicado ao cuidado, ensino e formação espiritual das crianças, proporcionando um ambiente seguro e acolhedor para que os pequenos cresçam no conhecimento de Jesus Cristo.</p>
+    
     <!-- Imagens do Ministério -->
     <div class="ministry-images">
         <img src="images/ministries/infantil/criancas-ebd.jpg" alt="Crianças na EBD" onerror="this.style.display='none';">
         <img src="images/ministries/infantil/atividade-01.jpg" alt="Atividade Infantil" onerror="this.style.display='none';">
     </div>
+    
+    <!-- INTEGRAÇÃO PEQUENOS DISCÍPULOS - COMPACTA -->
+<div class="pequenos-discipulos-compact">
+    <p class="site-title">Site Pequenos Discípulos</p>
+    <a href="https://pequenos-discipulos-site.vercel.app/"  class="btn-compact">
+        �� Visitar Site Completo
+    </a>
 </div>
     </section>
                 
@@ -1681,7 +1689,113 @@ footer {
     color: #6b7280;
     font-size: 0.9rem;
 }
-</style>
+/* INTEGRAÇÃO PEQUENOS DISCÍPULOS - COMPACTA */
+.pequenos-discipulos-compact {
+    margin-top: 1rem !important;
+    margin-bottom: 0.5rem !important;
+    padding: 1rem !important;
+    background: linear-gradient(135deg, #f8fafc, #e2e8f0) !important;
+    border-radius: 8px !important;
+    border: 1px solid var(--primary-color) !important;
+    text-align: center !important;
+}
+
+.pequenos-discipulos-compact .site-title {
+    color: var(--primary-color) !important;
+    font-size: 1rem !important;
+    font-weight: 600 !important;
+    margin: 0 0 0.8rem 0 !important;
+}
+
+.pequenos-discipulos-compact .btn-compact {
+    background: linear-gradient(135deg, var(--primary-color), #2563eb) !important;
+    color: white !important;
+    padding: 8px 16px !important;
+    font-size: 0.9rem !important;
+    font-weight: 600 !important;
+    border-radius: 6px !important;
+    text-decoration: none !important;
+    display: inline-block !important;
+    transition: all 0.3s ease !important;
+    box-shadow: 0 2px 8px rgba(30, 58, 138, 0.3) !important;
+}
+
+.pequenos-discipulos-compact .btn-compact:hover {
+    background: linear-gradient(135deg, var(--secondary-color), #f59e0b) !important;
+    color: var(--primary-color) !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 4px 12px rgba(251, 191, 36, 0.4) !important;
+}
+/* REDUÇÃO COM MARGENS NEGATIVAS - CORRIGIDO */
+.ministry-card {
+    margin-bottom: 1rem !important;
+}
+
+/* MARGEM NEGATIVA para Louvor */
+.ministry-card:nth-child(2) {
+    margin-bottom: -2.0rem !important; /* TESTE EXTREMO */
+}
+
+/* MARGEM NEGATIVA para Infantil */
+.ministry-card:has(.pequenos-discipulos-compact) {
+    margin-top: -0.3rem !important; /* NEGATIVO mais suave */
+    margin-bottom: 0rem !important;
+}
+
+/* ESPAÇO NEGATIVO ENTRE TEXTO E INTEGRAÇÃO */
+.pequenos-discipulos-compact {
+    margin-top: -0.3rem !important; /* NEGATIVO - cola no texto explicativo */
+    margin-bottom: 0rem !important;
+    padding: 0.5rem !important; /* Padding maior para dar espaço interno */
+    background: linear-gradient(135deg, #f8fafc, #e2e8f0) !important;
+    border-radius: 6px !important;
+    border: 1px solid var(--primary-color) !important;
+    text-align: center !important;
+}
+
+/* FONTE ORIGINAL - SEM MARGEM NEGATIVA NA FRASE */
+.pequenos-discipulos-compact .site-title {
+    color: var(--primary-color) !important;
+    font-size: 1rem !important; /* FONTE ORIGINAL MANTIDA */
+    font-weight: 600 !important;
+    margin: 0 0 0.3rem 0 !important; /* ESPAÇO POSITIVO para separar do botão */
+    line-height: 1.2 !important;
+}
+
+/* FONTE ORIGINAL DO BOTÃO - SEM MARGEM NEGATIVA */
+.pequenos-discipulos-compact .btn-compact {
+    background: linear-gradient(135deg, var(--primary-color), #2563eb) !important;
+    color: white !important;
+    padding: 8px 16px !important; /* PADDING ORIGINAL MANTIDO */
+    font-size: 0.9rem !important; /* FONTE ORIGINAL MANTIDA */
+    font-weight: 600 !important;
+    border-radius: 6px !important;
+    text-decoration: none !important;
+    display: inline-block !important;
+    transition: all 0.3s ease !important;
+    box-shadow: 0 2px 8px rgba(30, 58, 138, 0.3) !important;
+    margin-top: 0rem !important; /* ZERO - sem negativo */
+}
+
+.pequenos-discipulos-compact .btn-compact:hover {
+    background: linear-gradient(135deg, var(--secondary-color), #f59e0b) !important;
+    color: var(--primary-color) !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 4px 12px rgba(251, 191, 36, 0.4) !important;
+}
+
+/* ESPAÇO NEGATIVO APENAS NO TEXTO EXPLICATIVO */
+.ministry-card p {
+    margin-bottom: -0.1rem !important; /* NEGATIVO suave - aproxima da integração */
+}
+
+.ministry-card h3 {
+    margin-bottom: 0.3rem !important;
+}
+
+.ministry-images {
+    margin: 0.2rem 0 !important;
+}
 
     <!-- JavaScript -->
    <script>
