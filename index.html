@@ -64,6 +64,17 @@ section { padding: 4rem 0; }
 .schedule-card { background: white; padding: 2rem; border-radius: 15px; box-shadow: 0 5px 20px rgba(0,0,0,0.1); text-align: center; border-top: 4px solid var(--primary-color); }
 .schedule-card i { font-size: 3rem; color: var(--secondary-color); margin-bottom: 1rem; }
 .schedule-card h3 { font-family: 'Montserrat', sans-serif; margin-bottom: 1rem; color: var(--primary-color); }
+.ebd-info { margin-top: 1.5rem; padding-top: 1.5rem; border-top: 2px solid #e2e8f0; text-align: left; }
+.ebd-info h4 { font-family: 'Montserrat', sans-serif; color: var(--primary-color); font-size: 1rem; margin-bottom: 1rem; text-align: center; text-transform: uppercase; letter-spacing: 0.05em; }
+.ebd-info-item { display: flex; align-items: flex-start; gap: 0.6rem; margin-bottom: 0.75rem; font-size: 0.92rem; color: var(--text-dark); }
+.ebd-info-item i { color: var(--secondary-color); font-size: 1rem; min-width: 18px; margin-top: 2px; }
+.ebd-info-item strong { color: var(--primary-color); }
+.ebd-classes { margin-top: 1rem; }
+.ebd-classes h5 { font-family: 'Montserrat', sans-serif; font-size: 0.85rem; color: var(--text-light); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.6rem; }
+.ebd-class-list { list-style: none; padding: 0; }
+.ebd-class-list li { display: flex; align-items: center; gap: 0.5rem; font-size: 0.9rem; padding: 0.35rem 0; border-bottom: 1px solid #f3f4f6; color: var(--text-dark); }
+.ebd-class-list li:last-child { border-bottom: none; }
+.ebd-class-list li i { color: var(--primary-color); font-size: 0.8rem; }
 .ministries { background: var(--background-light); }
 .ministries-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 2rem; }
 .ministry-card { background: white; border-radius: 15px; box-shadow: 0 5px 20px rgba(0,0,0,0.1); transition: transform 0.3s; padding: 2rem; }
@@ -210,7 +221,7 @@ footer { background: var(--primary-color); color: white; padding: 3rem 0 1rem; }
                     <h3>Nossa Visão</h3>
                     <p>Ser uma igreja que impacta vidas, famílias e a sociedade, levando esperança e transformação através da Palavra de Deus.</p>
                 </div>
-                
+
                                                        </div>
                     <div class="history-item">
                         <div class="history-image">
@@ -240,6 +251,32 @@ footer { background: var(--primary-color); color: white; padding: 3rem 0 1rem; }
                     <p><strong>Dia:</strong> Domingo</p>
                     <p><strong>Horário:</strong> 9:00h</p>
                     <p>Estudo sistemático da Palavra de Deus</p>
+                    <div class="ebd-info">
+                        <h4><i class="fas fa-graduation-cap"></i> Informações da EBD</h4>
+                        <div class="ebd-info-item">
+                            <i class="fas fa-user-tie"></i>
+                            <span><strong>Superintendente:</strong> Pastor José Marcos da Silva</span>
+                        </div>
+                        <div class="ebd-info-item">
+                            <i class="fas fa-book"></i>
+                            <span><strong>Lição em estudo:</strong> As Sete Igrejas do Apocalipse — Éfeso, Esmirna, Pérgamo, Tiatira, Sardes, Filadélfia e Laodiceia</span>
+                        </div>
+                        <div class="ebd-info-item">
+                            <i class="fas fa-bible"></i>
+                            <span><strong>Trimestre:</strong> 1º Trimestre de 2026</span>
+                        </div>
+                        <div class="ebd-info-item">
+                            <i class="fas fa-users"></i>
+                            <span><strong>Média de alunos:</strong> 10 alunos</span>
+                        </div>
+                        <div class="ebd-classes">
+                            <h5><i class="fas fa-chalkboard-teacher"></i> Classe disponível</h5>
+                            <ul class="ebd-class-list">
+                                <li><i class="fas fa-circle"></i> Adultos</li>
+                             
+                            </ul>
+                        </div>
+                    </div>
                 </div>
                 <div class="schedule-card">
                     <i class="fas fa-calendar-day"></i>
@@ -586,6 +623,4 @@ window.addEventListener('load', function() {
 });
     </script>
 </body>
-
-
-</html>                target.scrollIntoView({ behavio
+</html>
