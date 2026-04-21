@@ -64,17 +64,6 @@ section { padding: 4rem 0; }
 .schedule-card { background: white; padding: 2rem; border-radius: 15px; box-shadow: 0 5px 20px rgba(0,0,0,0.1); text-align: center; border-top: 4px solid var(--primary-color); }
 .schedule-card i { font-size: 3rem; color: var(--secondary-color); margin-bottom: 1rem; }
 .schedule-card h3 { font-family: 'Montserrat', sans-serif; margin-bottom: 1rem; color: var(--primary-color); }
-.ebd-info { margin-top: 1.5rem; padding-top: 1.5rem; border-top: 2px solid #e2e8f0; text-align: left; }
-.ebd-info h4 { font-family: 'Montserrat', sans-serif; color: var(--primary-color); font-size: 1rem; margin-bottom: 1rem; text-align: center; text-transform: uppercase; letter-spacing: 0.05em; }
-.ebd-info-item { display: flex; align-items: flex-start; gap: 0.6rem; margin-bottom: 0.75rem; font-size: 0.92rem; color: var(--text-dark); }
-.ebd-info-item i { color: var(--secondary-color); font-size: 1rem; min-width: 18px; margin-top: 2px; }
-.ebd-info-item strong { color: var(--primary-color); }
-.ebd-classes { margin-top: 1rem; }
-.ebd-classes h5 { font-family: 'Montserrat', sans-serif; font-size: 0.85rem; color: var(--text-light); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.6rem; }
-.ebd-class-list { list-style: none; padding: 0; }
-.ebd-class-list li { display: flex; align-items: center; gap: 0.5rem; font-size: 0.9rem; padding: 0.35rem 0; border-bottom: 1px solid #f3f4f6; color: var(--text-dark); }
-.ebd-class-list li:last-child { border-bottom: none; }
-.ebd-class-list li i { color: var(--primary-color); font-size: 0.8rem; }
 .ministries { background: var(--background-light); }
 .ministries-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 2rem; }
 .ministry-card { background: white; border-radius: 15px; box-shadow: 0 5px 20px rgba(0,0,0,0.1); transition: transform 0.3s; padding: 2rem; }
@@ -135,6 +124,39 @@ footer { background: var(--primary-color); color: white; padding: 3rem 0 1rem; }
 .footer-bottom { text-align: center; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.1); color: rgba(255,255,255,0.7); }
 .whatsapp-float { position: fixed; bottom: 20px; right: 20px; background: #25d366; color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; text-decoration: none; box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4); z-index: 1000; transition: transform 0.3s; }
 .whatsapp-float:hover { transform: scale(1.1); }
+.video-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+}
+
+.video-card {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    padding: 1rem;
+    transition: transform 0.3s;
+}
+
+.video-card:hover {
+    transform: translateY(-5px);
+}
+
+.video-card iframe {
+    width: 100%;
+    height: 220px;
+    border: none;
+    border-radius: 10px;
+}
+
+.video-card h3 {
+    margin-top: 1rem;
+    color: var(--primary-color);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.1rem;
+    text-align: center;
+}
 @media (max-width: 768px) {
     .nav-links { display: none; }
     .mobile-menu { display: block; }
@@ -161,8 +183,9 @@ footer { background: var(--primary-color); color: white; padding: 3rem 0 1rem; }
                 <li><a href="#about">Sobre</a></li>
                 <li><a href="#schedule">Cultos</a></li>
                 <li><a href="#ministries">Ministérios</a></li>
-                <li><a href="#gallery">Galeria</a></li>
-                <li><a href="#agenda">Agenda</a></li>
+               <li><a href="#gallery">Galeria</a></li>
+<li><a href="#video">Vídeos</a></li>
+<li><a href="#agenda">Agenda</a></li>
                 <li><a href="#pastor">Pastor</a></li>
                 <li><a href="#prayer">Oração</a></li>
                 <li><a href="#collaboration">Colabore</a></li>
@@ -221,7 +244,7 @@ footer { background: var(--primary-color); color: white; padding: 3rem 0 1rem; }
                     <h3>Nossa Visão</h3>
                     <p>Ser uma igreja que impacta vidas, famílias e a sociedade, levando esperança e transformação através da Palavra de Deus.</p>
                 </div>
-
+                
                                                        </div>
                     <div class="history-item">
                         <div class="history-image">
@@ -238,61 +261,44 @@ footer { background: var(--primary-color); color: white; padding: 3rem 0 1rem; }
             <h2 class="section-title">Programação de Cultos</h2>
             <p class="section-subtitle">Venha adorar conosco! Todos são bem-vindos.</p>
             <div class="schedule-grid">
-                <div class="schedule-card">
-                    <i class="fas fa-praying-hands"></i>
-                    <h3>Culto de Oração</h3>
-                    <p><strong>Dia:</strong> Terça-feira</p>
-                    <p><strong>Horário:</strong> 19:30h</p>
-                    <p>Momento especial de oração e busca a Deus</p>
-                </div>
-                <div class="schedule-card">
-                    <i class="fas fa-book-open"></i>
-                    <h3>Escola Bíblica Dominical</h3>
-                    <p><strong>Dia:</strong> Domingo</p>
-                    <p><strong>Horário:</strong> 9:00h</p>
-                    <p>Estudo sistemático da Palavra de Deus</p>
-                    <div class="ebd-info">
-                        <h4><i class="fas fa-graduation-cap"></i> Informações da EBD</h4>
-                        <div class="ebd-info-item">
-                            <i class="fas fa-user-tie"></i>
-                            <span><strong>Superintendente:</strong> Pastor José Marcos da Silva</span>
-                        </div>
-                        <div class="ebd-info-item">
-                            <i class="fas fa-book"></i>
-                            <span><strong>Lição em estudo:</strong> As Sete Igrejas do Apocalipse — Éfeso, Esmirna, Pérgamo e Tiatira</span>
-                        </div>
-                        <div class="ebd-info-item">
-                            <i class="fas fa-bible"></i>
-                            <span><strong>Trimestre:</strong> 1º Trimestre de 2026</span>
-                        </div>
-                        <div class="ebd-info-item">
-                            <i class="fas fa-book-open"></i>
-                            <span><strong>Próximo trimestre:</strong> As Sete Igrejas do Apocalipse — Sardes, Filadélfia e Laodiceia (2º Trimestre de 2026)</span>
-                        </div>
-                        <div class="ebd-info-item">
-                            <i class="fas fa-users"></i>
-                            <span><strong>Média de alunos:</strong> 10 alunos</span>
-                        </div>
-                        <div class="ebd-classes">
-                            <h5><i class="fas fa-chalkboard-teacher"></i> Classe disponível</h5>
-                            <ul class="ebd-class-list">
-                                <li><i class="fas fa-circle"></i> Adultos</li>
-                                
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="schedule-card">
-                    <i class="fas fa-calendar-day"></i>
-                    <h3>Culto Principal</h3>
-                    <p><strong>Dia:</strong> Domingo</p>
-                    <p><strong>Horário:</strong> 19:00h</p>
-                    <p>Culto principal com toda a família</p>
-                </div>
-            </div>
-        </div>
-    </section>
+    <div class="schedule-card">
+        <i class="fas fa-praying-hands"></i>
+        <h3>Culto de Oração</h3>
+        <p><strong>Dia:</strong> Terça-feira</p>
+        <p><strong>Horário:</strong> 19:30h</p>
+        <p>Momento especial de oração e busca a Deus</p>
+    </div>
 
+    <div class="schedule-card">
+        <i class="fas fa-book-open"></i>
+        <h3>Escola Bíblica Dominical</h3>
+        <p><strong>Dia:</strong> Domingo</p>
+        <p><strong>Horário:</strong> 9:00h</p>
+        <p>Estudo sistemático da Palavra de Deus</p>
+    </div>
+
+    <div class="schedule-card">
+        <i class="fas fa-calendar-day"></i>
+        <h3>Culto Principal</h3>
+        <p><strong>Dia:</strong> Domingo</p>
+        <p><strong>Horário:</strong> 19:00h</p>
+        <p>Culto principal com toda a família</p>
+    </div>
+
+    <div class="schedule-card">
+        <i class="fas fa-hands"></i>
+        <h3>Culto de Gratidão</h3>
+        <p><strong>Dia:</strong> Último Domingo de cada mês</p>
+        <p><strong>Horário:</strong> 19:00h</p>
+        <p>
+            Culto especial com mensagem, participação dos membros com louvores,
+            leitura de versículos, testemunhos e comemoração dos aniversariantes do mês.
+        </p>
+    </div>
+</div>
+</div>
+</section>
+   
     <section id="ministries" class="ministries">
         <div class="container">
             <h2 class="section-title">Nossos Ministérios</h2>
@@ -347,7 +353,32 @@ footer { background: var(--primary-color); color: white; padding: 3rem 0 1rem; }
             </div>
         </div>
     </section>
+<section id="video">
+    <div class="container">
+        <h2 class="section-title">Vídeos</h2>
+        <p class="section-subtitle">Assista mensagens, cultos e conteúdos especiais</p>
 
+        <div class="video-grid">
+
+            <div class="video-card">
+                <iframe 
+                    src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+                    allowfullscreen>
+                </iframe>
+                <h3>Mensagem Especial</h3>
+            </div>
+
+            <div class="video-card">
+                <iframe 
+                    src="https://www.youtube.com/embed/ysz5S6PUM-U"
+                    allowfullscreen>
+                </iframe>
+                <h3>Culto Ao Vivo</h3>
+            </div>
+
+        </div>
+    </div>
+</section>
     <section id="agenda" class="agenda">
         <div class="container">
             <h2 class="section-title">Agenda de Eventos</h2>
@@ -627,4 +658,6 @@ window.addEventListener('load', function() {
 });
     </script>
 </body>
-</html>
+
+
+</html>                target.scrollIntoView({ behavio
