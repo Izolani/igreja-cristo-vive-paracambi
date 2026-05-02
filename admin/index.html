@@ -1,65 +1,135 @@
 <!DOCTYPE html>
+
 <html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
-<title>Painel da Igreja</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Painel Administrativo - Igreja Cristo Vive</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+
 <style>
-body { font-family: Arial; padding: 20px; background: #f5f5f5; }
-.card { background: white; padding: 20px; border-radius: 10px; max-width: 500px; margin: auto; }
-input, textarea { width: 100%; margin-bottom: 10px; padding: 10px; }
-button { background: #1e3a8a; color: white; padding: 10px; border: none; cursor: pointer; }
-.evento { background: #fff; padding: 10px; margin-top: 10px; border-left: 5px solid #fbbf24; }
+body {
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    background: #0f172a;
+    color: white;
+}
+
+.login-screen, .dashboard {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.card {
+    background: #1e293b;
+    padding: 30px;
+    border-radius: 12px;
+    width: 300px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 8px;
+    border: none;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+    background: #fbbf24;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.dashboard {
+    display: none;
+    flex-direction: column;
+    padding: 20px;
+}
+
+.header {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.box {
+    background: #1e293b;
+    padding: 20px;
+    border-radius: 12px;
+    text-align: center;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.box:hover {
+    background: #334155;
+}
 </style>
+
 </head>
+
 <body>
 
-<div class="card">
-<h2>Painel - Eventos</h2>
+<!-- LOGIN -->
 
-<input id="titulo" placeholder="Título do Evento">
-<input id="data" placeholder="Data (ex: 10/05/2026)">
-<textarea id="descricao" placeholder="Descrição"></textarea>
+<div class="login-screen" id="login">
+    <div class="card">
+        <h2>🔐 Painel Admin</h2>
+        <input type="password" id="senha" placeholder="Digite a senha">
+        <button onclick="login()">Entrar</button>
+    </div>
+</div>
 
-<button onclick="salvarEvento()">Salvar Evento</button>
+<!-- DASHBOARD -->
 
-<h3>Eventos Salvos</h3>
-<div id="lista"></div>
+<div class="dashboard" id="dashboard">
+    <div class="header">📊 Painel da Igreja</div>
+
+```
+<div class="grid">
+    <div class="box" onclick="alert('Em breve: Fotos')">📸 Galeria</div>
+    <div class="box" onclick="alert('Em breve: Vídeos')">🎥 Vídeos</div>
+    <div class="box" onclick="alert('Em breve: Agenda')">📅 Agenda</div>
+    <div class="box" onclick="alert('Em breve: Orações')">🙏 Orações</div>
+    <div class="box" onclick="alert('Em breve: Versículos')">📖 Versículos</div>
+</div>
+
+<br>
+<button onclick="logout()">Sair</button>
+```
+
 </div>
 
 <script>
-function salvarEvento() {
-    const titulo = document.getElementById('titulo').value;
-    const data = document.getElementById('data').value;
-    const descricao = document.getElementById('descricao').value;
+function login() {
+    const senha = document.getElementById('senha').value;
 
-    const evento = { titulo, data, descricao };
-
-    let eventos = JSON.parse(localStorage.getItem('eventos')) || [];
-    eventos.push(evento);
-
-    localStorage.setItem('eventos', JSON.stringify(eventos));
-
-    carregarEventos();
+    if (senha === "1234") {
+        document.getElementById('login').style.display = "none";
+        document.getElementById('dashboard').style.display = "flex";
+    } else {
+        alert("Senha incorreta!");
+    }
 }
 
-function carregarEventos() {
-    const lista = document.getElementById('lista');
-    lista.innerHTML = "";
-
-    const eventos = JSON.parse(localStorage.getItem('eventos')) || [];
-
-    eventos.forEach(e => {
-        lista.innerHTML += `
-            <div class="evento">
-                <strong>${e.titulo}</strong><br>
-                ${e.data}<br>
-                ${e.descricao}
-            </div>
-        `;
-    });
+function logout() {
+    location.reload();
 }
-
-carregarEventos();
 </script>
 
 </body>
