@@ -110,6 +110,16 @@ button {
 </div>
 
 <br>
+<h3>📅 Criar Evento</h3>
+
+<input type="text" id="titulo" placeholder="Título do evento">
+<input type="date" id="data">
+<input type="text" id="descricao" placeholder="Descrição">
+
+<button onclick="salvarEvento()">Salvar Evento</button>
+
+<h3 style="margin-top:20px;">📋 Eventos</h3>
+<div id="listaEventos"></div>
 <button onclick="logout()">Sair</button>
 ```
 
@@ -131,6 +141,40 @@ function logout() {
     location.reload();
 }
 </script>
+<script>
+function salvarEvento() {
+    const titulo = document.getElementById("titulo").value;
+    const data = document.getElementById("data").value;
+    const descricao = document.getElementById("descricao").value;
 
+    const evento = { titulo, data, descricao };
+
+    let eventos = JSON.parse(localStorage.getItem("eventos")) || [];
+    eventos.push(evento);
+
+    localStorage.setItem("eventos", JSON.stringify(eventos));
+
+    mostrarEventos();
+}
+
+function mostrarEventos() {
+    const lista = document.getElementById("listaEventos");
+    lista.innerHTML = "";
+
+    const eventos = JSON.parse(localStorage.getItem("eventos")) || [];
+
+    eventos.forEach(e => {
+        lista.innerHTML += `
+            <div style="background:#1e293b; padding:10px; margin:10px; border-radius:8px;">
+                <strong>${e.titulo}</strong><br>
+                📅 ${e.data}<br>
+                ${e.descricao}
+            </div>
+        `;
+    });
+}
+
+window.onload = mostrarEventos;
+</script>
 </body>
 </html>
