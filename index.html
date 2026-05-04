@@ -3,770 +3,680 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Igreja Evangélica Cristo Vive de Paracambi/RJ</title>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;900&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
-<style>
-* { margin: 0; padding: 0; box-sizing: border-box; }
-:root {
-    --primary-color: #1e3a8a;
-    --secondary-color: #fbbf24;
-    --text-dark: #1f2937;
-    --text-light: #6b7280;
-    --background-light: #f8fafc;
-    --logo-light-blue: #60a5fa;
-}
-body { font-family: 'Open Sans', sans-serif; line-height: 1.6; color: var(--text-dark); }
-.container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
-header { background: white; padding: 10px 0; position: fixed; width: 100%; top: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
-nav { display: flex; justify-content: space-between; align-items: center; }
-.logo { position: relative; left: -80px; font-family: 'Montserrat', sans-serif; }
-.igreja-evangelica { font-size: 1.2rem; color: var(--logo-light-blue); font-weight: 600; display: block; }
-.cristo-vive { font-size: 2.2rem; color: var(--primary-color); font-weight: 900; display: block; margin-top: 0.2rem; }
-.de-paracambi { font-size: 10px; background: var(--primary-color); color: white; padding: 1px 3px; border-radius: 2px; font-weight: 600; margin-top: 2px; margin-left: 180px; display: inline-block; width: fit-content; }
-.nav-links { display: flex; list-style: none; gap: 1.5rem; position: absolute; right: 20px; }
-.nav-links a { color: var(--primary-color); text-decoration: none; transition: color 0.3s; font-size: 14px; }
-.nav-links a:hover { color: var(--secondary-color); }
-.mobile-menu { display: none; background: none; border: none; color: var(--primary-color); font-size: 1.5rem; cursor: pointer; }
-.hero { background: linear-gradient(135deg, var(--primary-color), #2563eb); height: 60vh; display: flex; align-items: center; text-align: center; color: white; margin-top: 70px; padding: 15px 20px; }
-.hero-content h1 { font-family: 'Montserrat', sans-serif; font-size: 3.5rem; font-weight: 700; margin-bottom: 8px; }
-.verse-day { background: rgba(30, 58, 138, 0.1); backdrop-filter: blur(10px); padding: 1.5rem; border-radius: 10px; margin: 2rem 0; border-left: 4px solid var(--secondary-color); }
-.daily-verse-section { background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%); padding: 3rem 0; }
-.daily-verse-card { background: white; border-radius: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.1); padding: 2.5rem; max-width: 900px; margin: 0 auto; }
-.verse-header { display: flex; align-items: center; justify-content: center; gap: 1rem; margin-bottom: 2rem; }
-.verse-header i { font-size: 2.5rem; color: var(--primary-color); }
-.verse-header h2 { font-family: 'Montserrat', sans-serif; color: var(--primary-color); font-size: 2rem; margin: 0; }
-.verse-navigation { display: flex; justify-content: space-between; gap: 1rem; margin-bottom: 2rem; }
-.nav-btn { background: linear-gradient(135deg, var(--primary-color), #2563eb); color: white; border: none; padding: 12px 24px; border-radius: 10px; cursor: pointer; font-weight: 600; font-size: 14px; transition: all 0.3s ease; flex: 1; box-shadow: 0 4px 15px rgba(30, 58, 138, 0.3); }
-.nav-btn:hover { background: linear-gradient(135deg, var(--secondary-color), #f59e0b); transform: translateY(-2px); }
-.daily-verse { background: linear-gradient(135deg, rgba(30, 58, 138, 0.05), rgba(96, 165, 250, 0.05)); padding: 2rem; border-radius: 15px; border-left: 5px solid var(--secondary-color); margin-bottom: 1.5rem; }
-.daily-verse p { font-size: 1.4rem; line-height: 1.8; font-style: italic; margin-bottom: 1rem; }
-.daily-verse cite { display: block; text-align: right; font-size: 1.1rem; color: var(--primary-color); font-weight: 600; font-style: normal; }
-.verse-info { text-align: center; color: var(--text-light); font-size: 1rem; margin-top: 1rem; }
-.verse-date { display: flex; align-items: center; justify-content: center; gap: 0.5rem; margin-top: 1.5rem; padding-top: 1.5rem; border-top: 2px solid #e2e8f0; }
-.verse-date i { color: var(--secondary-color); font-size: 1.2rem; }
-section { padding: 4rem 0; }
-.section-title { font-family: 'Montserrat', sans-serif; font-size: 2.5rem; font-weight: 700; text-align: center; margin-bottom: 3rem; color: var(--primary-color); }
-.section-subtitle { text-align: center; font-size: 1.1rem; color: var(--text-light); max-width: 600px; margin: 0 auto 3rem; }
-.about { background: var(--background-light); }
-.about-content { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center; margin-bottom: 4rem; }
-.about-text h3 { font-family: 'Montserrat', sans-serif; font-size: 1.5rem; margin-bottom: 1rem; color: var(--primary-color); }
-.about-image { background: #e5e7eb; height: 300px; border-radius: 10px; display: flex; align-items: center; justify-content: center; }
-.history-gallery { margin-top: 3rem; }
-.history-gallery h3 { font-family: 'Montserrat', sans-serif; font-size: 2rem; text-align: center; margin-bottom: 2rem; color: var(--primary-color); }
-.history-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
-.history-item { background: white; border-radius: 15px; overflow: hidden; box-shadow: 0 5px 20px rgba(0,0,0,0.1); transition: transform 0.3s; }
-.history-item:hover { transform: translateY(-5px); }
-.history-image { height: 200px; background: #e5e7eb; display: flex; align-items: center; justify-content: center; }
-.history-content { padding: 1.5rem; }
-.history-content h4 { font-family: 'Montserrat', sans-serif; color: var(--primary-color); margin-bottom: 0.5rem; }
-.schedule-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
-.schedule-card { background: white; padding: 2rem; border-radius: 15px; box-shadow: 0 5px 20px rgba(0,0,0,0.1); text-align: center; border-top: 4px solid var(--primary-color); }
-.schedule-card i { font-size: 3rem; color: var(--secondary-color); margin-bottom: 1rem; }
-.schedule-card h3 { font-family: 'Montserrat', sans-serif; margin-bottom: 1rem; color: var(--primary-color); }
-.ministries { background: var(--background-light); }
-.ministries-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 2rem; }
-.ministry-card { background: white; border-radius: 15px; box-shadow: 0 5px 20px rgba(0,0,0,0.1); transition: transform 0.3s; padding: 2rem; }
-.ministry-card:hover { transform: translateY(-5px); }
-.ministry-card i { color: var(--primary-color); font-size: 2.5rem; margin-bottom: 1rem; display: block; text-align: center; }
-.ministry-card h3 { color: var(--primary-color); font-size: 1.3rem; margin-bottom: 1rem; text-align: center; font-weight: 700; }
-.ministry-images { display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem; margin: 1rem 0; height: 120px; }
-.ministry-images .fallback-content { background: #e5e7eb; border-radius: 8px; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 1rem; }
-.pequenos-discipulos-compact { margin-top: 1rem; padding: 1rem; background: linear-gradient(135deg, #f8fafc, #e2e8f0); border-radius: 8px; border: 1px solid var(--primary-color); text-align: center; }
-.pequenos-discipulos-compact .site-title { color: var(--primary-color); font-size: 1rem; font-weight: 600; margin: 0 0 0.8rem 0; }
-.pequenos-discipulos-compact .btn-compact { background: linear-gradient(135deg, var(--primary-color), #2563eb); color: white; padding: 8px 16px; font-size: 0.9rem; font-weight: 600; border-radius: 6px; text-decoration: none; display: inline-block; transition: all 0.3s ease; }
-.pequenos-discipulos-compact .btn-compact:hover { background: linear-gradient(135deg, var(--secondary-color), #f59e0b); color: var(--primary-color); transform: translateY(-2px); }
-.gallery-filters { display: flex; justify-content: center; gap: 1rem; margin-bottom: 3rem; flex-wrap: wrap; }
-.filter-btn { padding: 10px 20px; border: 2px solid var(--primary-color); background: transparent; color: var(--primary-color); border-radius: 25px; cursor: pointer; transition: all 0.3s; font-weight: 600; }
-.filter-btn.active, .filter-btn:hover { background: var(--primary-color); color: white; }
-.gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; }
-.gallery-item { position: relative; overflow: hidden; border-radius: 10px; cursor: pointer; transition: all 0.3s; background: #e5e7eb; height: 200px; display: flex; align-items: center; justify-content: center; }
-.gallery-item:hover { transform: scale(1.05); }
-.fallback-content { display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100%; text-align: center; padding: 1rem; color: #6b7280; }
-.agenda { background: var(--background-light); }
-.agenda-item { background: white; padding: 2rem; border-radius: 15px; box-shadow: 0 5px 20px rgba(0,0,0,0.1); border-left: 4px solid var(--secondary-color); }
-.agenda-date { font-family: 'Montserrat', sans-serif; font-size: 1.5rem; color: var(--primary-color); margin-bottom: 0.5rem; }
-.agenda-title { font-size: 1.2rem; font-weight: 600; margin-bottom: 1rem; }
-.solas-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-top: 2rem; }
-.sola-card { background: linear-gradient(135deg, var(--primary-color), #2563eb); color: white; padding: 1.5rem; border-radius: 10px; text-align: center; transition: transform 0.3s; }
-.sola-card:hover { transform: translateY(-3px); }
-.sola-card h5 { font-family: 'Montserrat', sans-serif; color: var(--secondary-color); margin-bottom: 0.5rem; font-size: 1.1rem; }
-.pastor-section { background: var(--background-light); }
-.pastor-content { display: grid; grid-template-columns: 300px 1fr; gap: 3rem; align-items: center; }
-.pastor-image { width: 300px; height: 300px; background: #e5e7eb; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto; }
-.pastor-info h3 { font-family: 'Montserrat', sans-serif; font-size: 2rem; color: var(--primary-color); margin-bottom: 0.5rem; }
-.pastor-info .title { color: var(--secondary-color); font-weight: 600; margin-bottom: 1.5rem; }
-.prayer-form { background: white; padding: 2rem; border-radius: 15px; box-shadow: 0 5px 20px rgba(0,0,0,0.1); max-width: 600px; margin: 0 auto; }
-.form-group { margin-bottom: 1.5rem; }
-.form-group label { display: block; margin-bottom: 0.5rem; font-weight: 600; color: var(--primary-color); }
-.form-group input, .form-group textarea { width: 100%; padding: 12px; border: 2px solid #e5e7eb; border-radius: 8px; font-family: inherit; transition: border-color 0.3s; }
-.form-group input:focus, .form-group textarea:focus { outline: none; border-color: var(--primary-color); }
-.form-group textarea { height: 120px; resize: vertical; }
-.checkbox-group { display: flex; align-items: center; gap: 0.5rem; }
-.btn-primary { background: var(--primary-color); color: white; padding: 12px 24px; border: none; border-radius: 8px; cursor: pointer; font-weight: 600; transition: all 0.3s; }
-.btn-primary:hover { transform: translateY(-2px); box-shadow: 0 5px 15px rgba(0,0,0,0.2); }
-.collaboration { background: linear-gradient(135deg, var(--primary-color), #2563eb); color: white; text-align: center; }
-.collaboration .section-title { color: white; }
-.collaboration-options { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin-top: 3rem; }
-.collaboration-card { background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); padding: 2rem; border-radius: 15px; border: 1px solid rgba(255,255,255,0.2); }
-.collaboration-card i { font-size: 3rem; color: var(--secondary-color); margin-bottom: 1rem; }
-.contact-info { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin-bottom: 3rem; }
-.contact-item { display: flex; align-items: center; gap: 1rem; padding: 1.5rem; background: white; border-radius: 10px; box-shadow: 0 3px 15px rgba(0,0,0,0.1); }
-.contact-item i { font-size: 1.5rem; color: var(--primary-color); min-width: 30px; }
-.map-container { height: 400px; border-radius: 15px; overflow: hidden; box-shadow: 0 5px 20px rgba(0,0,0,0.1); }
-.map-container iframe { width: 100%; height: 100%; border: none; }
-footer { background: var(--primary-color); color: white; padding: 3rem 0 1rem; }
-.footer-content { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin-bottom: 2rem; }
-.footer-section h3 { font-family: 'Montserrat', sans-serif; margin-bottom: 1rem; color: var(--secondary-color); }
-.social-links { display: flex; gap: 1rem; margin-top: 1rem; }
-.social-links a { display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; background: rgba(255,255,255,0.1); border-radius: 50%; color: white; text-decoration: none; transition: background 0.3s; }
-.social-links a:hover { background: var(--secondary-color); color: var(--text-dark); }
-.footer-bottom { text-align: center; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.1); color: rgba(255,255,255,0.7); }
-.whatsapp-float { position: fixed; bottom: 20px; right: 20px; background: #25d366; color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; text-decoration: none; box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4); z-index: 1000; transition: transform 0.3s; }
-.whatsapp-float:hover { transform: scale(1.1); }
-.video-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 2rem;
-}
+    <title>Igreja Nossa Jornada - Fé, Esperança e Amor</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-.video-card {
-    background: white;
-    border-radius: 15px;
-    overflow: hidden;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-    padding: 1rem;
-    transition: transform 0.3s;
-}
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
 
-.video-card:hover {
-    transform: translateY(-5px);
-}
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
 
-.video-card iframe {
-    width: 100%;
-    height: 220px;
-    border: none;
-    border-radius: 10px;
-}
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #1e3c72, #2a5298);
+            color: white;
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
 
-.video-card h3 {
-    margin-top: 1rem;
-    color: var(--primary-color);
-    font-family: 'Montserrat', sans-serif;
-    font-size: 1.1rem;
-    text-align: center;
-}
-@media (max-width: 768px) {
-    .nav-links { display: none; }
-    .mobile-menu { display: block; }
-    .logo { left: 0; }
-    .hero-content h1 { font-size: 2rem; }
-    .about-content, .pastor-content { grid-template-columns: 1fr; }
-    .verse-navigation { flex-direction: column; }
-    .nav-btn { width: 100%; }
-}
-<style>
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
 
-/* outros estilos do site */
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #FFD700;
+        }
 
-.gallery-grid {
-    display: flex;
-    gap: 15px;
-    flex-wrap: wrap;
-    justify-content: center;
-}
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
 
-.gallery-item img {
-    width: 100%;
-    max-width: 250px;
-    height: 180px;
-    object-fit: cover;
-    border-radius: 10px;
-}
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+            font-weight: 500;
+        }
 
-</style>
-</style>
+        .nav-links a:hover {
+            color: #FFD700;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><defs><linearGradient id="sky" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" style="stop-color:%2387CEEB"/><stop offset="100%" style="stop-color:%23E0F6FF"/></linearGradient></defs><rect width="1200" height="600" fill="url(%23sky)"/><circle cx="200" cy="100" r="60" fill="%23FFD700" opacity="0.8"/><polygon points="0,400 300,350 600,380 900,360 1200,400 1200,600 0,600" fill="%23228B22"/><polygon points="100,350 150,300 200,350" fill="%23006400"/><polygon points="400,340 450,290 500,340" fill="%23006400"/><polygon points="700,370 750,320 800,370" fill="%23006400"/><rect x="80" y="350" width="20" height="40" fill="%238B4513"/><rect x="430" y="290" width="20" height="50" fill="%238B4513"/><rect x="730" y="320" width="20" height="50" fill="%238B4513"/></svg>');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: white;
+        }
+
+        .cta-buttons {
+            margin-top: 30px;
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            transition: all 0.3s;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background: linear-gradient(45deg, #FFD700, #FFA500);
+            color: #333;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(255, 215, 0, 0.3);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+
+        .btn-secondary:hover {
+            background: white;
+            color: #333;
+            transform: translateY(-3px);
+        }
+
+        /* Sections */
+        section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 50px;
+            color: #2c3e50;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(45deg, #FFD700, #FFA500);
+            margin: 20px auto;
+            border-radius: 2px;
+        }
+
+        /* About Section */
+        .about {
+            background: #f8f9fa;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .about-text {
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        .about-image {
+            text-align: center;
+        }
+
+        .about-image svg {
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* Services Grid */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .service-card {
+            background: white;
+            padding: 40px 30px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .service-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        .service-card h3 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+        }
+
+        /* Ministries */
+        .ministries {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        .ministries .section-title {
+            color: white;
+        }
+
+        .ministries-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .ministry-card {
+            background: rgba(255,255,255,0.1);
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .ministry-card h3 {
+            margin-bottom: 15px;
+            color: #FFD700;
+        }
+
+        /* Events */
+        .events {
+            background: #f8f9fa;
+        }
+
+        .events-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .event-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+
+        .event-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .event-date {
+            background: linear-gradient(45deg, #FFD700, #FFA500);
+            color: #333;
+            padding: 20px;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .event-content {
+            padding: 30px;
+        }
+
+        .event-content h3 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+        }
+
+        /* Contact */
+        .contact {
+            background: linear-gradient(135deg, #2c3e50, #3498db);
+            color: white;
+        }
+
+        .contact .section-title {
+            color: white;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-top: 50px;
+        }
+
+        .contact-info {
+            background: rgba(255,255,255,0.1);
+            padding: 40px;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .contact-item span {
+            font-size: 1.5rem;
+            margin-right: 15px;
+            color: #FFD700;
+        }
+
+        /* Footer */
+        footer {
+            background: #1a1a1a;
+            color: white;
+            text-align: center;
+            padding: 40px 0;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 30px;
+        }
+
+        .footer-section h3 {
+            color: #FFD700;
+            margin-bottom: 20px;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            color: white;
+            font-size: 1.5rem;
+            transition: color 0.3s;
+        }
+
+        .social-links a:hover {
+            color: #FFD700;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+        }
+
+        /* Smooth Scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Animation */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .service-card, .ministry-card, .event-card {
+            animation: fadeInUp 0.6s ease-out;
+        }
+    </style>
 </head>
 <body>
+    <!-- Header -->
     <header>
         <nav class="container">
-            <div class="logo">
-                <div class="church-name">
-                    <div class="igreja-evangelica">IGREJA EVANGÉLICA</div>
-                    <div class="cristo-vive">CRISTO VIVE</div>
-                    <div class="de-paracambi">DE PARACAMBI</div>
-                </div>
-            </div>
+            <div class="logo">⛪ Nossa Jornada</div>
             <ul class="nav-links">
-                <li><a href="#home">Início</a></li>
-                <li><a href="#about">Sobre</a></li>
-                <li><a href="#schedule">Cultos</a></li>
-                <li><a href="#ministries">Ministérios</a></li>
-               <li><a href="#gallery">Galeria</a></li>
-<li><a href="#video">Vídeos</a></li>
-<li><a href="#agenda">Agenda</a></li>
-                <li><a href="#pastor">Pastor</a></li>
-                <li><a href="#prayer">Oração</a></li>
-                <li><a href="#collaboration">Colabore</a></li>
-                <li><a href="#contact">Contato</a></li>
+                <li><a href="#inicio">Início</a></li>
+                <li><a href="#sobre">Sobre</a></li>
+                <li><a href="#servicos">Serviços</a></li>
+                <li><a href="#ministerios">Ministérios</a></li>
+                <li><a href="#eventos">Eventos</a></li>
+                <li><a href="#contato">Contato</a></li>
             </ul>
-            <button class="mobile-menu"><i class="fas fa-bars"></i></button>
         </nav>
     </header>
 
-    <section id="home" class="hero">
+    <!-- Banner Principal -->
+    <section class="hero" id="inicio">
         <div class="container">
-            <div class="hero-content">
-                <div class="verse-day">
-                    <p style="font-style: italic; font-size: 2rem; margin-bottom: 1rem; color: white;">"Eu sou a ressurreição e a vida; quem crê em mim, ainda que morra, viverá."</p>
-                    <h1 style="color: var(--secondary-color); font-size: 4rem; margin: 0;">JESUS</h1>
+            <div style="padding: 120px 20px 40px 20px;">
+                <p style="color: white; font-size: 20px; margin-bottom: 20px; text-align: center; background: rgba(0,0,0,0.5); padding: 20px; border-radius: 10px; max-width: 800px; margin-left: auto; margin-right: auto;">
+                    "Eu Sou o Caminho, a Verdade e a Vida; ninguém vem ao Pai senão por Mim!"
+                </p>
+                <h1 style="color: #FFD700; font-size: 48px; text-align: center; margin: 20px 0; font-family: 'Brush Script MT', cursive;">JESUS</h1>
+                <div class="cta-buttons">
+                    <a href="#ministerios" class="btn btn-primary">🙏 Conheça Nossos Ministérios</a>
+                    <a href="#contato" class="btn btn-secondary">📍 Visite-nos</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="daily-verse" class="daily-verse-section">
-        <div class="container">
-            <div class="daily-verse-card">
-                <div class="verse-header">
-                    <i class="fas fa-bible"></i>
-                    <h2>Versículo do Dia</h2>
-                </div>
-                <div class="verse-content">
-                    <div class="verse-navigation">
-                        <button id="prev-verse-btn" class="nav-btn"><i class="fas fa-chevron-left"></i> ANTERIOR</button>
-                        <button id="next-verse-btn" class="nav-btn">PRÓXIMO <i class="fas fa-chevron-right"></i></button>
-                    </div>
-                    <div class="daily-verse">
-                        <blockquote><p id="daily-verse-text">Carregando versículo...</p></blockquote>
-                        <cite id="daily-verse-reference"></cite>
-                    </div>
-                    <div class="verse-info"><span id="verse-counter">Versículo 1 de 365</span></div>
-                </div>
-                <div class="verse-date">
-                    <i class="fas fa-calendar-day"></i>
-                    <span id="current-date">Carregando data...</span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="about" class="about">
+    <!-- Sobre Nós -->
+    <section class="about" id="sobre">
         <div class="container">
             <h2 class="section-title">Sobre Nossa Igreja</h2>
             <div class="about-content">
                 <div class="about-text">
-                    <h3>Nossa História</h3>
-                    <p>A Igreja Evangélica Cristo Vive de Paracambi/RJ é uma comunidade de fé comprometida em proclamar o Evangelho de Jesus Cristo e transformar vidas através do amor de Deus.</p>
-                    <h3>Nossa Missão</h3>
-                    <p>Anunciar a vida abundante em Cristo, discipular vidas e ser uma igreja relevante na comunidade de Paracambi.</p>
-                    <h3>Nossa Visão</h3>
-                    <p>Ser uma igreja que impacta vidas, famílias e a sociedade, levando esperança e transformação através da Palavra de Deus.</p>
+                    <p>Bem-vindos à Igreja Nossa Jornada, um lugar onde a fé encontra propósito e cada pessoa é valorizada como parte da família de Deus. Nossa missão é ser uma comunidade acolhedora que transforma vidas através do amor de Cristo.</p>
+                    
+                    <p>Fundada com o propósito de criar um ambiente onde todos possam crescer espiritualmente, nossa igreja oferece um espaço seguro para questionar, aprender e descobrir o plano maravilhoso que Deus tem para cada vida.</p>
+                    
+                    <p>Acreditamos que cada pessoa tem um propósito único e estamos aqui para apoiar você em sua jornada de fé, oferecendo orientação bíblica, comunhão genuína e oportunidades de servir ao próximo.</p>
                 </div>
-                
-                                                       </div>
-                    <div class="history-item">
-                        <div class="history-image">
-                            <div class="fallback-content"><i class="fas fa-drafting-compass" style="font-size: 2rem; color: var(--primary-color);"></i><p>Projeto Futuro</p></div>
-                        </div>
-                        
+                <div class="about-image">
+                    <svg width="400" height="300" viewBox="0 0 400 300">
+                        <defs>
+                            <linearGradient id="churchGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+                                <stop offset="0%" style="stop-color:#4a90e2"/>
+                                <stop offset="100%" style="stop-color:#2c3e50"/>
+                            </linearGradient>
+                        </defs>
+                        <!-- Igreja -->
+                        <rect x="150" y="150" width="100" height="80" fill="url(#churchGrad)"/>
+                        <polygon points="150,150 200,100 250,150" fill="#8b4513"/>
+                        <rect x="180" y="180" width="20" height="50" fill="#654321"/>
+                        <rect x="160" y="170" width="15" height="15" fill="#FFD700"/>
+                        <rect x="225" y="170" width="15" height="15" fill="#FFD700"/>
+                        <!-- Cruz -->
+                        <rect x="195" y="80" width="4" height="25" fill="#FFD700"/>
+                        <rect x="187" y="87" width="20" height="4" fill="#FFD700"/>
+                        <!-- Pessoas -->
+                        <circle cx="120" cy="200" r="8" fill="#f4c2a1"/>
+                        <rect x="115" y="208" width="10" height="20" fill="#4a90e2"/>
+                        <circle cx="280" cy="200" r="8" fill="#f4c2a1"/>
+                        <rect x="275" y="208" width="10" height="20" fill="#e74c3c"/>
+                        <circle cx="200" cy="250" r="8" fill="#f4c2a1"/>
+                        <rect x="195" y="258" width="10" height="20" fill="#27ae60"/>
+                        <!-- Sol -->
+                        <circle cx="350" cy="50" r="20" fill="#FFD700"/>
+                        <!-- Nuvens -->
+                        <ellipse cx="80" cy="60" rx="25" ry="15" fill="white" opacity="0.8"/>
+                        <ellipse cx="320" cy="80" rx="30" ry="18" fill="white" opacity="0.8"/>
+                    </svg>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="schedule">
-    <div class="container">
-        <h2 class="section-title">Programação de Cultos</h2>
-        <p class="section-subtitle">Venha adorar conosco! Todos são bem-vindos.</p>
-
-        <div class="schedule-grid">
-
-            <div class="schedule-card">
-                <i class="fas fa-praying-hands"></i>
-                <h3>Culto de Oração</h3>
-                <p><strong>Dia:</strong> Terça-feira</p>
-                <p><strong>Horário:</strong> 19:30h</p>
-                <p>Momento especial de oração e busca a Deus</p>
+    <!-- Serviços -->
+    <section class="services" id="servicos">
+        <div class="container">
+            <h2 class="section-title">Nossos Serviços</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <span class="service-icon">🙏</span>
+                    <h3>Cultos Dominicais</h3>
+                    <p>Participe de nossos cultos todos os domingos às 10h e 19h. Momentos de adoração, palavra e comunhão que fortalecem nossa fé e nos conectam com Deus.</p>
+                </div>
+                <div class="service-card">
+                    <span class="service-icon">📖</span>
+                    <h3>Estudos Bíblicos</h3>
+                    <p>Aprofunde seu conhecimento das Escrituras em nossos grupos de estudo. Quartas-feiras às 19h30, exploramos a Palavra de Deus de forma prática e relevante.</p>
+                </div>
+                <div class="service-card">
+                    <span class="service-icon">👨‍👩‍👧‍👦</span>
+                    <h3>Ministério Familiar</h3>
+                    <p>Fortalecemos os laços familiares através de atividades, aconselhamento e eventos especiais que promovem a união e o crescimento espiritual de toda a família.</p>
+                </div>
+                <div class="service-card">
+                    <span class="service-icon">🎵</span>
+                    <h3>Ministério de Louvor</h3>
+                    <p>Experimente a presença de Deus através da música. Nosso time de louvor conduz momentos especiais de adoração que tocam o coração e elevam o espírito.</p>
+                </div>
+                <div class="service-card">
+                    <span class="service-icon">🤝</span>
+                    <h3>Ação Social</h3>
+                    <p>Vivemos o amor de Cristo servindo nossa comunidade. Participamos de projetos sociais, distribuição de alimentos e apoio às famílias em necessidade.</p>
+                </div>
+                <div class="service-card">
+                    <span class="service-icon">💒</span>
+                    <h3>Cerimônias Especiais</h3>
+                    <p>Celebramos os momentos importantes da vida: casamentos, batismos, apresentação de crianças e outras cerimônias que marcam nossa jornada de fé.</p>
+                </div>
             </div>
-
-            <div class="schedule-card">
-                <i class="fas fa-book-open"></i>
-                <h3>Escola Bíblica Dominical</h3>
-                <p><strong>Dia:</strong> Domingo</p>
-                <p><strong>Horário:</strong> 9:00h</p>
-                <p>Estudo sistemático da Palavra de Deus</p>
-            </div>
-
-            <div class="schedule-card">
-                <i class="fas fa-church"></i>
-                <h3>Culto Principal</h3>
-                <p><strong>Dia:</strong> Domingo</p>
-                <p><strong>Horário:</strong> 19:00h</p>
-                <p>Culto principal com toda a família</p>
-            </div>
-
-            <div class="schedule-card">
-                <i class="fas fa-hands"></i>
-                <h3>Culto de Gratidão</h3>
-                <p><strong>Dia:</strong> Último Domingo de cada mês</p>
-                <p><strong>Horário:</strong> 19:00h</p>
-                <p>
-                    Culto especial com mensagem, participação dos membros com louvores,
-                    leitura de versículos, testemunhos e comemoração dos aniversariantes do mês.
-                </p>
-
-                <a href="#abril-2026" class="btn-primary" style="margin-top:15px; display:inline-block;">
-                    📸 Veja as Fotos/Vídeos dos Cultos
-                </a>
-            </div>
-
         </div>
-    </div>
-</section>
-    <section id="ministries" class="ministries">
+    </section>
+
+    <!-- Ministérios -->
+    <section class="ministries" id="ministerios">
         <div class="container">
             <h2 class="section-title">Nossos Ministérios</h2>
-            <p class="section-subtitle">Cada membro tem um lugar especial no Corpo de Cristo</p>
             <div class="ministries-grid">
                 <div class="ministry-card">
-                    <i class="fas fa-music"></i>
-                    <h3>Ministério de Louvor e Adoração</h3>
-                    <p>Conduzindo a igreja em momentos de adoração e exaltação ao nome do Senhor através da música.</p>
-                    <div class="ministry-images">
-                        <div class="fallback-content"><i class="fas fa-music"></i><p style="font-size: 0.8rem;">Equipe de Louvor</p></div>
-                        <div class="fallback-content"><i class="fas fa-microphone"></i><p style="font-size: 0.8rem;">Ensaio</p></div>
-                    </div>
+                    <h3>👶 Ministério Infantil</h3>
+                    <p>Cuidamos das nossas crianças com amor e dedicação, ensinando os valores cristãos de forma lúdica e apropriada para cada idade.</p>
                 </div>
                 <div class="ministry-card">
-                    <i class="fas fa-child"></i>
-                    <h3>Ministério Infantil</h3>
-                    <p>Dedicado ao cuidado, ensino e formação espiritual das crianças, proporcionando um ambiente seguro e acolhedor.</p>
-                    <div class="ministry-images">
-                        <div class="fallback-content"><i class="fas fa-children"></i><p style="font-size: 0.8rem;">Crianças EBD</p></div>
-                        <div class="fallback-content"><i class="fas fa-heart"></i><p style="font-size: 0.8rem;">Atividades</p></div>
+                    <h3>🧑‍🎓 Ministério Jovem</h3>
+                    <p>Um espaço onde os jovens podem crescer na fé, fazer amizades verdadeiras e descobrir seu propósito em Deus.</p>
+                </div>
+                <div class="ministry-card">
+                    <h3>👥 Ministério de Casais</h3>
+                    <p>Fortalecemos os relacionamentos matrimoniais através de encontros, retiros e aconselhamento baseado nos princípios bíblicos.</p>
+                </div>
+                <div class="ministry-card">
+                    <h3>🎼 Ministério de Música</h3>
+                    <p>Expressamos nossa adoração através da música, com coral, banda e grupos que ministram durante os cultos e eventos especiais.</p>
+                </div>
+                <div class="ministry-card">
+                    <h3>🏠 Ministério de Células</h3>
+                    <p>Pequenos grupos que se reúnem em casas para estudo, oração e comunhão, fortalecendo os laços de amizade e fé.</p>
+                </div>
+                <div class="ministry-card">
+                    <h3>🤲 Ministério de Oração</h3>
+                    <p>Intercessores dedicados que oram pelas necessidades da igreja e da comunidade, buscando a face de Deus em favor de todos.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Eventos -->
+    <section class="events" id="eventos">
+        <div class="container">
+            <h2 class="section-title">Próximos Eventos</h2>
+            <div class="events-grid">
+                <div class="event-card">
+                    <div class="event-date">
+                        <div style="font-size: 2rem;">15</div>
+                        <div>DEZEMBRO</div>
                     </div>
-                    <div class="pequenos-discipulos-compact">
-                        <p class="site-title">🌟 Site Pequenos Discípulos</p>
-                        <a href="https://pequenos-discipulos-site.vercel.app/" target="_blank" class="btn-compact">📖 Visitar Site Completo</a>
+                    <div class="event-content">
+                        <h3>🎄 Cantata de Natal</h3>
+                        <p>Uma apresentação especial celebrando o nascimento de Jesus. Venha com toda a família para este momento único de adoração e celebração.</p>
+                        <p><strong>Horário:</strong> 19h30</p>
+                    </div>
+                </div>
+                <div class="event-card">
+                    <div class="event-date">
+                        <div style="font-size: 2rem;">31</div>
+                        <div>DEZEMBRO</div>
+                    </div>
+                    <div class="event-content">
+                        <h3>🎊 Culto de Gratidão</h3>
+                        <p>Encerramos o ano com gratidão a Deus por todas as bênçãos recebidas. Um momento especial de louvor e testemunhos.</p>
+                        <p><strong>Horário:</strong> 23h</p>
+                    </div>
+                </div>
+                <div class="event-card">
+                    <div class="event-date">
+                        <div style="font-size: 2rem;">07</div>
+                        <div>JANEIRO</div>
+                    </div>
+                    <div class="event-content">
+                        <h3>🙏 Semana de Oração</h3>
+                        <p>Iniciamos o ano buscando a direção de Deus através da oração. Participe conosco nesta semana especial de consagração.</p>
+                        <p><strong>Horário:</strong> 19h30 (Segunda a Sexta)</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="gallery">
+    <!-- Contato -->
+    <section class="contact" id="contato">
         <div class="container">
-            <h2 class="section-title">Galeria de Fotos</h2>
-            <p class="section-subtitle">Momentos especiais da nossa comunidade de fé</p>
-            <div class="gallery-filters">
-                <button class="filter-btn active" data-filter="all">Todas</button>
-                <button class="filter-btn" data-filter="cultos">Cultos</button>
-                <button class="filter-btn" data-filter="confraternizacoes">Confraternizações</button>
-                <button class="filter-btn" data-filter="acoes-sociais">Ações Sociais</button>
-                <button class="filter-btn" data-filter="eventos">Eventos</button>
-                <button class="filter-btn" data-filter="batismos">Batismos</button>
-                <button class="filter-btn" data-filter="ebd">EBD</button>
-            </div>
-            <div class="gallery-grid">
-                <div class="gallery-item" data-category="cultos"><div class="fallback-content"><i class="fas fa-camera" style="font-size: 2rem;"></i><p>Cultos</p></div></div>
-                <div class="gallery-item" data-category="confraternizacoes"><div class="fallback-content"><i class="fas fa-users" style="font-size: 2rem;"></i><p>Confraternizações</p></div></div>
-                <div class="gallery-item" data-category="acoes-sociais"><div class="fallback-content"><i class="fas fa-heart" style="font-size: 2rem;"></i><p>Ações Sociais</p></div></div>
-                <div class="gallery-item" data-category="eventos"><div class="fallback-content"><i class="fas fa-birthday-cake" style="font-size: 2rem;"></i><p>Eventos</p></div></div>
-                <div class="gallery-item" data-category="batismos"><div class="fallback-content"><i class="fas fa-water" style="font-size: 2rem;"></i><p>Batismos</p></div></div>
-                <div class="gallery-item" data-category="ebd"><div class="fallback-content"><i class="fas fa-graduation-cap" style="font-size: 2rem;"></i><p>EBD</p></div></div>
-            </div>
-        </div>
-    </section>
-<section id="video">
-    <div class="container">
-        <h2 class="section-title">Vídeos</h2>
-        <p class="section-subtitle">Assista mensagens, cultos e conteúdos especiais</p>
-
-        <div class="video-grid">
-            <div class="video-card">
-    <iframe 
-        src="https://www.youtube.com/embed/0a8g_aKWpK0"
-        allowfullscreen>
-    </iframe>
-    <h3>Mensagem Especial</h3>
-</div>
-
-            <div class="video-card">
-                <iframe 
-                    src="https://www.youtube.com/embed/ysz5S6PUM-U"
-                    allowfullscreen>
-                </iframe>
-                <h3>Culto Ao Vivo</h3>
-            </div>
-
-        </div>
-    </div>
-</section>
-    <section id="agenda" class="agenda">
-        <div class="container">
-            <h2 class="section-title">Agenda de Eventos</h2>
-            <p class="section-subtitle">Fique por dentro dos próximos eventos</p>
-            <div class="agenda-grid">
-                
-            </div>
-        </div>
-    </section>
-
-    <section id="pastor" class="pastor-section">
-        <div class="container">
-            <h2 class="section-title">Liderança Pastoral</h2>
-            <div class="pastor-content">
-                <div class="pastor-image"><i class="fas fa-user" style="font-size: 4rem;"></i></div>
-                <div class="pastor-info">
-                    <h3>Pastor José Marcos da Silva</h3>
-                    <p class="title">Pastor Presidente</p>
-                    <p>Servo de Deus comprometido com a obra do Senhor, dedicado ao pastoreio e cuidado do rebanho.</p>
-                    <blockquote style="border-left: 4px solid var(--secondary-color); padding-left: 1rem; margin: 2rem 0; font-style: italic; color: var(--text-light);">"Meu desejo é ver vidas transformadas pelo poder do Evangelho e famílias restauradas pelo amor de Cristo."</blockquote>
+            <h2 class="section-title">Entre em Contato</h2>
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h3>📍 Localização</h3>
+                    <div class="contact-item">
+                        <span>🏠</span>
+                        <div>
+                            <strong>Endereço:</strong><br>
+                            Rua da Esperança, 123<br>
+                            Bairro Jardim da Paz<br>
+                            CEP: 12345-678
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <span>📞</span>
+                        <div>
+                            <strong>Telefone:</strong><br>
+                            (11) 9999-9999
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <span>📧</span>
+                        <div>
+                            <strong>Email:</strong><br>
+                            contato@nossajornada.com.br
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-info">
+                    <h3>⏰ Horários dos Cultos</h3>
+                    <div class="contact-item">
+                        <span>🌅</span>
+                        <div>
+                            <strong>Domingo Manhã:</strong><br>
+                            10h00 - Culto de Celebração
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <span>🌙</span>
+                        <div>
+                            <strong>Domingo Noite:</strong><br>
+                            19h00 - Culto de Adoração
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <span>📖</span>
+                        <div>
+                            <strong>Quarta-feira:</strong><br>
+                            19h30 - Estudo Bíblico
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-info">
+                    <h3>🤝 Redes Sociais</h3>
+                    <p>Acompanhe nossas atividades e receba mensagens de fé e esperança através das nossas redes sociais.</p>
+                    <div class="social-links">
+                        <a href="#" title="Facebook">📘</a>
+                        <a href="#" title="Instagram">📷</a>
+                        <a href="#" title="YouTube">📺</a>
+                        <a href="#" title="WhatsApp">💬</a>
+                    </div>
+                    <p style="margin-top: 20px; font-size: 0.9rem;">Siga-nos para ficar por dentro de todas as novidades e eventos especiais da nossa comunidade.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="prayer">
-        <div class="container">
-            <h2 class="section-title">Pedidos de Oração</h2>
-            <p class="section-subtitle">Compartilhe seu pedido conosco. A oração move o coração de Deus!</p>
-            <form class="prayer-form">
-                <div class="form-group"><label for="name">Nome:</label><input type="text" id="name" name="name" required></div>
-                <div class="form-group"><label for="email">E-mail (opcional):</label><input type="email" id="email" name="email"></div>
-                <div class="form-group"><label for="prayer-request">Seu Pedido de Oração:</label><textarea id="prayer-request" name="prayer-request" placeholder="Compartilhe seu pedido..." required></textarea></div>
-                <div class="form-group"><div class="checkbox-group"><input type="checkbox" id="confidential" name="confidential"><label for="confidential">Pedido confidencial</label></div></div>
-                <button type="submit" class="btn-primary" style="width: 100%;"><i class="fas fa-praying-hands"></i> Enviar Pedido</button>
-            </form>
-        </div>
-    </section>
-<div class="gallery-grid">
-
-  <div class="gallery-item">
-    <img src="imagens/foto1.jpeg" alt="Culto de Gratidão Abril 2026 - Foto 1">
-  </div>
-
-  <div class="gallery-item">
-    <img src="imagens/foto2.jpeg" alt="Culto de Gratidão Abril 2026 - Foto 2">
-  </div>
-
-  <div class="gallery-item">
-    <img src="imagens/foto3.jpeg" alt="Culto de Gratidão Abril 2026 - Foto 3">
-  </div>
-
-</div>
-
-    <div class="video-grid" style="margin-top:2rem;">
-      <div class="video-card">
-        <div class="fallback-content" style="height:220px;">
-          <i class="fas fa-video"></i>
-          <p>Vídeo em breve</p>
-        </div>
-        <h3>Abril 2026</h3>
-      </div>
-    </div>
-  </div>
-</section>
-<section id="abril-2026" class="agenda">
-  <div class="container">
-    <h2 class="section-title">Culto de Gratidao - Abril de 2026</h2>
-    <p class="section-subtitle">Fotos e vídeos do culto especial</p>
-
-    <div class="gallery-grid">
-
-      <div class="gallery-item">
-        <img src="imagens/foto1.jpeg" alt="Foto 1">
-      </div>
-
-      <div class="gallery-item">
-        <img src="imagens/foto2.jpeg" alt="Foto 2">
-      </div>
-
-      <div class="gallery-item">
-        <img src="imagens/foto3.jpeg" alt="Foto 3">
-      </div>
-
-    </div>
-
-  <!-- 🎬 VÍDEO DO YOUTUBE -->
-<div style="margin-top: 2rem; text-align:center;">
-
-  <iframe 
-    width="560" 
-    height="315" 
-    src="https://www.youtube.com/embed/rW2tu9b4cjw" 
-    title="Culto de Gratidão Abril 2026"
-    frameborder="0" 
-    allowfullscreen
-    style="border-radius:10px;">
-  </iframe>
-
-  <h3 style="margin-top:10px;">Culto de Gratidão - Abril 2026</h3>
-
-</div>
-</div>
-</section>
-<section id="oracao-abril-2026" class="agenda">
-  <div class="container">
-    <h2 class="section-title">Culto de Oração - Abril 2026</h2>
-    <p class="section-subtitle">Momentos de intercessão e busca a Deus</p>
-
-    <div class="gallery-grid">
-
-      <div class="gallery-item">
-        <img src="imagens/oracao1.jpeg" alt="Culto de Oração Abril - Foto 1">
-      </div>
-
-      <div class="gallery-item">
-        <img src="imagens/oracao2.jpeg" alt="Culto de Oração Abril - Foto 2">
-      </div>
-
-    </div>
-
-  </div>
-</section>
-    <section id="collaboration" class="collaboration">
-        <div class="container">
-            <h2 class="section-title">Seja um Colaborador!</h2>
-            <p style="font-size: 1.2rem; color: rgba(255,255,255,0.9);">Sua contribuição é fundamental para o crescimento do Reino de Deus!</p>
-            <div class="collaboration-options">
-                <div class="collaboration-card"><i class="fas fa-heart"></i><h3>Dízimos e Ofertas</h3><p>Contribua para a manutenção da obra.</p></div>
-                <div class="collaboration-card"><i class="fas fa-hands-helping"></i><h3>Trabalho Voluntário</h3><p>Doe seu tempo e talentos.</p></div>
-                <div class="collaboration-card"><i class="fas fa-pray"></i><h3>Oração</h3><p>Participe da corrente de oração.</p></div>
-            </div>
-        </div>
-    </section>
-
-    <section id="contact">
-        <div class="container">
-            <h2 class="section-title">Localização e Contato</h2>
-            <div class="contact-info">
-                <div class="contact-item"><i class="fas fa-map-marker-alt"></i><div><h4>Endereço</h4><p>Estrada RJ-127, 9737<br>Lages, Paracambi - RJ<br>CEP: 26.600-000</p></div></div>
-                <div class="contact-item"><i class="fas fa-phone"></i><div><h4>Telefone/WhatsApp</h4><p>(21) 98786-0391</p></div></div>
-                <div class="contact-item"><i class="fas fa-clock"></i><div><h4>Horários dos Cultos</h4><p>Terças: 19:30h<br>Domingos: 9:00h e 19:00h</p></div></div>
-            </div>
-            <div class="map-container"><iframe src="https://www.google.com/maps?q=-22.6284654,-43.7087439&output=embed" allowfullscreen="" loading="lazy"></iframe></div>
-        </div>
-    </section>
-
+    <!-- Footer -->
     <footer>
         <div class="container">
             <div class="footer-content">
-                <div class="footer-section"><h3>Igreja Cristo Vive</h3><p>A Igreja que Anuncia Vida em Abundância!</p><div class="social-links"><a href="#"><i class="fab fa-facebook"></i></a><a href="#"><i class="fab fa-instagram"></i></a><a href="#"><i class="fab fa-youtube"></i></a><a href="https://wa.me/5521987860391"><i class="fab fa-whatsapp"></i></a></div></div>
-                <div class="footer-section"><h3>Contato</h3><p><i class="fas fa-map-marker-alt"></i> Estrada RJ-127, 9737</p><p><i class="fas fa-phone"></i> (21) 98786-0391</p></div>
-                <div class="footer-section"><h3>Horários</h3><p><strong>Terças:</strong> 19:30h</p><p><strong>Domingos:</strong> 9:00h e 19:00h</p></div>
+                <div class="footer-section">
+                    <h3>Igreja Nossa Jornada</h3>
+                    <p>Uma comunidade de fé, esperança e amor, caminhando juntos em direção aos propósitos de Deus para nossas vidas.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Links Rápidos</h3>
+                    <p><a href="#sobre" style="color: white; text-decoration: none;">Sobre Nós</a></p>
+                    <p><a href="#servicos" style="color: white; text-decoration: none;">Serviços</a></p>
+                    <p><a href="#ministerios" style="color: white; text-decoration: none;">Ministérios</a></p>
+                    <p><a href="#eventos" style="color: white; text-decoration: none;">Eventos</a></p>
+                </div>
+                <div class="footer-section">
+                    <h3>Versículo da Semana</h3>
+                    <p style="font-style: italic;">"Porque eu bem sei os pensamentos que tenho a vosso respeito, diz o Senhor; pensamentos de paz e não de mal, para vos dar o fim que esperais."</p>
+                    <p><strong>Jeremias 29:11</strong></p>
+                </div>
             </div>
-            <div class="footer-bottom"><p>&copy; 2026 Igreja Evangélica Cristo Vive de Paracambi/RJ</p></div>
+            <div style="border-top: 1px solid #333; padding-top: 20px; margin-top: 30px;">
+                <p>&copy; 2024 Igreja Nossa Jornada. Todos os direitos reservados. | Desenvolvido com ❤️ para a glória de Deus</p>
+            </div>
         </div>
     </footer>
-
-    <a href="https://wa.me/5521987860391" class="whatsapp-float" target="_blank"><i class="fab fa-whatsapp"></i></a>
-<script>
-// 365 VERSÍCULOS BÍBLICOS
-const versiculosAnuais = [
-    { text: "No princípio, Deus criou os céus e a terra.", reference: "Gênesis 1:1" },
-    { text: "E Deus viu tudo o que tinha feito, e eis que era muito bom.", reference: "Gênesis 1:31" },
-    { text: "O Senhor é o meu pastor; nada me faltará.", reference: "Salmos 23:1" },
-    { text: "Ainda que eu ande pelo vale da sombra da morte, não temerei mal algum, porque tu estás comigo.", reference: "Salmos 23:4" },
-    { text: "Certamente que a bondade e a misericórdia me seguirão todos os dias da minha vida.", reference: "Salmos 23:6" },
-    { text: "Buscar-me-eis e me achareis quando me buscardes de todo o vosso coração.", reference: "Jeremias 29:13" },
-    { text: "Porque os meus pensamentos não são os vossos pensamentos, nem os vossos caminhos, os meus caminhos, diz o Senhor.", reference: "Isaías 55:8" },
-    { text: "Confia no Senhor de todo o teu coração e não te estribes no teu próprio entendimento.", reference: "Provérbios 3:5" },
-    { text: "Reconhece-o em todos os teus caminhos, e ele endireitará as tuas veredas.", reference: "Provérbios 3:6" },
-    { text: "O Senhor é a minha luz e a minha salvação; a quem temerei?", reference: "Salmos 27:1" },
-    { text: "Espera no Senhor, anima-te, e ele fortalecerá o teu coração.", reference: "Salmos 27:14" },
-    { text: "Entrega o teu caminho ao Senhor; confia nele, e ele tudo fará.", reference: "Salmos 37:5" },
-    { text: "Deleita-te também no Senhor, e ele te concederá os desejos do teu coração.", reference: "Salmos 37:4" },
-    { text: "Deus é o nosso refúgio e fortaleza, socorro bem presente na angústia.", reference: "Salmos 46:1" },
-    { text: "Aquietai-vos e sabei que eu sou Deus.", reference: "Salmos 46:10" },
-    { text: "Cria em mim, ó Deus, um coração puro e renova em mim um espírito reto.", reference: "Salmos 51:10" },
-    { text: "Porque Deus amou o mundo de tal maneira que deu o seu Filho unigênito.", reference: "João 3:16" },
-    { text: "Eu sou o caminho, e a verdade, e a vida. Ninguém vem ao Pai senão por mim.", reference: "João 14:6" },
-    { text: "Não se turbe o vosso coração; credes em Deus, crede também em mim.", reference: "João 14:1" },
-    { text: "Na casa de meu Pai há muitas moradas.", reference: "João 14:2" },
-    { text: "Eu sou a luz do mundo; quem me segue não andará em trevas.", reference: "João 8:12" },
-    { text: "Conhecereis a verdade, e a verdade vos libertará.", reference: "João 8:32" },
-    { text: "Eu sou a porta; se alguém entrar por mim, salvar-se-á.", reference: "João 10:9" },
-    { text: "Eu sou o bom pastor; o bom pastor dá a sua vida pelas ovelhas.", reference: "João 10:11" },
-    { text: "As minhas ovelhas ouvem a minha voz, e eu conheço-as, e elas me seguem.", reference: "João 10:27" },
-    { text: "Eu sou a ressurreição e a vida; quem crê em mim, ainda que esteja morto, viverá.", reference: "João 11:25" },
-    { text: "Eu sou a videira verdadeira, e meu Pai é o lavrador.", reference: "João 15:1" },
-    { text: "Eu sou a videira, vós, as varas; quem está em mim, e eu nele, este dá muito fruto.", reference: "João 15:5" },
-    { text: "Sem mim nada podeis fazer.", reference: "João 15:5b" },
-    { text: "Como o Pai me amou, também eu vos amei a vós; permanecei no meu amor.", reference: "João 15:9" },
-    { text: "Ninguém tem maior amor do que este: de dar alguém a sua vida pelos seus amigos.", reference: "João 15:13" },
-    { text: "Não me escolhestes vós a mim, mas eu vos escolhi a vós.", reference: "João 15:16" },
-    { text: "Tenho-vos dito isso para que em mim tenhais paz; no mundo tereis aflições, mas tende bom ânimo; eu venci o mundo.", reference: "João 16:33" },
-    { text: "Santifica-os na verdade; a tua palavra é a verdade.", reference: "João 17:17" },
-    { text: "Tudo posso naquele que me fortalece.", reference: "Filipenses 4:13" },
-    { text: "Não estejais inquietos por coisa alguma.", reference: "Filipenses 4:6" },
-    { text: "E a paz de Deus, que excede todo o entendimento, guardará os vossos corações.", reference: "Filipenses 4:7" },
-    { text: "Porque pela graça sois salvos, por meio da fé; e isso não vem de vós; é dom de Deus.", reference: "Efésios 2:8" },
-    { text: "Portanto, agora, nenhuma condenação há para os que estão em Cristo Jesus.", reference: "Romanos 8:1" },
-    { text: "E sabemos que todas as coisas contribuem juntamente para o bem daqueles que amam a Deus.", reference: "Romanos 8:28" },
-    { text: "Se Deus é por nós, quem será contra nós?", reference: "Romanos 8:31" },
-    { text: "Mas em todas estas coisas somos mais do que vencedores, por aquele que nos amou.", reference: "Romanos 8:37" },
-    { text: "Porque estou certo de que nem a morte, nem a vida nos poderá separar do amor de Deus.", reference: "Romanos 8:38-39" },
-    { text: "Vinde a mim, todos os que estais cansados e oprimidos, e eu vos aliviarei.", reference: "Mateus 11:28" },
-    { text: "Tomai sobre vós o meu jugo e aprendei de mim, que sou manso e humilde de coração.", reference: "Mateus 11:29" },
-    { text: "Buscai primeiro o Reino de Deus, e a sua justiça, e todas essas coisas vos serão acrescentadas.", reference: "Mateus 6:33" },
-    { text: "Não ajunteis tesouros na terra, mas ajuntai tesouros no céu.", reference: "Mateus 6:19-20" },
-    { text: "Porque onde estiver o vosso tesouro, aí estará também o vosso coração.", reference: "Mateus 6:21" },
-    { text: "Não julgueis, para que não sejais julgados.", reference: "Mateus 7:1" },
-    { text: "Pedi, e dar-se-vos-á; buscai e encontrareis; batei, e abrir-se-vos-á.", reference: "Mateus 7:7" },
-    { text: "Ide, portanto, fazei discípulos de todas as nações.", reference: "Mateus 28:19" },
-    { text: "E eis que eu estou convosco todos os dias, até à consumação dos séculos.", reference: "Mateus 28:20" },
-    { text: "Bem-aventurados os pobres de espírito, porque deles é o Reino dos céus.", reference: "Mateus 5:3" },
-    { text: "Bem-aventurados os que choram, porque eles serão consolados.", reference: "Mateus 5:4" },
-    { text: "Bem-aventurados os mansos, porque eles herdarão a terra.", reference: "Mateus 5:5" },
-    { text: "Bem-aventurados os que têm fome e sede de justiça, porque eles serão fartos.", reference: "Mateus 5:6" },
-    { text: "Bem-aventurados os misericordiosos, porque eles alcançarão misericórdia.", reference: "Mateus 5:7" },
-    { text: "Bem-aventurados os limpos de coração, porque eles verão a Deus.", reference: "Mateus 5:8" },
-    { text: "Bem-aventurados os pacificadores, porque eles serão chamados filhos de Deus.", reference: "Mateus 5:9" },
-    { text: "Vós sois o sal da terra.", reference: "Mateus 5:13" },
-    { text: "Vós sois a luz do mundo.", reference: "Mateus 5:14" },
-    { text: "Assim resplandeça a vossa luz diante dos homens.", reference: "Mateus 5:16" },
-    { text: "O Senhor é bom, um refúgio em tempos de angústia. Ele protege os que nele confiam.", reference: "Naum 1:7" },
-    { text: "Porque o Senhor, o teu Deus, está contigo por onde quer que andares.", reference: "Josué 1:9" },
-    { text: "Alegrai-vos sempre no Senhor; outra vez digo: alegrai-vos.", reference: "Filipenses 4:4" },
-    { text: "Lançando sobre ele toda a vossa ansiedade, porque ele tem cuidado de vós.", reference: "1 Pedro 5:7" },
-    { text: "O ladrão não vem senão a roubar, a matar e a destruir; eu vim para que tenham vida e a tenham com abundância.", reference: "João 10:10" },
-    { text: "Porque eu sei os pensamentos que tenho a vosso respeito, diz o Senhor; pensamentos de paz e não de mal.", reference: "Jeremias 29:11" },
-    { text: "O amor é paciente, o amor é bondoso. Não inveja, não se vangloria, não se orgulha.", reference: "1 Coríntios 13:4" },
-    { text: "Sede fortes e corajosos! Não temas, nem te espantes, porque o Senhor, teu Deus, é contigo.", reference: "Josué 1:9" },
-    { text: "Ó profundidade da riqueza, tanto da sabedoria como do conhecimento de Deus!", reference: "Romanos 11:33" },
-    { text: "Quanto ao mais, irmãos, tudo o que é verdadeiro, tudo o que é honesto, nisso pensai.", reference: "Filipenses 4:8" },
-    { text: "O fruto do Espírito é: amor, gozo, paz, longanimidade, benignidade, bondade, fé, mansidão, temperança.", reference: "Gálatas 5:22-23" },
-    { text: "Portanto, quer comais, quer bebais ou façais outra qualquer coisa, fazei tudo para a glória de Deus.", reference: "1 Coríntios 10:31" },
-    { text: "E a fé é o firme fundamento das coisas que se esperam e a prova das coisas que se não veem.", reference: "Hebreus 11:1" },
-    { text: "Bendito seja o Deus e Pai de nosso Senhor Jesus Cristo, que nos abençoou com todas as bênçãos espirituais.", reference: "Efésios 1:3" },
-    { text: "Não temais! Estai quietos e vede o livramento do Senhor.", reference: "Êxodo 14:13" },
-    { text: "O Senhor é o meu auxílio; não temerei o que me possa fazer o homem.", reference: "Hebreus 13:6" }
-];
-
-// Preencher até 365 versículos
-while(versiculosAnuais.length < 365) {
-    versiculosAnuais.push(versiculosAnuais[versiculosAnuais.length % 75]);
-}
-
-let currentVerseIndex = 0;
-
-function updateVerse(index) {
-    if (index < 0) index = 364;
-    if (index > 364) index = 0;
-    
-    currentVerseIndex = index;
-    const verse = versiculosAnuais[currentVerseIndex];
-    
-    const verseTextElement = document.getElementById('daily-verse-text');
-    const verseRefElement = document.getElementById('daily-verse-reference');
-    const verseCounterElement = document.getElementById('verse-counter');
-    
-    if (verseTextElement) verseTextElement.textContent = verse.text;
-    if (verseRefElement) verseRefElement.textContent = verse.reference;
-    if (verseCounterElement) verseCounterElement.textContent = 'Versículo ' + (currentVerseIndex + 1) + ' de 365';
-}
-
-function updateDate() {
-    const today = new Date();
-    const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
-    let dateString = today.toLocaleDateString('pt-BR', options);
-    dateString = dateString.charAt(0).toUpperCase() + dateString.slice(1);
-    
-    const dateElement = document.getElementById('current-date');
-    if (dateElement) dateElement.textContent = dateString;
-}
-
-function getDayOfYear() {
-    const now = new Date();
-    const start = new Date(now.getFullYear(), 0, 0);
-    const diff = now - start;
-    const oneDay = 1000 * 60 * 60 * 24;
-    return Math.floor(diff / oneDay);
-}
-
-// INICIALIZAÇÃO quando a página carregar
-window.addEventListener('load', function() {
-    console.log('Página carregada! Inicializando versículos...');
-    
-    const dayOfYear = getDayOfYear();
-    const verseIndex = dayOfYear % 365;
-    
-    updateVerse(verseIndex);
-    updateDate();
-    
-    const prevBtn = document.getElementById('prev-verse-btn');
-    const nextBtn = document.getElementById('next-verse-btn');
-    
-    if (prevBtn) {
-        prevBtn.onclick = function() {
-            updateVerse(currentVerseIndex - 1);
-        };
-    }
-    
-    if (nextBtn) {
-        nextBtn.onclick = function() {
-            updateVerse(currentVerseIndex + 1);
-        };
-    }
-    
-    document.addEventListener('keydown', function(e) {
-        if (e.key === 'ArrowLeft') updateVerse(currentVerseIndex - 1);
-        if (e.key === 'ArrowRight') updateVerse(currentVerseIndex + 1);
-    });
-
-    // Gallery filters
-    const filterBtns = document.querySelectorAll('.filter-btn');
-    const galleryItems = document.querySelectorAll('.gallery-item');
-
-    filterBtns.forEach(function(btn) {
-        btn.addEventListener('click', function() {
-            filterBtns.forEach(function(b) { b.classList.remove('active'); });
-            btn.classList.add('active');
-            const filter = btn.getAttribute('data-filter');
-            galleryItems.forEach(function(item) {
-                if (filter === 'all' || item.getAttribute('data-category') === filter) {
-                    item.style.display = 'block';
-                } else {
-                    item.style.display = 'none';
-                }
-            });
-        });
-    });
-
-    // Prayer form
-    const prayerForm = document.querySelector('.prayer-form');
-    if (prayerForm) {
-        prayerForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            const name = document.getElementById('name').value;
-            const email = document.getElementById('email').value;
-            const request = document.getElementById('prayer-request').value;
-            const confidential = document.getElementById('confidential').checked;
-            const message = '🙏 PEDIDO DE ORAÇÃO\n\nNome: ' + name + '\nEmail: ' + (email || 'Não informado') + '\nPedido: ' + request + '\nConfidencial: ' + (confidential ? 'Sim' : 'Não');
-            window.open('https://wa.me/5521987860391?text=' + encodeURIComponent(message), '_blank');
-            prayerForm.reset();
-            alert('Pedido enviado! Você será redirecionado para o WhatsApp.');
-        });
-    }
-
-    // Smooth scrolling
-    document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
-        anchor.addEventListener('click', function(e) {
-            e.preventDefault();
-            const target = document.querySelector(this.getAttribute('href'));
-            if (target) {
-                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-            }
-        });
-    });
-    
-    console.log('Tudo inicializado! Versículo atual:', currentVerseIndex + 1);
-});
-    </script>
 </body>
-
-
-</html>                target.scrollIntoView({ behavio
+</html>
